@@ -5,13 +5,17 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
 
+
   # Defines the root path route ("/")
   # root "articles#index"
   get "/menu", to: "pages#menu"
 
   resources :bike_racks
+
   resources :lanes
+
   resources :shops
+
   resources :videos
 
 end
