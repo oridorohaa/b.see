@@ -13,13 +13,14 @@ class BikeRackLikesController < ApplicationController
   end
 
   def destroy
-    @bike_rack_like = BikeRackLike.where(user: current_user, bike_rack: @bike_rack)
+    @bike_rack_like = BikeRackLike.find_by(user: current_user, bike_rack: @bike_rack)
     @bike_rack_like.destroy
+    redirect_to @bike_rack, notice: 'unliked'
   end
 
   private
 
   def set_bike_rack
-    @bike_rack = BikeRack.find(params[:bike_rake_id])
+    @bike_rack = BikeRack.find(params[:bike_rack_id])
   end
 end
