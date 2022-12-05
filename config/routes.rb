@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: "pages#home"
+  get "/menu", to: "pages#menu"
 
   resources :bike_racks do
     resources :bike_rack_likes, only: %i[create destroy]
