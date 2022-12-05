@@ -3,9 +3,15 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
 
   # Defines the root path route ("/")
   # root "articles#index"
   get "/menu", to: "pages#menu"
+
+  resources :bike_rakes
+  resources :lanes
+  resources :shops
+  resources :videos
+
 end
