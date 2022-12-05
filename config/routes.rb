@@ -3,19 +3,22 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: "pages#home"
-
-
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   get "/menu", to: "pages#menu"
 
-  resources :bike_racks
+  resources :bike_racks do
+    resources :bike_rack_likes, only: %i[create destroy]
+  end
 
-  resources :lanes
+  resources :lanes do
+    resources :lane_likes, only: %i[create destroy]
+  end
 
-  resources :shops
+  resources :shops do
+    resources :shop_likes, only: %i[create destroy]
+  end
 
-  resources :videos
+  resources :videos do
+    resources :video_likes, only: %i[create destroy]
+  end
 
 end
