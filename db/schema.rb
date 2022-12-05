@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_210458) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_211208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bike_racks", force: :cascade do |t|
     t.string "address"
     t.string "description"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_210458) do
     t.string "start_point"
     t.string "end_point"
     t.string "drescription"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_210458) do
     t.string "phone_number"
     t.string "description"
     t.string "website"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -124,7 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_210458) do
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.boolean "status"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
