@@ -9,7 +9,7 @@ class VideoLikesController < ApplicationController
   end
 
   def destroy
-    @video_like = VideoLike.where(user: current_user, video: @video)
+    @video_like = VideoLike.find_by(user: current_user, video: @video)
     @video_like.destroy
   end
 
