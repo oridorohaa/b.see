@@ -3,4 +3,5 @@
 <%= @shop.hours %><br>
 <%= @shop.phone_number %><br>
 <%= @shop.website %><br>
-<%= link_to "edit shop", edit_shop_path(@shop) %>
+<%= link_to "edit shop", edit_shop_path(@shop) %> <br>
+<%= link_to "delete shop", shop_path(@shop),  data: {turbo_method: :delete} %>

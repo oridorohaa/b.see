@@ -1,1 +1,13 @@
 <%= link_to "new shop",  new_shop_path %>
+<% @shops.each do |shop| %>
+  <div class="shop-container">
+    <a href="/shops/<%=shop.id%>"><%= shop.address %></a>
+    <%= shop.description %>
+  </div>
+<% end %>
+
+<style>
+.shop-container{
+  border: 1px solid black;
+}
+</style>
