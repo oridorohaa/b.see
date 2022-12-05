@@ -2,7 +2,7 @@ class LanesController < ApplicationController
   before_action :set_lane, only: %i[show edit update destroy]
 
   def index
-    @lane = Lane.all
+    @lanes = Lane.all
   end
 
   def show
