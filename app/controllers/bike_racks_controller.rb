@@ -8,6 +8,7 @@ class BikeRacksController < ApplicationController
   def show
     # show
     @rack = BikeRack.find(params[:id])
+    
   end
 
   def new
@@ -40,7 +41,7 @@ class BikeRacksController < ApplicationController
 
   def destroy
     @rack.destroy
-    redirect_to racks_path, status: :see_other
+    redirect_to bike_racks_path, status: :see_other
   end
 
   private
