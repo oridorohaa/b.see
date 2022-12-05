@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
 
   def show
     # show
+    @shop = Shop.find(params[:id])
   end
 
   def new

@@ -7,6 +7,7 @@ class VideosController < ApplicationController
 
   def show
     # show
+    @video = Video.find(params[:id])
   end
 
   def new
@@ -14,7 +15,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(shop_params)
+    @video = Video.new(video_params)
     @video.user = current_user
     if @video.save
       redirect_to @video
