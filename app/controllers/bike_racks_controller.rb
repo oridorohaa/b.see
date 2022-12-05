@@ -2,7 +2,7 @@ class BikeRacksController < ApplicationController
   before_action :set_rack, only: %i[show edit update destroy]
 
   def index
-    @rack = BikeRack.all
+    @racks = BikeRack.all
   end
 
   def show

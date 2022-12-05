@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :bike_rakes
   resources :lanes
+  resources :shops
 end
