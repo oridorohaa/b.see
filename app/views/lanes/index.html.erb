@@ -1,1 +1,14 @@
 <%= link_to "Create Lane",  new_lane_path %>
+<% @lanes.each do |lane| %>
+  <div class="lane-container">
+    <a href="/lanes/<%=lane.id%>"><%= lane.street_name %> </a><br>
+    <%= lane.drescription %>
+  </div>
+<% end %>
+
+<style>
+
+.lane-container{
+  border:1px solid black;
+}
+</style>

@@ -1,1 +1,14 @@
 <%= link_to "add video", new_video_path %>
+<% @videos.each do |video| %>
+  <div class="video-container">
+    <a href="/videos/<%=video.id%>"><%= video.title %></a> <br>
+    <%= video.description %><br>
+  </div>
+<% end %>
+
+
+<style>
+.video-container{
+  border:1px solid black;
+}
+</style>

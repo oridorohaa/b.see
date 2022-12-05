@@ -2,4 +2,5 @@
 <%= @lane.start_point %><br>
 <%= @lane.end_point %><br>
 <%= @lane.drescription %><br>
-<%= link_to "edit",  edit_lane_path(@lane) %>
+<%= link_to "edit",  edit_lane_path(@lane) %> <br>
+<%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %>
