@@ -1,0 +1,2 @@
+class BikeRack < ApplicationRecord
+end
