@@ -9,7 +9,7 @@ class LaneLikesController < ApplicationController
   end
 
   def destroy
-    @lane_like = LaneLike.where(user: current_user, lane: @lane)
+    @lane_like = LaneLike.find_by(user: current_user, lane: @lane)
     @lane_like.destroy
   end
 

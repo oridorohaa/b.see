@@ -9,7 +9,7 @@ class ShopLikesController < ApplicationController
   end
 
   def destroy
-    @shop_like = ShopLike.where(user: current_user, shop: @shop)
+    @shop_like = ShopLike.find_by(user: current_user, shop: @shop)
     @shop_like.destroy
   end
 
