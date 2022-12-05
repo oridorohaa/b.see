@@ -7,6 +7,7 @@ class LanesController < ApplicationController
 
   def show
     # show
+    @lane = Lane.find(params[:id])
   end
 
   def new
@@ -25,6 +26,7 @@ class LanesController < ApplicationController
 
   def edit
     # edit
+    @lane = Lane.find(params[:id])
   end
 
   def update
@@ -48,6 +50,6 @@ class LanesController < ApplicationController
   end
 
   def lane_params
-    params.require(:lane).permit(:street, :start_point, :end_point, :description, :status)
+    params.require(:lane).permit(:street_name, :start_point, :end_point, :drescription, :status)
   end
 end
