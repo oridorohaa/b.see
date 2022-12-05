@@ -4,12 +4,20 @@ Rails.application.routes.draw do
   }
   root to: "pages#home"
 
-  resources :bike_racks
-  
-  resources :lanes
+  resources :bike_racks do
+    resources :bike_rack_likes, only: %i[create destroy]
+  end
 
-  resources :shops
+  resources :lanes do
+    resources :lane_likes, only: %i[create destroy]
+  end
 
-  resources :videos
+  resources :shops do
+    resources :shop_likes, only: %i[create destroy]
+  end
+
+  resources :videos do
+    resources :video_likes, only: %i[create destroy]
+  end
 
 end
