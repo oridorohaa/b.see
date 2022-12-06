@@ -1,4 +1,4 @@
-class ReportsController < ApplicationController
+class BikeRackReportsController < ApplicationController
   before_action :set_rack
 
   def new
@@ -10,6 +10,8 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.user = current_user
     if @report.save
+      @rack.status = false
+      @rack.save
       @bike_rack_report = BikeRackReport.new(bike_rack: @rack, report: @report)
       authorize @report
       if @bike_rack_report.save
@@ -24,6 +26,10 @@ class ReportsController < ApplicationController
   end
 
   private
+
+  def create_shop_report
+
+  end
 
   def report_params
     params.require(:report).permit(:content)
