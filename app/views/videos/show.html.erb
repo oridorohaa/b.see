@@ -1,4 +1,6 @@
 <%= @video.title %><br>
 <%= @video.description %><br>
 <%= link_to "edit video", edit_video_path(@video) %><br>
+<%= link_to "like", video_video_likes_path(@video), data:{turbo_method: :post} %><br>
+<%= link_to "unlike", video_video_like_path(@video), data:{turbo_method: :delete} %><br>
 <%= link_to "delete video", video_path(@video),  data: {turbo_method: :delete} %>

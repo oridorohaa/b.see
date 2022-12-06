@@ -2,15 +2,20 @@ class VideoLikesController < ApplicationController
   before_action :set_video
 
   def create
-    @video_like = Video.new
+    @video_like = VideoLike.new
     @video_like.user = current_user
     @video_like.video = @video
-    @video_like.save
+    if @video_like.save
+      redirect_to @video, notice: 'liked'
+    else
+      redirect_to @video, notice: 'did not save'
+    end
   end
 
   def destroy
     @video_like = VideoLike.find_by(user: current_user, video: @video)
     @video_like.destroy
+    redirect_to @video, notice: 'unliked'
   end
 
   private
