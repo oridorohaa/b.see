@@ -1,9 +1,17 @@
 <%= link_to "add rack",  new_bike_rack_path %>
 
 <ul>
-  <% @racks.each do |rack| %>
+  <% @bike_racks.each do |rack| %>
     <li>
       <a href="bike_racks/<%= rack.id %>"><%= rack.address %></a>
     </li>
   <% end %>
 </ul>
+
+
+<style>
+body{
+  background:#1C1C17;
+}
+
+</style>

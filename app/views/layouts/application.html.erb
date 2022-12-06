@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/461d3ede14.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-  <%= render "shared/navbar" %>
-   <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+
+    <% unless controller_name = "pages" %>
+      <%= render "shared/navbar" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <div id="map" data-controller="google-maps" style="height:500px;"></div>
+
+
     <%= yield %>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDccxIYTxUNSLDIIemRnyaopDj5a6t-HMc&callback=initMap&v=weekly"

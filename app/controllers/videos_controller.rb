@@ -2,21 +2,22 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
 
   def index
-    @videos = Video.all
+    @videos = policy_scope(Video)
   end
 
   def show
-    # show
-    @video = Video.find(params[:id])
+    authorize @video
   end
 
   def new
     @video = Video.new
+    authorize @video
   end
 
   def create
     @video = Video.new(video_params)
     @video.user = current_user
+    authorize @video
     if @video.save
       redirect_to @video
     else
@@ -25,10 +26,11 @@ class VideosController < ApplicationController
   end
 
   def edit
-    # edit
+    authorize @video
   end
 
   def update
+    authorize @video
     @video.update(video_params)
     if @video.save
       redirect_to @video
@@ -38,6 +40,7 @@ class VideosController < ApplicationController
   end
 
   def destroy
+    authorize @video
     @video.destroy
     redirect_to videos_path, status: :see_other
   end

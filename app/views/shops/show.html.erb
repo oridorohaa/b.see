@@ -4,4 +4,7 @@
 <%= @shop.phone_number %><br>
 <%= @shop.website %><br>
 <%= link_to "edit shop", edit_shop_path(@shop) %> <br>
-<%= link_to "delete shop", shop_path(@shop),  data: {turbo_method: :delete} %>
+<%= link_to "like", shop_shop_likes_path(@shop), data:{ turbo_method: :post} %> <br>
+<%= link_to "unlike", shop_shop_like_path(@shop), data:{ turbo_method: :delete} %><br>
+<%= link_to "delete shop", shop_path(@shop),  data: {turbo_method: :delete} %><br>
+<%= link_to "report", new_shop_shop_report_path(@shop) %>
