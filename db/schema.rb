@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_205903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
     t.index ["user_id"], name: "index_lane_likes_on_user_id"
   end
 
+  create_table "lane_reports", force: :cascade do |t|
+    t.bigint "lane_id", null: false
+    t.bigint "report_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lane_id"], name: "index_lane_reports_on_lane_id"
+    t.index ["report_id"], name: "index_lane_reports_on_report_id"
+  end
+
   create_table "lanes", force: :cascade do |t|
     t.string "street_name"
     t.string "start_point"
@@ -120,6 +129,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_shop_likes_on_shop_id"
     t.index ["user_id"], name: "index_shop_likes_on_user_id"
+  end
+
+  create_table "shop_reports", force: :cascade do |t|
+    t.bigint "shop_id", null: false
+    t.bigint "report_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_shop_reports_on_report_id"
+    t.index ["shop_id"], name: "index_shop_reports_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -167,6 +185,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
     t.index ["video_id"], name: "index_video_likes_on_video_id"
   end
 
+  create_table "video_reports", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "report_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_video_reports_on_report_id"
+    t.index ["video_id"], name: "index_video_reports_on_video_id"
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -188,14 +215,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
   add_foreign_key "lane_comments", "lanes"
   add_foreign_key "lane_likes", "lanes"
   add_foreign_key "lane_likes", "users"
+  add_foreign_key "lane_reports", "lanes"
+  add_foreign_key "lane_reports", "reports"
   add_foreign_key "likes", "users"
   add_foreign_key "reports", "users"
   add_foreign_key "shop_comments", "comments"
   add_foreign_key "shop_comments", "shops"
   add_foreign_key "shop_likes", "shops"
   add_foreign_key "shop_likes", "users"
+  add_foreign_key "shop_reports", "reports"
+  add_foreign_key "shop_reports", "shops"
   add_foreign_key "video_comments", "comments"
   add_foreign_key "video_comments", "videos"
   add_foreign_key "video_likes", "users"
   add_foreign_key "video_likes", "videos"
+  add_foreign_key "video_reports", "reports"
+  add_foreign_key "video_reports", "videos"
 end

@@ -27,10 +27,6 @@ class BikeRackReportsController < ApplicationController
 
   private
 
-  def create_shop_report
-
-  end
-
   def report_params
     params.require(:report).permit(:content)
   end
