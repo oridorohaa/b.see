@@ -5,4 +5,5 @@
 <%= link_to "edit",  edit_lane_path(@lane) %> <br>
 <%= link_to "like",  lane_lane_likes_path(@lane), data: {turbo_method: :post} %><br>
 <%= link_to "unlike",  lane_lane_like_path(@lane), data: {turbo_method: :delete} %><br>
-<%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %>
+<%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %><br>
+<%= link_to "report", new_lane_lane_report_path(@lane) %>
