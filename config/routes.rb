@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :bike_racks do
     resources :bike_rack_likes, only: %i[create destroy]
+    resources :bike_rack_comments, only: :create
   end
 
   resources :lanes do
