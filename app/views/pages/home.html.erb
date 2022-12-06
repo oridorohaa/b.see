@@ -1,3 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to  "continue as guest" , menu_path %>
+<div class="container">
+  <div class="tagline">
+    <div class="bsee">
+      <h1>b</h1>
+      <div class="gear"></div>
+      <h1>s</h1>
+      <h1>e</h1>
+      <h1>e</h1>
+    </div>
+    <p>never off the chain</p>
+  </div>
+  <div class="home-actions">
+    <div class="buttons">
+      <%= link_to "log in", new_user_session_path, class: "button" %>
+      <%= link_to "sign up", new_user_registration_path, class: "button" %>
+    </div>
+    <%= link_to  "continue as guest" , menu_path, class: "link" %>
+  </div>
+</div>
