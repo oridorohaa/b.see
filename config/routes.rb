@@ -13,14 +13,16 @@ Rails.application.routes.draw do
 
   resources :lanes do
     resources :lane_likes, only: %i[create destroy]
+    resources :lane_comments, only: :create
   end
 
   resources :shops do
     resources :shop_likes, only: %i[create destroy]
+    resources :shop_comments, only: :create
   end
 
   resources :videos do
     resources :video_likes, only: %i[create destroy]
+    resources :video_comments, only: :create
   end
-
 end

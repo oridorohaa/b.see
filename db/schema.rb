@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_12_06_165152) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +61,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_165152) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "lane_comments", force: :cascade do |t|
+    t.bigint "lane_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_lane_comments_on_comment_id"
+    t.index ["lane_id"], name: "index_lane_comments_on_lane_id"
+  end
+
   create_table "lane_likes", force: :cascade do |t|
     t.bigint "lane_id", null: false
     t.bigint "user_id", null: false
@@ -93,6 +104,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_165152) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
+  create_table "shop_comments", force: :cascade do |t|
+    t.bigint "shop_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_shop_comments_on_comment_id"
+    t.index ["shop_id"], name: "index_shop_comments_on_shop_id"
   end
 
   create_table "shop_likes", force: :cascade do |t|
@@ -130,6 +150,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_165152) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "video_comments", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_video_comments_on_comment_id"
+    t.index ["video_id"], name: "index_video_comments_on_video_id"
+  end
+
   create_table "video_likes", force: :cascade do |t|
     t.bigint "video_id", null: false
     t.bigint "user_id", null: false
@@ -156,12 +185,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_165152) do
   add_foreign_key "bike_rack_reports", "bike_racks"
   add_foreign_key "bike_rack_reports", "reports"
   add_foreign_key "comments", "users"
+  add_foreign_key "lane_comments", "comments"
+  add_foreign_key "lane_comments", "lanes"
   add_foreign_key "lane_likes", "lanes"
   add_foreign_key "lane_likes", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "reports", "users"
+  add_foreign_key "shop_comments", "comments"
+  add_foreign_key "shop_comments", "shops"
   add_foreign_key "shop_likes", "shops"
   add_foreign_key "shop_likes", "users"
+  add_foreign_key "video_comments", "comments"
+  add_foreign_key "video_comments", "videos"
   add_foreign_key "video_likes", "users"
   add_foreign_key "video_likes", "videos"
 end
