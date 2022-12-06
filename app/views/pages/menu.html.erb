@@ -1,10 +1,38 @@
-<h1>MAIN MENU </h1>
+<%# <h1>MAIN MENU </h1> %>
 
-<%# <h2>Racks</h2> %>
-<%= link_to "Racks", bike_racks_path %>
-<%# <h2>Lanes</h2> %>
-<%= link_to "Lanes", lanes_path %>
-<%# <h2>Shops</h2> %>
-<%= link_to "Shops", shops_path %>
-<%# <h2>Video</h2> %>
-<%= link_to "Videos", videos_path %>
+<div class="menu-container">
+  <%= link_to "Racks", bike_racks_path, class:"menu-item"%>
+  <%= link_to "Lanes", lanes_path,  class:"menu-item" %>
+  <%= link_to "Shops", shops_path,  class:"menu-item" %>
+  <%= link_to "Videos", videos_path,  class:"menu-item" %>
+</div>
+
+
+
+
+<style>
+
+body{
+  background:#1C1C17;
+}
+
+.menu-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.menu-item{
+  text-decoration:none;
+  background:#F5FF6D;
+  color:black;
+  padding:50px 100px;
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin-bottom:50px;
+  border-radius:10px;
+  /* border: 3px solid #F5FF6D; */
+
+}
+</style>
