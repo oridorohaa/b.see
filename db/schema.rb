@@ -32,6 +32,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
     t.index ["user_id"], name: "index_bike_rack_likes_on_user_id"
   end
 
+  create_table "bike_rack_reports", force: :cascade do |t|
+    t.bigint "bike_rack_id", null: false
+    t.bigint "report_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_rack_id"], name: "index_bike_rack_reports_on_bike_rack_id"
+    t.index ["report_id"], name: "index_bike_rack_reports_on_report_id"
+  end
+
   create_table "bike_racks", force: :cascade do |t|
     t.string "address"
     t.string "description"
@@ -172,6 +181,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_183503) do
   add_foreign_key "bike_rack_comments", "comments"
   add_foreign_key "bike_rack_likes", "bike_racks"
   add_foreign_key "bike_rack_likes", "users"
+  add_foreign_key "bike_rack_reports", "bike_racks"
+  add_foreign_key "bike_rack_reports", "reports"
   add_foreign_key "comments", "users"
   add_foreign_key "lane_comments", "comments"
   add_foreign_key "lane_comments", "lanes"
