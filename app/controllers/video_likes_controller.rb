@@ -5,6 +5,7 @@ class VideoLikesController < ApplicationController
     @video_like = VideoLike.new
     @video_like.user = current_user
     @video_like.video = @video
+    authorize @video_like
     if @video_like.save
       redirect_to @video, notice: 'liked'
     else
@@ -14,6 +15,7 @@ class VideoLikesController < ApplicationController
 
   def destroy
     @video_like = VideoLike.find_by(user: current_user, video: @video)
+    authorize @video_like
     @video_like.destroy
     redirect_to @video, notice: 'unliked'
   end

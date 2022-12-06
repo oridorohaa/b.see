@@ -5,6 +5,7 @@ class ShopCommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       @shop_comment = ShopComment.new(shop: @shop, comment: @comment)
+      authorize @shop_comment
       if @shop_comment.save
         redirect_to @shop
       else

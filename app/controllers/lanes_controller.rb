@@ -2,21 +2,22 @@ class LanesController < ApplicationController
   before_action :set_lane, only: %i[show edit update destroy]
 
   def index
-    @lanes = Lane.all
+    @lanes = policy_scope(Lane)
   end
 
   def show
-    # show
-    @lane = Lane.find(params[:id])
+    authorize @lane
   end
 
   def new
     @lane = Lane.new
+    authorize @lane
   end
 
   def create
     @lane = Lane.new(lane_params)
     @lane.user = current_user
+    authorize @lane
     if @lane.save
       redirect_to @lane
     else
@@ -25,11 +26,11 @@ class LanesController < ApplicationController
   end
 
   def edit
-    # edit
-    @lane = Lane.find(params[:id])
+    authorize @lane
   end
 
   def update
+    authorize @lane
     @lane.update(lane_params)
     if @lane.save
       redirect_to @lane
@@ -39,6 +40,7 @@ class LanesController < ApplicationController
   end
 
   def destroy
+    authorize @lane
     @lane.destroy
     redirect_to lanes_path, status: :see_other
   end

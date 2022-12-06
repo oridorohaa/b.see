@@ -2,21 +2,22 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: %i[show edit update destroy]
 
   def index
-    @shops = Shop.all
+    @shops = policy_scope(Shop)
   end
 
   def show
-    # show
-    @shop = Shop.find(params[:id])
+    authorize @shop
   end
 
   def new
     @shop = Shop.new
+    authorize @shop
   end
 
   def create
     @shop = Shop.new(shop_params)
     @shop.user = current_user
+    authorize @shop
     if @shop.save
       redirect_to @shop
     else
@@ -25,10 +26,11 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    # edit
+    authorize @shop
   end
 
   def update
+    authorize @shop
     @shop.update(shop_params)
     if @shop.save
       redirect_to @shop
@@ -38,6 +40,7 @@ class ShopsController < ApplicationController
   end
 
   def destroy
+    authorize @shop
     @shop.destroy
     redirect_to shops_path, status: :see_other
   end

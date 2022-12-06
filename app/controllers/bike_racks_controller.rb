@@ -1,56 +1,57 @@
 class BikeRacksController < ApplicationController
-  before_action :set_rack, only: %i[show edit update destroy]
+  before_action :set_bike_rack, only: %i[show edit update destroy]
 
   def index
-    @racks = BikeRack.all
+    @bike_racks = policy_scope(BikeRack)
   end
 
   def show
-    # show
-    @rack = BikeRack.find(params[:id])
-    
+    authorize @bike_rack
   end
 
   def new
-    @rack = BikeRack.new
+    @bike_rack = BikeRack.new
+    authorize @bike_rack
   end
 
   def create
-    @rack = BikeRack.new(rack_params)
-    @rack.user = current_user
-    if @rack.save
-      redirect_to @rack
+    @bike_rack = BikeRack.new(bike_rack_params)
+    @bike_rack.user = current_user
+    authorize @bike_rack
+    if @bike_rack.save
+      redirect_to @bike_rack
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    # edit
-    @rack = BikeRack.find(params[:id])
+    authorize @bike_rack
   end
 
   def update
-    @rack.update(rack_params)
-    if @rack.save
-      redirect_to @rack
+    authorize @bike_rack
+    @bike_rack.update(bike_rack_params)
+    if @bike_rack.save
+      redirect_to @bike_rack
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @rack.destroy
+    authorize @bike_rack
+    @bike_rack.destroy
     redirect_to bike_racks_path, status: :see_other
   end
 
   private
 
-  def set_rack
-    @rack = BikeRack.find(params[:id])
+  def set_bike_rack
+    @bike_rack = BikeRack.find(params[:id])
   end
 
-  def rack_params
+  def bike_rack_params
     params.require(:bike_rack).permit(:address, :description, :status)
   end
 end
