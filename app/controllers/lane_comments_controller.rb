@@ -5,6 +5,7 @@ class LaneCommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       @lane_comment = Lane.new(lane: @lane, comment: @comment)
+      authorize @lane_comment
       if @lane_comment.save
         redirect_to @lane
       else
