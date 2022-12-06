@@ -5,6 +5,7 @@ class VideoCommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       @video_comment = VideoComment.new(video: @video, comment: @comment)
+      authorize @video_comment
       if @video_comment.save
         redirect_to @video
       else

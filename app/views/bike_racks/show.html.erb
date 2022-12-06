@@ -1,6 +1,6 @@
-<%= @rack.address %><br>
-<%= @rack.description %>
-<%= link_to "edit",  edit_bike_rack_path(@rack) %>
-<%= link_to "delete", bike_rack_path(@rack), data: {turbo_method: :delete} %>
-<%= link_to 'like', bike_rack_bike_rack_likes_path(@rack), data: {turbo_method: :post} %>
-<%= link_to 'unlike', bike_rack_bike_rack_like_path(@rack), data: {turbo_method: :delete} %>
+<%= @bike_rack.address %><br>
+<%= @bike_rack.description %>
+<%= link_to "edit",  edit_bike_rack_path(@bike_rack) %>
+<%= link_to "delete", bike_rack_path(@bike_rack), data: {turbo_method: :delete} %>
+<%= link_to 'like', bike_rack_bike_rack_likes_path(@bike_rack), data: {turbo_method: :post} %>
+<%= link_to 'unlike', bike_rack_bike_rack_like_path(@bike_rack), data: {turbo_method: :delete} %>

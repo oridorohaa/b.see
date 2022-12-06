@@ -5,6 +5,7 @@ class BikeRackCommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       @bike_rack_comment = BikeRackComment.new(bike_rack: @bike_rack, comment: @comment)
+      authorize @bike_rack_comment
       if @bike_rack_comment.save
         redirect_to @bike_rack
       else
