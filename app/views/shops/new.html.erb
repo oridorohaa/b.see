@@ -1,8 +1,30 @@
 <%= simple_form_for(@shop) do |f| %>
 <%= f.input :address %>
+<%= f.input :latitude%>
+<%= f.input :longitude %>
 <%= f.input :hours %>
 <%= f.input :phone_number %>
 <%= f.input :description %>
 <%= f.input :website %>
 <%= f.submit "add shop" %>
 <% end %>
+
+<script>
+function initAuto(){
+
+  const inputShop = document.querySelector("#shop_address")
+  const inputLatShop = document.querySelector("#shop_latitude")
+  const inputLongShop = document.querySelector("#shop_longitude")
+  const autocomplete = new google.maps.places.Autocomplete(inputShop)
+
+  autocomplete.addListener("place_changed", function(){
+    console.log(autocomplete.getPlace());
+    inputLatShop.value = autocomplete.getPlace().geometry.location.lat()
+    console.log(inputLatShop.value)
+    inputLongShop.value = autocomplete.getPlace().geometry.location.lng()
+    console.log(inputLongShop.value)
+  })
+}
+
+
+</script>

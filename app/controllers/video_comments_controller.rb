@@ -1,8 +1,8 @@
 class VideoCommentsController < ApplicationController
+  before_action :set_video
+  before_action :set_comment
+
   def create
-    @video = video.find(params[:video_id])
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
     if @comment.save
       @video_comment = VideoComment.new(video: @video, comment: @comment)
       authorize @video_comment
@@ -18,7 +18,16 @@ class VideoCommentsController < ApplicationController
 
   private
 
+  def set_video
+    @video = Video.find(params[:video_id])
+  end
+
+  def set_comment
+    @comment = Comment.new(content: comment_params[:comments][:content])
+    @comment.user = current_user
+  end
+
   def comment_params
-    params.require(:video_comment).permit(:content)
+    params.require(:video_comment).permit(comments: {})
   end
 end

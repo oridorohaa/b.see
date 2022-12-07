@@ -6,8 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/461d3ede14.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8&callback=initMap&libraries=places&v=weekly" defer="defer">
+    </script>
+
   </head>
   <body>
 
@@ -19,11 +23,102 @@
     <% end %>
     <%# <div id="map" data-controller="google-maps" style="height:500px;"></div> %>
 
+    <script>
+      bike_rack_data = null
+      shop_data = null
+     </script>
+    <script>
+    function initAuto(){
 
+    }
+    function initMap() {
+    console.log(bike_rack_data)
+    console.log("Hi")
+    initAuto()
+    let mapDiv =document.getElementById("map")
+    let map = null
+    if (mapDiv){
+      map = new google.maps.Map(mapDiv, {
+        center: { lat: 19.432608, lng: -99.133209 },
+        zoom: 12,
+      });
+    }
+
+
+    if(bike_rack_data && map){
+      console.log("bike rack data defined")
+      for(const rack in bike_rack_data){
+      let d = bike_rack_data[rack]
+      if(d.lat !== ''){
+        console.log("map")
+        console.log( parseFloat(d.lat))
+        let marker = new google.maps.Marker({
+          position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
+          map,
+          title:"marker"
+        })
+        marker.setMap(map);
+      }
+      }
+    }
+
+    if(shop_data && map){
+      console.log(shop_data)
+      for(const shop in shop_data){
+      let d = shop_data[shop]
+      if(d.lat !== ''){
+        console.log("map")
+        console.log( parseFloat(d.lat))
+        let marker = new google.maps.Marker({
+          position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
+          map,
+          title:"marker"
+        })
+        marker.setMap(map);
+      }
+      }
+
+    }
+
+    if(map){
+
+      infoWindow = new google.maps.InfoWindow();
+      var locationButton = document.createElement("button");
+      locationButton.textContent = "Pan to Current Location";
+      locationButton.classList.add("custom-map-control-button");
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+      locationButton.addEventListener("click", function () {
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function (position) {
+                  var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude,
+                  };
+                  infoWindow.setPosition(pos);
+                  infoWindow.setContent("Location found.");
+                  infoWindow.open(map);
+                  map.setCenter(pos);
+              }, function () {
+                  handleLocationError(true, infoWindow, map.getCenter());
+              });
+          }
+          else {
+              // Browser doesn't support Geolocation
+              handleLocationError(false, infoWindow, map.getCenter());
+          }
+      });
+    }
+  }
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation
+            ? "Error: The Geolocation service failed."
+            : "Error: Your browser doesn't support geolocation.");
+        infoWindow.open(map);
+    }
+    window.initMap = initMap;
+  </script>
     <%= yield %>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDccxIYTxUNSLDIIemRnyaopDj5a6t-HMc&callback=initMap&v=weekly"
-      defer
-    ></script>
   </body>
 </html>

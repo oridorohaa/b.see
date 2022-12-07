@@ -1,8 +1,8 @@
 class BikeRackCommentsController < ApplicationController
+  before_action :set_bike_rack
+  before_action :set_comment
+
   def create
-    @bike_rack = BikeRack.find(params[:bike_rack_id])
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
     if @comment.save
       @bike_rack_comment = BikeRackComment.new(bike_rack: @bike_rack, comment: @comment)
       authorize @bike_rack_comment
@@ -16,9 +16,25 @@ class BikeRackCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @bike_rack_comment = BikeRackComment.find_by(bike_rack: @bike_rack, comment: @comment)
+    authorize @bike_rack_comment
+    @bike_rack_comment.destroy
+    redirect_to bike_racks_path, status: :see_other
+  end
+
   private
 
+  def set_bike_rack
+    @bike_rack = BikeRack.find(params[:bike_rack_id])
+  end
+
+  def set_comment
+    @comment = Comment.new(content: comment_params[:comments][:content])
+    @comment.user = current_user
+  end
+
   def comment_params
-    params.require(:bike_rack_comment).permit(:content)
+    params.require(:bike_rack_comment).permit(comments: {})
   end
 end

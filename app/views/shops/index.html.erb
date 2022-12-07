@@ -1,6 +1,19 @@
 
 <div id="map" data-controller="google-maps" style="height:500px;"></div>
 
+<script>
+ shop_data = {
+  <% @shops.each do |shop| %>
+  '<%=shop.id%>':{
+    'lat': '<%=shop.latitude%>',
+    'long': '<%=shop.longitude%>',
+  },
+  <% end %>
+ }
+
+//  console.log(shop_data)
+</script>
+
 <%= link_to "new shop",  new_shop_path %>
 <% @shops.each do |shop| %>
   <div class="shop-container">

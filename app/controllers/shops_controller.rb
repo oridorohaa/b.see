@@ -7,6 +7,8 @@ class ShopsController < ApplicationController
 
   def show
     authorize @shop
+    @shop_comment = ShopComment.new
+    @comment = Comment.new
   end
 
   def new
@@ -52,6 +54,6 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit(:address, :hours, :phone_number, :description, :website, :status)
+    params.require(:shop).permit(:address, :hours, :phone_number, :description, :website, :status, :latitude, :longitude)
   end
 end

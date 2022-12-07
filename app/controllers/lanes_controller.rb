@@ -7,6 +7,8 @@ class LanesController < ApplicationController
 
   def show
     authorize @lane
+    @lane_comment = LaneComment.new
+    @comment = Comment.new
   end
 
   def new

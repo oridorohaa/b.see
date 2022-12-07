@@ -7,6 +7,8 @@ class BikeRacksController < ApplicationController
 
   def show
     authorize @bike_rack
+    @bike_rack_comment = BikeRackComment.new
+    @comment = Comment.new
   end
 
   def new
@@ -52,6 +54,6 @@ class BikeRacksController < ApplicationController
   end
 
   def bike_rack_params
-    params.require(:bike_rack).permit(:address, :description, :status)
+    params.require(:bike_rack).permit(:address, :description, :status, :latitude, :longitude)
   end
 end
