@@ -6,3 +6,20 @@
 <%= link_to 'like', bike_rack_bike_rack_likes_path(@bike_rack), data: {turbo_method: :post} %><br>
 <%= link_to 'unlike', bike_rack_bike_rack_like_path(@bike_rack), data: {turbo_method: :delete} %><br>
 <%= link_to 'report', new_bike_rack_bike_rack_report_path(@bike_rack) %>
+
+
+<ul>
+  <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>
+    <li>
+      <%= bike_rack_comment.comment.content %>
+      <%= link_to 'delete', bike_rack_bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for([@bike_rack, @bike_rack_comment]) do |f| %>
+  <%= f.simple_fields_for :comments do |comments_form| %>
+    <%= comments_form.input :content %>
+  <% end %>
+  <%= f.submit 'add' %>
+<% end %>

@@ -7,3 +7,20 @@
 <%= link_to "unlike",  lane_lane_like_path(@lane), data: {turbo_method: :delete} %><br>
 <%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %><br>
 <%= link_to "report", new_lane_lane_report_path(@lane) %>
+
+
+<ul>
+  <% @lane.lane_comments.each do |lane_comment| %>
+    <li>
+      <%= lane_comment.comment.content %>
+      <%= link_to 'delete', lane_lane_comment_path(lane_comment), data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for([@lane, @lane_comment]) do |f| %>
+  <%= f.simple_fields_for :comments do |comments_form| %>
+    <%= comments_form.input :content %>
+  <% end %>
+  <%= f.submit 'add' %>
+<% end %>

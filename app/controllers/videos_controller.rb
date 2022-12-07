@@ -7,6 +7,8 @@ class VideosController < ApplicationController
 
   def show
     authorize @video
+    @video_comment = VideoComment.new
+    @comment = Comment.new
   end
 
   def new

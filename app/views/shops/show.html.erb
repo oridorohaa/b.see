@@ -8,3 +8,19 @@
 <%= link_to "unlike", shop_shop_like_path(@shop), data:{ turbo_method: :delete} %><br>
 <%= link_to "delete shop", shop_path(@shop),  data: {turbo_method: :delete} %><br>
 <%= link_to "report", new_shop_shop_report_path(@shop) %>
+
+<ul>
+  <% @shop.shop_comments.each do |shop_comment| %>
+    <li>
+      <%= shop_comment.comment.content %>
+      <%= link_to 'delete', shop_shop_comment_path(shop_comment), data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for([@shop, @shop_comment]) do |f| %>
+  <%= f.simple_fields_for :comments do |comments_form| %>
+    <%= comments_form.input :content %>
+  <% end %>
+  <%= f.submit 'add' %>
+<% end %>

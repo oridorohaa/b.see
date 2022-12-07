@@ -5,3 +5,19 @@
 <%= link_to "unlike", video_video_like_path(@video), data:{turbo_method: :delete} %><br>
 <%= link_to "delete video", video_path(@video),  data: {turbo_method: :delete} %><br>
 <%= link_to "report", new_video_video_report_path(@video) %>
+
+<ul>
+  <% @video.video_comments.each do |video_comment| %>
+    <li>
+      <%= video_comment.comment.content %>
+      <%= link_to 'delete', video_video_comment_path(video_comment), data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for([@video, @video_comment]) do |f| %>
+  <%= f.simple_fields_for :comments do |comments_form| %>
+    <%= comments_form.input :content %>
+  <% end %>
+  <%= f.submit 'add' %>
+<% end %>
