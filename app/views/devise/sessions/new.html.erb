@@ -1,20 +1,157 @@
-<h2>Log in</h2>
+<div class="login">
+  <%= link_to "back", root_path, class: "back-btn" %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="bsee">
+    <h1>b</h1>
+    <div class="gear"></div>
+    <h1>s</h1>
+    <h1>e</h1>
+    <h1>e</h1>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+  <div class="login-form">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    label: false,
+                    placeholder: "email..." %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "current-password" },
+                    label: false,
+                    placeholder: "password..." %>
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'link' %><br />
+        <% end %>
+        <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="links">
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <p>create an <%= link_to "account", new_registration_path(resource_name), class: 'link' %></p>
+        <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "login-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# $black: #1C1C17;
+$yellow: #F5FF6D; %>
+
+<style>
+
+
+  .login {
+    background-color: #1C1C17;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  }
+
+  .login-form {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  a {
+    color: #F5FF6D;
+  }
+
+  .login-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1C1C17;
+    background-color: #F5FF6D;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    text-decoration: none;
+    color: #F5FF6D;
+  }
+
+  .form-control {
+    background-color: #1C1C17;
+    border: 1px solid #F5FF6D;
+    border-radius: 10px;
+    width: 300px;
+    padding: 8px;
+  }
+
+  .form-control:focus {
+    background-color: #1C1C17;
+  }
+
+  .form-control::placeholder {
+    color: #F5FF6D;
+  }
+
+  .form-control:focus::placeholder {
+    color: transparent;
+  }
+
+  .link {
+    color: #F5FF6D;
+    text-decoration: none;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links p {
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .form-check {
+    color: #F5FF6D;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bsee {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .bsee h1 {
+      font-size: 120px;
+      color: #F5FF6D;
+    }
+
+    .gear {
+      background-color: #F5FF6D;
+      height: 16px;
+      width: 16px;
+      margin: 0 10px;
+      margin-top: 25%;
+    }
+
+</style>
