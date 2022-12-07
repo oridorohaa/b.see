@@ -7,6 +7,8 @@ class BikeRacksController < ApplicationController
 
   def show
     authorize @bike_rack
+    @bike_rack_comment = BikeRackComment.new
+    @comment = Comment.new
   end
 
   def new
