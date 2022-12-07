@@ -95,9 +95,6 @@ BikeRack.create!(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Ben
                  longitude: -99.15960,
                  user: user)
 
-                 user: user)
-
-
 
 Shop.destroy_all
 
@@ -107,7 +104,7 @@ Shop.create!(name: "Crankset Bicycle Shop (Trek Juárez)",
              phone_number: "+525559414753",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery",
 
-             user: user,
+
 
              latitude: 19.42744,
              longitude: -99.15946,
@@ -121,8 +118,6 @@ Shop.create!(name: "People for Bikes",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery",
              website: "http://pfb.com.mx/",
 
-             user: user,
-
              latitude: 19.41670,
              longitude: -99.15700,
              user: user)
@@ -135,7 +130,7 @@ Shop.create!(name: "Chop Chop Bikes",
              description: "In-store pick-up In-store shopping Free Wifi",
              website: "http://www.chopchopbikes.com/",
 
-             user: user,
+
 
              latitude: 19.41297,
              longitude: -99.16746,
@@ -149,7 +144,7 @@ Shop.create!(name: "Bikedemonium Workshop",
              description: "Bicycle repair shop",
              website: "http://instagram.com/bikedemoniumworkshop",
 
-             user: user,
+
 
              latitude: 19.40499,
              longitude: -99.16987,
@@ -163,7 +158,7 @@ Shop.create!(name: "Pedal and Crank Bike Shop",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery FreeWifi Debit cards NFC mobile payments",
              website: "None",
 
-             user: user,
+
 
              latitude: 19.41265,
              longitude: -99.18469,
@@ -177,7 +172,7 @@ Shop.create!(name: "BICIMANIACOS BIKE STORE",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery Gender-neutral toilets Free WiFi",
              website: "https://www.facebook.com/bicimaniacos.bikestore/",
 
-             user: user,
+
 
              latitude: 19.39548,
              longitude: -99.15480,
@@ -191,7 +186,7 @@ Shop.create!(name: "LBU Bike Store Patriotismo",
              description: "In-store shopping In-store pick-up Delivery Same-day delivery Wheelchair-accessible",
              website: "http://www.lbushop.mx/",
 
-             user: user,
+
 
              latitude: 19.39058,
              longitude: -99.18256,
@@ -205,7 +200,7 @@ Shop.create!(name: "Group Bcl Imports",
              description: "In-store shopping In-store pick-up Delivery Wheelchair accessible",
              website: "None",
 
-             user: user,
+
 
              latitude: 19.38093,
              longitude: -99.13548,
@@ -221,7 +216,7 @@ Shop.create!(name: "Bike Urban Reform",
 
 
              user: user,
-              latitude: 19.43277,
+            latitude: 19.43277,
              longitude: -99.15174)
 
 
@@ -232,7 +227,7 @@ Shop.create!(name: "Hippixi Bikes",
              phone_number: "+525585006129",
              description: "",
              website: "In-store pick-up Delivery Same-day delivery Free ",
-             user: user,
+
              latitude: 19.42918,
              longitude: -99.18985,
              user: user)
