@@ -4,6 +4,18 @@
 
 <%= link_to "add rack",  new_bike_rack_path %>
 
+<script>
+ bike_rack_data = {
+  <% @bike_racks.each do |rack| %>
+  '<%=rack.id%>':{
+    'lat': '<%=rack.latitude%>',
+    'long': '<%=rack.longitude%>',
+  },
+  <% end %>
+ }
+
+//  console.log(bike_rack_data)
+</script>
 <ul>
   <% @bike_racks.each do |rack| %>
     <li>

@@ -20,6 +20,7 @@ BikeRack.destroy_all
 
 BikeRack.create!(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
                  description: "Tres biciestacionamientos tipo cuadro",
+
                  user: user)
 
 BikeRack.create!(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -58,6 +59,7 @@ BikeRack.create!(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Ben
                  description: "Cinco biciestacionamientos tipo U invertidad",
                  user: user)
 
+
 Shop.destroy_all
 
 Shop.create!(name: "Crankset Bicycle Shop (Trek Juárez)",
@@ -65,7 +67,12 @@ Shop.create!(name: "Crankset Bicycle Shop (Trek Juárez)",
              hours: "Monday to Friday 10:30AM-7PM Saturday 10:30AM-6PM",
              phone_number: "+525559414753",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery",
-             user: user)
+
+             user: user,
+
+             latitude: 19.42744,
+             longitude: -99.15946)
+
 
 Shop.create!(name: "People for Bikes",
              address: "Zacatecas 55, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
@@ -73,7 +80,12 @@ Shop.create!(name: "People for Bikes",
              phone_number: "+525552641457",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery",
              website: "http://pfb.com.mx/",
-             user: user)
+
+             user: user,
+
+             latitude: 19.41670,
+             longitude: -99.15700)
+
 
 Shop.create!(name: "Chop Chop Bikes",
              address: "Amsterdam 282, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -81,7 +93,12 @@ Shop.create!(name: "Chop Chop Bikes",
              phone_number: "+525519525376",
              description: "In-store pick-up In-store shopping Free Wifi",
              website: "http://www.chopchopbikes.com/",
-             user: user)
+
+             user: user,
+
+             latitude: 19.41297,
+             longitude: -99.16746)
+
 
 Shop.create!(name: "Bikedemonium Workshop",
              address: "C. Villahermosa 29, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -89,7 +106,12 @@ Shop.create!(name: "Bikedemonium Workshop",
              phone_number: "+525520690448",
              description: "Bicycle repair shop",
              website: "http://instagram.com/bikedemoniumworkshop",
-             user: user)
+
+             user: user,
+
+             latitude: 19.40499,
+             longitude: -99.16987)
+
 
 Shop.create!(name: "Pedal and Crank Bike Shop",
              address: "Gobernador José María Tornel 44, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX",
@@ -97,7 +119,12 @@ Shop.create!(name: "Pedal and Crank Bike Shop",
              phone_number: "+525562736707",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery FreeWifi Debit cards NFC mobile payments",
              website: "None",
-             user: user)
+
+             user: user,
+
+             latitude: 19.41265,
+             longitude: -99.18469)
+
 
 Shop.create!(name: "BICIMANIACOS BIKE STORE",
              address: "Cumbres de Maltrata 160, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
@@ -105,7 +132,12 @@ Shop.create!(name: "BICIMANIACOS BIKE STORE",
              phone_number: "+525555364651",
              description: "Delivery In-store pick-up In-store shopping Same-day delivery Gender-neutral toilets Free WiFi",
              website: "https://www.facebook.com/bicimaniacos.bikestore/",
-             user: user)
+
+             user: user,
+
+             latitude: 19.39548,
+             longitude: -99.15480)
+
 
 Shop.create!(name: "LBU Bike Store Patriotismo",
              address: "Av. Patriotismo 384, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
@@ -113,7 +145,12 @@ Shop.create!(name: "LBU Bike Store Patriotismo",
              phone_number: "+525552711717",
              description: "In-store shopping In-store pick-up Delivery Same-day delivery Wheelchair-accessible",
              website: "http://www.lbushop.mx/",
-             user: user)
+
+             user: user,
+
+             latitude: 19.39058,
+             longitude: -99.18256)
+
 
 Shop.create!(name: "Group Bcl Imports",
              address: "C. Carmen 97, Nativitas, Benito Juárez, 03500 Ciudad de México, CDMX",
@@ -121,7 +158,12 @@ Shop.create!(name: "Group Bcl Imports",
              phone_number: "Monday to Friday 10AM-6:30PM Saturday 10AM-2:30PM Sunday Closed",
              description: "In-store shopping In-store pick-up Delivery Wheelchair accessible",
              website: "None",
-             user: user)
+
+             user: user,
+
+             latitude: 19.38093,
+             longitude: -99.13548)
+
 
 Shop.create!(name: "Bike Urban Reform",
              address: "Av. Morelos 70, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
@@ -129,7 +171,11 @@ Shop.create!(name: "Bike Urban Reform",
              phone_number: "+525555350240",
              description: "Identifies as women-owned Gender-neutral toilets LGBTQ+friendly Transgender safe space",
              website: "http://www.lbushop.mx/",
-             user: user)
+
+             user: user,
+              latitude: 19.43277,
+             longitude: -99.15174)
+
 
 Shop.create!(name: "Hippixi Bikes",
              address: "Lamartine 607, Polanco, Bosque de Chapultepec I Secc, Miguel Hidalgo, 11580 Ciudad de México, CDMX",
@@ -137,4 +183,7 @@ Shop.create!(name: "Hippixi Bikes",
              phone_number: "+525585006129",
              description: "",
              website: "In-store pick-up Delivery Same-day delivery Free ",
-             user: user)
+             user: user,
+             latitude: 19.42918,
+             longitude: -99.18985)
+

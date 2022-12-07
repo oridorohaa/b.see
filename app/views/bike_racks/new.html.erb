@@ -1,5 +1,25 @@
 <%= simple_form_for(@bike_rack) do |f| %>
-  <%= f.input :address %>
+  <%= f.input :address  %>
   <%= f.input :description %>
+  <%= f.input :latitude%>
+  <%= f.input :longitude %>
   <%= f.submit "add rack" %>
 <% end %>
+
+
+<script>
+const input = document.querySelector("#bike_rack_address")
+const inputLat = document.querySelector("#bike_rack_latitude")
+const inputLong = document.querySelector("#bike_rack_longitude")
+const autocomplete = new google.maps.places.Autocomplete(input)
+
+autocomplete.addListener("place_changed", function(){
+  console.log(autocomplete.getPlace());
+  inputLat.value = autocomplete.getPlace().geometry.location.lat()
+  console.log(inputLat.value)
+  inputLong.value = autocomplete.getPlace().geometry.location.lng()
+  console.log(inputLong.value)
+})
+
+
+</script>
