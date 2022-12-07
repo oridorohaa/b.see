@@ -3,5 +3,6 @@
 <%= f.input :start_point %>
 <%= f.input :end_point %>
 <%= f.input :drescription %>
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.submit "create lane" %>
 <% end %>

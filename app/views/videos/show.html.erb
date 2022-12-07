@@ -1,10 +1,21 @@
 <%= @video.title %><br>
 <%= @video.description %><br>
+<%= link_to "back", videos_path %>
+<%= link_to "menu", menu_path %>
 <%= link_to "edit video", edit_video_path(@video) %><br>
 <%= link_to "like", video_video_likes_path(@video), data:{turbo_method: :post} %><br>
 <%= link_to "unlike", video_video_like_path(@video), data:{turbo_method: :delete} %><br>
 <%= link_to "delete video", video_path(@video),  data: {turbo_method: :delete} %><br>
 <%= link_to "report", new_video_video_report_path(@video) %>
+
+<% if @video.video.attached? %>
+  <%= cl_video_tag(@video.video.key,
+  :loop => false, :controls => true,
+  :transformation => [
+    :height=>360, :width=>480, :crop=>"pad",
+    :quality=>70, :duration=>"10"],
+  :fallback_content => "Your browser does not support HTML5 video tags." ) %>
+<% end %>
 
 <ul>
   <% @video.video_comments.each do |video_comment| %>

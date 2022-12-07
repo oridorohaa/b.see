@@ -54,6 +54,6 @@ class LanesController < ApplicationController
   end
 
   def lane_params
-    params.require(:lane).permit(:street_name, :start_point, :end_point, :drescription, :status)
+    params.require(:lane).permit(:street_name, :start_point, :end_point, :drescription, :status, photos: [])
   end
 end
