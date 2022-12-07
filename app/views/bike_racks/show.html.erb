@@ -1,12 +1,19 @@
 
 <%= @bike_rack.address %><br>
 <%= @bike_rack.description %>
+<%= link_to "back", bike_racks_path %>
+<%= link_to "menu", menu_path %>
 <%= link_to "edit",  edit_bike_rack_path(@bike_rack) %> <br>
 <%= link_to "delete", bike_rack_path(@bike_rack), data: {turbo_method: :delete} %><br>
 <%= link_to 'like', bike_rack_bike_rack_likes_path(@bike_rack), data: {turbo_method: :post} %><br>
 <%= link_to 'unlike', bike_rack_bike_rack_like_path(@bike_rack), data: {turbo_method: :delete} %><br>
 <%= link_to 'report', new_bike_rack_bike_rack_report_path(@bike_rack) %>
 
+<% if @bike_rack.photos.attached? %>
+  <% @bike_rack.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
 
 <ul>
   <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>

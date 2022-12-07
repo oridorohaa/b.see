@@ -1,5 +1,6 @@
 <%= simple_form_for(@bike_rack) do |f| %>
   <%= f.input :address %>
   <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "add rack" %>
 <% end %>

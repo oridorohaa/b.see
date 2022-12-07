@@ -2,12 +2,19 @@
 <%= @lane.start_point %><br>
 <%= @lane.end_point %><br>
 <%= @lane.drescription %><br>
+<%= link_to "back", lanes_path %>
+<%= link_to "menu", menu_path %>
 <%= link_to "edit",  edit_lane_path(@lane) %> <br>
 <%= link_to "like",  lane_lane_likes_path(@lane), data: {turbo_method: :post} %><br>
 <%= link_to "unlike",  lane_lane_like_path(@lane), data: {turbo_method: :delete} %><br>
 <%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %><br>
 <%= link_to "report", new_lane_lane_report_path(@lane) %>
 
+<% if @lane.photos.attached? %>
+  <% @lane.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
 
 <ul>
   <% @lane.lane_comments.each do |lane_comment| %>

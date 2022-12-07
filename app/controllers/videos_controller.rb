@@ -54,6 +54,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :status)
+    params.require(:video).permit(:title, :description, :status, :video)
   end
 end
