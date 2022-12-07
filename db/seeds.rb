@@ -14,50 +14,89 @@
 # html_doc = Nokogiri::HTML(html_file)
 User.destroy_all
 
-user = User.create(username: "ADMIN", email: 'joseph@email.com', password: '123456')
+
+user = User.create(username: 'Joseph', email: 'joseph@email.com', password: '123456')
 
 BikeRack.destroy_all
 
 BikeRack.create!(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
                  description: "Tres biciestacionamientos tipo cuadro",
 
+                 latitude: 19.39550,
+                 longitude: -99.16681,
+
                  user: user)
 
 BikeRack.create!(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
                  description: "Un biciestacionamiento tipo U invertidad",
+
+                 latitude: 19.41125,
+                 longitude: -99.16801,
+
                  user: user)
 
 BikeRack.create!(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
                  description: "Cinco biciestacionamientos tipo U invertidad",
+
+                 latitude: 19.42732,
+                 longitude: -99.16599,
+
                  user: user)
 
 BikeRack.create!(address: "C. Liverpool 34, Juárez, Cuauhtémoc, 06600 Juárez, CDMX",
                  description: "Cuatro biciestacionamientos tipo U invertidad",
+
+                 latitude: 19.42746,
+                 longitude: -99.15753,
+
                  user: user)
 
 BikeRack.create!(address: "Cda. Ernesto Pugibet 17, Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
                  description: "Tres biciestacionamientos tipo U invertidad",
+
+                 latitude: 19.43007,
+                 longitude: -99.14401,
+
                  user: user)
 
 BikeRack.create!(address: "Revillagigedo 20, Colonia Centro, Centro, Cuauhtémoc, 06050 Ciudad de México, CDMX",
                  description: "Tres biciestacionamiento tipo U invertidad",
+
+                 latitude: 19.43371,
+                 longitude: -99.14594,
                  user: user)
 
 BikeRack.create!(address: "Calle Julio Verne 233, Polanco, Polanco IV Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
                  description: "biciestacionamiento tipo Auto",
+
+                 latitude: 19.42956,
+                 longitude: -99.19691,
+
                  user: user)
 
 BikeRack.create!(address: "Parroquia 517, Col del Valle Sur, Benito Juárez, 03100 Ciudad de México, CDMX",
                  description: "Cinco biciestacionamientos tipo U invertidad",
+
+                 latitude: 19.37031,
+                 longitude: -99.17215,
+
                  user: user)
 
 BikeRack.create!(address: "Torres Adalid 1359, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
                  description: "Cinco biciestacionamientos tipo U invertidad",
+                 latitude: 19.38957,
+                 longitude: -99.15767,
                  user: user)
 
 BikeRack.create!(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
                  description: "Cinco biciestacionamientos tipo U invertidad",
+
+                 latitude: 19.39431,
+                 longitude: -99.15960,
                  user: user)
+
+                 user: user)
+
 
 
 Shop.destroy_all
@@ -71,7 +110,8 @@ Shop.create!(name: "Crankset Bicycle Shop (Trek Juárez)",
              user: user,
 
              latitude: 19.42744,
-             longitude: -99.15946)
+             longitude: -99.15946,
+             user: user)
 
 
 Shop.create!(name: "People for Bikes",
@@ -84,7 +124,8 @@ Shop.create!(name: "People for Bikes",
              user: user,
 
              latitude: 19.41670,
-             longitude: -99.15700)
+             longitude: -99.15700,
+             user: user)
 
 
 Shop.create!(name: "Chop Chop Bikes",
@@ -97,7 +138,8 @@ Shop.create!(name: "Chop Chop Bikes",
              user: user,
 
              latitude: 19.41297,
-             longitude: -99.16746)
+             longitude: -99.16746,
+             user: user)
 
 
 Shop.create!(name: "Bikedemonium Workshop",
@@ -110,7 +152,8 @@ Shop.create!(name: "Bikedemonium Workshop",
              user: user,
 
              latitude: 19.40499,
-             longitude: -99.16987)
+             longitude: -99.16987,
+             user: user)
 
 
 Shop.create!(name: "Pedal and Crank Bike Shop",
@@ -123,7 +166,8 @@ Shop.create!(name: "Pedal and Crank Bike Shop",
              user: user,
 
              latitude: 19.41265,
-             longitude: -99.18469)
+             longitude: -99.18469,
+             user: user)
 
 
 Shop.create!(name: "BICIMANIACOS BIKE STORE",
@@ -136,7 +180,8 @@ Shop.create!(name: "BICIMANIACOS BIKE STORE",
              user: user,
 
              latitude: 19.39548,
-             longitude: -99.15480)
+             longitude: -99.15480,
+             user: user)
 
 
 Shop.create!(name: "LBU Bike Store Patriotismo",
@@ -149,7 +194,8 @@ Shop.create!(name: "LBU Bike Store Patriotismo",
              user: user,
 
              latitude: 19.39058,
-             longitude: -99.18256)
+             longitude: -99.18256,
+             user: user)
 
 
 Shop.create!(name: "Group Bcl Imports",
@@ -162,7 +208,8 @@ Shop.create!(name: "Group Bcl Imports",
              user: user,
 
              latitude: 19.38093,
-             longitude: -99.13548)
+             longitude: -99.13548,
+             user: user)
 
 
 Shop.create!(name: "Bike Urban Reform",
@@ -172,9 +219,11 @@ Shop.create!(name: "Bike Urban Reform",
              description: "Identifies as women-owned Gender-neutral toilets LGBTQ+friendly Transgender safe space",
              website: "http://www.lbushop.mx/",
 
+
              user: user,
               latitude: 19.43277,
              longitude: -99.15174)
+
 
 
 Shop.create!(name: "Hippixi Bikes",
@@ -185,4 +234,5 @@ Shop.create!(name: "Hippixi Bikes",
              website: "In-store pick-up Delivery Same-day delivery Free ",
              user: user,
              latitude: 19.42918,
-             longitude: -99.18985)
+             longitude: -99.18985,
+             user: user)
