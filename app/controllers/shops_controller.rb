@@ -7,6 +7,8 @@ class ShopsController < ApplicationController
 
   def show
     authorize @shop
+    @shop_comment = ShopComment.new
+    @comment = Comment.new
   end
 
   def new
