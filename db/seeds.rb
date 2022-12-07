@@ -12,6 +12,10 @@
 
 # html_file = URI.open(url).read
 # html_doc = Nokogiri::HTML(html_file)
+User.destroy_all
+
+user = User.create(username: "ADMIN", email: 'joseph@email.com', password: '123456')
+
 BikeRack.destroy_all
 
 BikeRack.create!(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
