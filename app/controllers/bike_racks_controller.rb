@@ -54,6 +54,6 @@ class BikeRacksController < ApplicationController
   end
 
   def bike_rack_params
-    params.require(:bike_rack).permit(:address, :description, :status, photos: [])
+    params.require(:bike_rack).permit(:address, :description, :status, :latitude, :longitude, photos: [])
   end
 end
