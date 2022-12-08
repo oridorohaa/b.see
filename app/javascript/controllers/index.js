@@ -24,3 +24,5 @@ application.register("lanes-google-maps", LanesGoogleMapsController)
 import AddressInputController from "./address_input_controller"
 application.register("address-input", AddressInputController)
 
+import SearchAddressController from "./search_address_controller"
+application.register("search-address", SearchAddressController )
