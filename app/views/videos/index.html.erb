@@ -63,28 +63,6 @@
     <% end %>
   </div>
 
-  <div class="video-list" data-filter-videos-target="list">
-    <% @ordered_videos.each do |video| %>
-      <div class="video-container">
-        <div class="video">
-          <%= cl_video_tag(video.video.key,
-            :controls => true,
-            :transformation => [
-              {:width=>200, :crop=>"pad"},
-              {:height=>100, :crop=>"scale"}
-            ],
-            :fallback_content => "Your browser does not support HTML5 video tags.")
-          %>
-        </div>
-        <div class="video-info">
-          <a href="/videos/<%=video.id%>"><%= video.title %></a>
-          <p><%= video.user.username %> | <%= video.created_at.strftime("%b %e %Y") %></p>
-          <%= video.description %><br>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
   <div class="buttons" data-filter-videos-target="buttons">
     <%= link_to new_video_path, class: 'button' do %>
       <i class="fa-solid fa-plus fa-xl"></i>
