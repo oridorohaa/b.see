@@ -1,15 +1,51 @@
+<div class="nav-div">
+<input type="text" class="search-input" placeholder="search location...">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+<div id="map" data-controller="lanes-google-maps" style="height:500px;"></div>
+<div class="bottom-container">
+  <%= link_to "add lane", new_lane_path, class:"button"%>
+  <%= link_to "home", menu_path, class:"button" %>
+</div>
 
-<div id="map" data-controller="google-maps" style="height:500px;"></div>
-
-<%= link_to "Create Lane",  new_lane_path %>
-<% @lanes.each do |lane| %>
-  <div class="lane-container">
-    <a href="/lanes/<%=lane.id%>"><%= lane.street_name %> </a><br>
-    <%= lane.drescription %>
-  </div>
-<% end %>
 
 <style>
+body{
+  background:#1C1C17;
+}
+
+.button{
+  width:180px;
+  background:#F5FF6D;
+  padding:13px 30px;
+  text-decoration:none;
+  color:black;
+  border-radius:20px;
+  display:flex;
+  justify-content:space-around;
+}
+
+.bottom-container{
+  display:flex;
+  justify-content:space-between;
+  padding:0px 10px;
+  margin-top:30px;
+
+}
+
+.nav-div{
+  padding:10px;
+}
+.search-input{
+  margin-left:30px;
+  width:80%;
+  border-radius:5px;
+}
+
+.fa-magnifying-glass{
+  font-size:25px;
+  color:yellow;
+}
 
 .lane-container{
   border:1px solid black;

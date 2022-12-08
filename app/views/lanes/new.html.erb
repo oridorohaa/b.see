@@ -1,3 +1,5 @@
+
+<div data-controller='address-input'>
 <%= simple_form_for(@lane) do |f| %>
 <%= f.input :street_name %>
 <%= f.input :start_point %>
@@ -6,3 +8,4 @@
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 <%= f.submit "create lane" %>
 <% end %>
+</div>
