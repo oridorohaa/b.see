@@ -1,14 +1,16 @@
 
-<div class="nav-div">
+<div class="nav-div" data-controller='search-address'>
 <input type="text" class="search-input" placeholder="search location...">
+ <input type="text" class ="lat" style="display:none">
+  <input type="text" class ="long" style="display:none">
 <i class="fa-solid fa-magnifying-glass"></i>
 </div>
-<div id="map" data-controller="racks-google-maps" style="height:500px;"></div>
+<div id="map" data-controller="racks-google-maps" style="height:590px;"></div>
 
 
 <div class="bottom-container">
-  <%= link_to "add rack", new_bike_rack_path, class:"button"%>
   <%= link_to "home", menu_path, class:"button" %>
+  <%= link_to "add rack", new_bike_rack_path, class:"button"%>
 </div>
 
 
@@ -50,16 +52,25 @@ body{
 }
 
 .nav-div{
+  display:flex;
   padding:10px;
 }
 .search-input{
+  background-color: #1C1C17;
+  border: 1px solid #F5FF6D;
+  border-radius: 10px 0 0 10px;
   margin-left:30px;
   width:80%;
-  border-radius:5px;
+  padding:6px;
+  color:white;
+  padding-left:20px;
 }
 
 .fa-magnifying-glass{
   font-size:25px;
-  color:yellow;
+  color:#F5FF6D;
+  border:1px solid #F5FF6D;
+  padding:6px;
+  border-radius: 0px 10px 10px 0px;
 }
 </style>
