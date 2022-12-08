@@ -125,7 +125,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_165652) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["user_id"], name: "index_lanes_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -276,6 +286,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_165652) do
   add_foreign_key "lane_likes", "users"
   add_foreign_key "lane_reports", "lanes"
   add_foreign_key "lane_reports", "reports"
+  add_foreign_key "likes", "users"
   add_foreign_key "reports", "users"
   add_foreign_key "shop_comments", "comments"
   add_foreign_key "shop_comments", "shops"
