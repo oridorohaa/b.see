@@ -5,6 +5,10 @@ class VideoPolicy < ApplicationPolicy
     end
   end
 
+  def tagged?
+    true
+  end
+
   def show?
     true
   end

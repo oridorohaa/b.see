@@ -9,6 +9,18 @@ class VideosController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @ordered_videos
+      @videos = policy_scope(Video).tagged_with(params[:tag])
+      authorize @videos
+    else
+      @videos = policy_scope(Video).all
+      authorize @videos
+    end
+    render :index
+  end
+
   def show
     authorize @video
     @video_comment = VideoComment.new
@@ -58,6 +70,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :status, :video)
+    params.require(:video).permit(:title, :description, :status, :video, tag_list: [])
   end
 end
