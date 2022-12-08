@@ -4,8 +4,23 @@
 
 import { application } from "./application"
 
-import GoogleMapsController from "./google_maps_controller"
+import GoogleMapsController from "./racks_google_maps_controller"
 application.register("google-maps", GoogleMapsController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+
+import ShopsGoogleMapsController from "./shops_google_maps_controller"
+application.register("shops-google-maps", ShopsGoogleMapsController)
+
+import RacksGoogleMapsController from "./racks_google_maps_controller"
+application.register("racks-google-maps", RacksGoogleMapsController)
+
+import LanesGoogleMapsController from "./lanes_google_maps_controller"
+application.register("lanes-google-maps", LanesGoogleMapsController)
+
+
+import AddressInputController from "./address_input_controller"
+application.register("address-input", AddressInputController)
+
