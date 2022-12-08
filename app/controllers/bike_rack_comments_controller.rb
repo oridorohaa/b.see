@@ -1,6 +1,6 @@
 class BikeRackCommentsController < ApplicationController
-  before_action :set_bike_rack
-  before_action :set_comment
+  before_action :set_bike_rack, except: :destroy
+  before_action :set_comment, except: :destroy
 
   def create
     if @comment.save
@@ -17,10 +17,12 @@ class BikeRackCommentsController < ApplicationController
   end
 
   def destroy
+    @bike_rack = params[:id]
+    @comment = params[:bike_rack_id]
     @bike_rack_comment = BikeRackComment.find_by(bike_rack: @bike_rack, comment: @comment)
     authorize @bike_rack_comment
     @bike_rack_comment.destroy
-    redirect_to bike_racks_path, status: :see_other
+    redirect_to bike_racks_path, notice: "comment deleted"
   end
 
   private
