@@ -4,12 +4,15 @@ Rails.application.routes.draw do
   }
   root to: "pages#home"
   get "/menu", to: "pages#menu"
+  get '/tagged', to: "videos#tagged", as: :tagged
 
   resources :bike_racks do
     resources :bike_rack_likes, only: %i[create destroy]
-    resources :bike_rack_comments, only: %i[create destroy]
+    resources :bike_rack_comments, only: %i[create]
     resources :bike_rack_reports, only: %i[new create]
   end
+
+  resources :bike_rack_comments, only: :destroy
 
   # post 'racks/:rack_id/reports/new', to: 'test#test', as: 'new_rack_report'
 

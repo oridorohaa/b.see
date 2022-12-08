@@ -13,6 +13,7 @@ export default class extends Controller {
   initMap(){
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
+    console.log("rack MAP", map)
     //custom code
     if(bike_rack_data && map){
       console.log("bike rack data defined")
@@ -39,13 +40,8 @@ export default class extends Controller {
       }
     }
 
-
-    this.initAuto();
   }
 
-  initAuto(){
-
-  }
 
 
 }

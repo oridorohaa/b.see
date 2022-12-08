@@ -2,7 +2,23 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
 
   def index
-    @videos = policy_scope(Video)
+    if params[:query].present?
+      @videos = policy_scope(Video).search_by_title_and_description(params[:query])
+    else
+      @videos = policy_scope(Video)
+    end
+  end
+
+  def tagged
+    if params[:tag].present?
+      @ordered_videos
+      @videos = policy_scope(Video).tagged_with(params[:tag])
+      authorize @videos
+    else
+      @videos = policy_scope(Video).all
+      authorize @videos
+    end
+    render :index
   end
 
   def show
@@ -54,6 +70,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :status, :video)
+    params.require(:video).permit(:title, :description, :status, :video, tag_list: [])
   end
 end
