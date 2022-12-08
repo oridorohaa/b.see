@@ -5,8 +5,13 @@
       class: "form-control",
       placeholder: "search..."
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "search", class: "search-btn" %>
   <% end %>
+</div>
+
+<div class="dropdowns">
+  <button>filter</button>
+  <button>order</button>
 </div>
 
 <div class="video-list">
@@ -15,24 +20,36 @@
       <div class="video">
         <%= cl_video_tag(video.video.key,
           :controls => true,
-          :transformation => [:height=>50, :width=>80],
+          :transformation => [
+            {:width=>200, :crop=>"pad"},
+            {:height=>100, :crop=>"scale"}
+          ],
           :fallback_content => "Your browser does not support HTML5 video tags.")
         %>
       </div>
       <div class="video-info">
-        <a href="/videos/<%=video.id%>"><%= video.title %></a> <br>
+        <a href="/videos/<%=video.id%>"><%= video.title %></a>
+        <p><%= video.user.username %> | <%= video.created_at.strftime("%b %e %Y") %></p>
         <%= video.description %><br>
       </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "add video", new_video_path %>
+<div class="buttons">
+  <%= link_to new_video_path, class: 'button' do %>
+    <i class="fa-solid fa-plus fa-xl"></i>
+  <% end %>
+  <%= link_to menu_path, class: 'button' do %>
+    <i class="fa-solid fa-house fa-xl"></i>
+  <% end %>
+</div>
 
 <style>
 .video-list {
   border: 1px solid #F5FF6D;
   width: 80%;
+  height: 400px;
   margin: 20px auto;
   border-radius: 10px;
 }
@@ -43,5 +60,80 @@
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+}
+
+.video {
+  margin: 15px;
+  width: 50%;
+}
+
+.video-info {
+  margin: 15px;
+  color: #E5E2DA;
+  overflow-y: scroll;
+}
+
+.video-info a {
+  text-decoration: none;
+  color: #E5E2DA;
+}
+
+.video-info p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px 10px;
+}
+
+.button {
+  text-decoration: none;
+  color: #F5FF6D;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+button {
+  color: #F5FF6D;
+  border: 1px solid #F5FF6D;
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  background: none;
+}
+
+.video-search {
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 0;
+}
+
+.form-control {
+  background-color: #1C1C17;
+  border: 1px solid #F5FF6D;
+  border-radius: 10px 0 0 10px;
+}
+
+.form-control:focus {
+  background: none;
+  color: #E5E2DA;
+}
+
+.search-btn {
+  color: #1C1C17;
+  background: #F5FF6D;
+  border: 1px solid #F5FF6D;
+  border-radius: 0 10px 10px 0;
 }
 </style>
