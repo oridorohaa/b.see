@@ -3,7 +3,7 @@ class VideosController < ApplicationController
 
   def index
     if params[:query].present?
-      @videos = Video.where("title ILIKE ?", "%#{params[:query]}%")
+      @videos = policy_scope(Video).search_by_title_and_description(params[:query])
     else
       @videos = policy_scope(Video)
     end
