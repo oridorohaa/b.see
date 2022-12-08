@@ -33,4 +33,7 @@ Rails.application.routes.draw do
     resources :video_comments, only: %i[create destroy]
     resources :video_reports, only: %i[new create]
   end
+
+  get "/recent", to: "videos#recent"
+  get "/most_liked", to: "videos#most_liked"
 end
