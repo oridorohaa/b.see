@@ -22,8 +22,5 @@ application.register("racks-google-maps", RacksGoogleMapsController)
 import ShopsGoogleMapsController from "./shops_google_maps_controller"
 application.register("shops-google-maps", ShopsGoogleMapsController)
 
-import AddressInputController from "./address_input_controller"
-application.register("address-input", AddressInputController)
-
 import SearchAddressController from "./search_address_controller"
 application.register("search-address", SearchAddressController )
