@@ -1,32 +1,70 @@
+<div class="navbar">
+  <div class="navbar-section">
+    <%= link_to bike_racks_path, class: "button" do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <div class="actions">
+      <i class="fa-solid fa-bars fa-xl"></i>
+      <div class="actions-dropdown">
+        <%= link_to edit_bike_rack_path(@bike_rack), class: "button" do %>
+          <i class="fa-solid fa-pencil fa-xl"></i>
+        <% end %>
+        <%= link_to bike_rack_path(@bike_rack), data: {turbo_method: :delete}, class: "button"  do %>
+          <i class="fa-solid fa-trash fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="heart">
+    <% unless @bike_rack.has_user_liked?(current_user) %>
+      <%= link_to bike_rack_bike_rack_likes_path(@bike_rack), data: {turbo_method: :post}  do %>
+        <i class="fa-regular fa-heart fa-xl"></i>
+      <% end %>
+    <% else %>
+      <%= link_to bike_rack_bike_rack_like_path(@bike_rack), data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-heart fa-xl"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-<%= @bike_rack.address %><br>
-<%= @bike_rack.description %>
-<%= link_to "back", bike_racks_path %>
-<%= link_to "menu", menu_path %>
-<%= link_to "edit",  edit_bike_rack_path(@bike_rack) %> <br>
-<%= link_to "delete", bike_rack_path(@bike_rack), data: {turbo_method: :delete} %><br>
-<%= link_to 'like', bike_rack_bike_rack_likes_path(@bike_rack), data: {turbo_method: :post} %><br>
-<%= link_to 'unlike', bike_rack_bike_rack_like_path(@bike_rack), data: {turbo_method: :delete} %><br>
-<%= link_to 'report', new_bike_rack_bike_rack_report_path(@bike_rack) %>
-
-<% if @bike_rack.photos.attached? %>
-  <% @bike_rack.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<div class="photo">
+  <% if @bike_rack.photos.attached? %>
+    <% @bike_rack.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<ul>
-  <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>
-    <li>
-      <%= bike_rack_comment.comment.content %>
-      <%= link_to 'delete', bike_rack_bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete} %>
-    </li>
-  <% end %>
-</ul>
+<div class="info">
+  <%= @bike_rack.address %>
+  <%= @bike_rack.description %>
+</div>
 
-<%= simple_form_for([@bike_rack, @bike_rack_comment]) do |f| %>
-  <%= f.simple_fields_for :comments do |comments_form| %>
-    <%= comments_form.input :content %>
+<div class="comments">
+  <p>comments</p>
+  <ul>
+    <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>
+      <li>
+        <%= bike_rack_comment.comment.content %>
+        <%= link_to 'delete', bike_rack_bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete} %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="add-comment">
+    <i class="fa-solid fa-plus fa-xl"></i>
+    <%= simple_form_for([@bike_rack, @bike_rack_comment]) do |f| %>
+      <%= f.simple_fields_for :comments do |comments_form| %>
+        <%= comments_form.input :content, label: false, as: :text %>
+      <% end %>
+      <%= f.submit '+', class: 'submit-btn' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="report">
+  <%= link_to new_bike_rack_bike_rack_report_path(@bike_rack), class: "report-btn" do %>
+    <p><i class="fa-solid fa-triangle-exclamation fa-xl"></i></i> report</p>
   <% end %>
-  <%= f.submit 'add' %>
-<% end %>
+</div>
