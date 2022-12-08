@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   root to: "pages#home"
   get "/menu", to: "pages#menu"
+  get '/tagged', to: "videos#tagged", as: :tagged
 
   resources :bike_racks do
     resources :bike_rack_likes, only: %i[create destroy]

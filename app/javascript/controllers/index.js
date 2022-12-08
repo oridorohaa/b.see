@@ -4,23 +4,20 @@
 
 import { application } from "./application"
 
-import GoogleMapsController from "./racks_google_maps_controller"
-application.register("google-maps", GoogleMapsController)
+import AddressInputController from "./address_input_controller"
+application.register("address-input", AddressInputController)
+
+import FilterVideosController from "./filter_videos_controller"
+application.register("filter-videos", FilterVideosController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-
-import ShopsGoogleMapsController from "./shops_google_maps_controller"
-application.register("shops-google-maps", ShopsGoogleMapsController)
+import LanesGoogleMapsController from "./lanes_google_maps_controller"
+application.register("lanes-google-maps", LanesGoogleMapsController)
 
 import RacksGoogleMapsController from "./racks_google_maps_controller"
 application.register("racks-google-maps", RacksGoogleMapsController)
 
-import LanesGoogleMapsController from "./lanes_google_maps_controller"
-application.register("lanes-google-maps", LanesGoogleMapsController)
-
-
-import AddressInputController from "./address_input_controller"
-application.register("address-input", AddressInputController)
-
+import ShopsGoogleMapsController from "./shops_google_maps_controller"
+application.register("shops-google-maps", ShopsGoogleMapsController)
