@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_184150) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_224305) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_184150) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -126,17 +125,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_184150) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.float "latitude"
-    t.float "longitude"
-    t.string "address"
     t.index ["user_id"], name: "index_lanes_on_user_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -256,7 +245,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_184150) do
   add_foreign_key "lane_likes", "users"
   add_foreign_key "lane_reports", "lanes"
   add_foreign_key "lane_reports", "reports"
-  add_foreign_key "likes", "users"
   add_foreign_key "reports", "users"
   add_foreign_key "shop_comments", "comments"
   add_foreign_key "shop_comments", "shops"

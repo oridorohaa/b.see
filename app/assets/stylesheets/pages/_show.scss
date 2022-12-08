@@ -1,0 +1,137 @@
+$black: #1C1C17;
+$yellow: #F5FF6D;
+$white: #E5E2DA;
+
+@media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  body {
+    background-color: #1C1C17;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: $black;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: $yellow;
+    }
+
+    .navbar-section {
+      width: 20%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 10px;
+    }
+
+    .button {
+      padding: 10px;
+    }
+
+    .actions {
+      position: relative;
+    }
+
+    .actions-dropdown {
+      width: 0;
+      position: absolute;
+      top: -50%;
+      left: 150%;
+      display: flex;
+      flex-direction: row;
+      overflow-x: hidden;
+      transition: all .5s ease;
+      justify-content: space-evenly;
+    }
+
+    .actions:hover .actions-dropdown {
+      width: 100px;
+    }
+
+    .heart {
+      margin: 0 10px;
+      width: 20%;
+      text-align: center;
+    }
+  }
+
+  i {
+    color: $yellow;
+  }
+
+  .info {
+    border: 1px solid $yellow;
+    color: $white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .comments {
+    border: 1px solid $yellow;
+    color: $white;
+    margin: 20px;
+    padding: 0 10px;
+    border-radius: 10px;
+
+    form {
+      border: 1px solid $yellow;
+      width: 80%;
+      border-radius: 10px;
+      margin: 0 auto;
+      margin-bottom: 10%;
+      display: flex;
+      flex-direction: column;
+      height: 0;
+      overflow-y: hidden;
+      transition: all .5s ease;
+    }
+
+    .form-control {
+      width: 100%;
+      background-color: $black;
+      color: $white;
+      border: none;
+      border-bottom: 1px solid $yellow;
+      border-radius: 8px 8px 0 0;
+      height: 110px;
+    }
+
+    .submit-btn {
+      background-color: $yellow;
+      color: $black;
+      border: none;
+      padding: 8px;
+      border-radius: 0 0 8px 0;
+      width: 20%;
+      align-self: flex-end;
+    }
+
+    .add-comment:hover form {
+      height: 150px;
+    }
+
+    .mb-3 {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .report {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+
+    .report-btn {
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    p {
+      color: $yellow;
+    }
+  }
+}
