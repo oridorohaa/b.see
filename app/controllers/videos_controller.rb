@@ -2,7 +2,11 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
 
   def index
-    @videos = policy_scope(Video)
+    if params[:query].present?
+      @videos = Video.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @videos = policy_scope(Video)
+    end
   end
 
   def show

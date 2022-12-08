@@ -1,14 +1,47 @@
-<%= link_to "add video", new_video_path %>
-<% @videos.each do |video| %>
-  <div class="video-container">
-    <a href="/videos/<%=video.id%>"><%= video.title %></a> <br>
-    <%= video.description %><br>
-  </div>
-<% end %>
+<div class="video-search">
+  <%= form_with url: videos_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search..."
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
+<div class="video-list">
+  <% @videos.each do |video| %>
+    <div class="video-container">
+      <div class="video">
+        <%= cl_video_tag(video.video.key,
+          :controls => true,
+          :transformation => [:height=>50, :width=>80],
+          :fallback_content => "Your browser does not support HTML5 video tags.")
+        %>
+      </div>
+      <div class="video-info">
+        <a href="/videos/<%=video.id%>"><%= video.title %></a> <br>
+        <%= video.description %><br>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "add video", new_video_path %>
 
 <style>
+.video-list {
+  border: 1px solid #F5FF6D;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
 .video-container{
-  border:1px solid black;
+  background-color: #47473B;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
 }
 </style>
