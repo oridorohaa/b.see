@@ -1,4 +1,7 @@
-<div data-controller='address-input'>
+<div data-controller='address-input' class="container">
+  <%= link_to menu_path do  %>
+  <i class="fa-solid fa-house"></i>
+  <% end %>
 <%= simple_form_for(@shop) do |f| %>
 <%= f.input :address  %>
 <%= f.input :latitude%>
@@ -8,7 +11,45 @@
 <%= f.input :description %>
 <%= f.input :website %>
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit "add shop" %>
+<%= f.submit "add shop", class:"submit" %>
 <% end %>
 </div>
 
+<style>
+.fa-house{
+  position:absolute;
+  font-size:30px;
+  left: 86%;
+  top: 3%;
+}
+.submit{
+  background:#F5FF6D;
+  width:80%;
+  padding: 10px 0;
+  border-radius:25px;
+}
+.container{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+.form-control{
+  border-radius:10px;
+  width:80%;
+  background:none;
+  border: 1px solid #F5FF6D;
+  color:white;
+}
+
+.form-control:focus{
+  background:none;
+  color:white;
+}
+
+.form-label{
+  color: #F5FF6D;
+}
+
+</style>

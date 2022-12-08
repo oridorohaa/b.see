@@ -1,11 +1,56 @@
 
-<div data-controller='address-input'>
+<div data-controller='address-input'  class="container">
+  <%= link_to menu_path do  %>
+  <i class="fa-solid fa-house"></i>
+  <% end %>
 <%= simple_form_for(@lane) do |f| %>
 <%= f.input :street_name %>
 <%= f.input :start_point %>
 <%= f.input :end_point %>
 <%= f.input :drescription %>
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit "create lane" %>
+<%= f.submit "create lane", class:"submit" %>
 <% end %>
 </div>
+
+<style>
+
+.fa-house{
+  position:absolute;
+  font-size:30px;
+  left: 12%;
+  top: 9%;
+}
+
+.submit{
+  background:#F5FF6D;
+  width:80%;
+  padding: 10px 0;
+  border-radius:25px;
+}
+.container{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+.form-control{
+  border-radius:10px;
+  width:80%;
+  background:none;
+  border: 1px solid #F5FF6D;
+  color:white;
+}
+
+.form-control:focus{
+  background:none;
+  color:white;
+}
+
+.form-label{
+  color: #F5FF6D;
+}
+
+</style>
