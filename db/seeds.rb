@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,79 +6,116 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# require "json"
-# require "open-uri"
-
-# url = "https://img.asmedia.epimg.net/resizer/EDUTHxqWgJ6K…shing.com/diarioas/CZLZLV2EOVNBHCU6MNHPVWPUOE.jpg"
-
-# html_file = URI.open(url).read
-# html_doc = Nokogiri::HTML(html_file)
 User.destroy_all
-
 
 user = User.create(username: 'Joseph', email: 'joseph@email.com', password: '123456')
 
 BikeRack.destroy_all
 
-BikeRack.create!(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
-                 description: "Tres biciestacionamientos tipo cuadro",
-                 latitude: 19.39550,
-                 longitude: -99.16681,
-                 user: user)
+file = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_square.jpg")
 
-BikeRack.create!(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
-                 description: "Un biciestacionamiento tipo U invertidad",
-                 latitude: 19.41125,
-                 longitude: -99.16801,
-                 user: user)
+rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
+                    description: "Tres biciestacionamientos tipo cuadro",
+                    latitude: 19.39550,
+                    longitude: -99.16681,
+                    user: user)
+rack.photos.attach(io: file, filename: "biciestacionamineto", content_type: "images/jpg")
+rack.save
 
-BikeRack.create!(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
-                 description: "Cinco biciestacionamientos tipo U invertidad",
-                 latitude: 19.42732,
-                 longitude: -99.16599,
-                 user: user)
+file2 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
 
-BikeRack.create!(address: "C. Liverpool 34, Juárez, Cuauhtémoc, 06600 Juárez, CDMX",
-                 description: "Cuatro biciestacionamientos tipo U invertidad",
-                 latitude: 19.42746,
-                 longitude: -99.15753,
-                 user: user)
+rack = BikeRack.new(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
+                    description: "Un biciestacionamiento tipo U invertidad",
+                    latitude: 19.41125,
+                    longitude: -99.16801,
+                    user: user)
+rack.photos.attach(io: file2, filename: "biciestacionamineto1", content_type: "images/jpg")
+rack.save
 
-BikeRack.create!(address: "Cda. Ernesto Pugibet 17, Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
-                 description: "Tres biciestacionamientos tipo U invertidad",
-                 latitude: 19.43007,
-                 longitude: -99.14401,
-                 user: user)
+file3 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
 
-BikeRack.create!(address: "Revillagigedo 20, Colonia Centro, Centro, Cuauhtémoc, 06050 Ciudad de México, CDMX",
-                 description: "Tres biciestacionamiento tipo U invertidad",
-                 latitude: 19.43371,
-                 longitude: -99.14594,
-                 user: user)
+rack = BikeRack.new(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
+                    description: "Cinco biciestacionamientos tipo U invertidad",
+                    latitude: 19.42732,
+                    longitude: -99.16599,
+                    user: user)
+rack.photos.attach(io: file3, filename: "biciestacionamineto2", content_type: "images/jpg")
+rack.save
 
-BikeRack.create!(address: "Calle Julio Verne 233, Polanco, Polanco IV Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
-                 description: "biciestacionamiento tipo Auto",
-                 latitude: 19.42956,
-                 longitude: -99.19691,
-                 user: user)
+file4 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
 
-BikeRack.create!(address: "Parroquia 517, Col del Valle Sur, Benito Juárez, 03100 Ciudad de México, CDMX",
-                 description: "Cinco biciestacionamientos tipo U invertidad",
-                 latitude: 19.37031,
-                 longitude: -99.17215,
-                 user: user)
+rack = BikeRack.new(address: "C. Liverpool 34, Juárez, Cuauhtémoc, 06600 Juárez, CDMX",
+                    description: "Cuatro biciestacionamientos tipo U invertidad",
+                    latitude: 19.42746,
+                    longitude: -99.15753,
+                    user: user)
+rack.photos.attach(io: file4, filename: "biciestacionamineto4", content_type: "images/jpg")
+rack.save
 
-BikeRack.create!(address: "Torres Adalid 1359, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
-                 description: "Cinco biciestacionamientos tipo U invertidad",
-                 latitude: 19.38957,
-                 longitude: -99.15767,
-                 user: user)
+file5 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
 
-BikeRack.create!(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
-                 description: "Cinco biciestacionamientos tipo U invertidad",
-                 latitude: 19.39431,
-                 longitude: -99.15960,
-                 user: user)
+rack = BikeRack.new(address: "Cda. Ernesto Pugibet 17, Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
+                    description: "Tres biciestacionamientos tipo U invertidad",
+                    latitude: 19.43007,
+                    longitude: -99.14401,
+                    user: user)
+rack.photos.attach(io: file5, filename: "biciestacionamineto5", content_type: "images/jpg")
+rack.save
+
+file6 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
+
+rack = BikeRack.new(address: "Revillagigedo 20, Colonia Centro, Centro, Cuauhtémoc, 06050 Ciudad de México, CDMX",
+                    description: "Tres biciestacionamiento tipo U invertidad",
+                    latitude: 19.43371,
+                    longitude: -99.14594,
+                    user: user)
+
+rack.photos.attach(io: file6, filename: "biciestacionamineto6", content_type: "images/jpg")
+rack.save
+
+file7 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_auto.jpg")
+
+rack = BikeRack.new(address: "Calle Julio Verne 233, Polanco, Polanco IV Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo Auto",
+                    latitude: 19.42956,
+                    longitude: -99.19691,
+                    user: user)
+
+rack.photos.attach(io: file7, filename: "biciestacionamineto7", content_type: "images/jpg")
+rack.save
+
+file8 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
+
+rack = BikeRack.new(address: "Parroquia 517, Col del Valle Sur, Benito Juárez, 03100 Ciudad de México, CDMX",
+                    description: "Cinco biciestacionamientos tipo U invertidad",
+                    latitude: 19.37031,
+                    longitude: -99.17215,
+                    user: user)
+
+rack.photos.attach(io: file8, filename: "biciestacionamineto8", content_type: "images/jpg")
+rack.save
+
+file9 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
+
+rack = BikeRack.new(address: "Torres Adalid 1359, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
+                    description: "Cinco biciestacionamientos tipo U invertidad",
+                    latitude: 19.38957,
+                    longitude: -99.15767,
+                    user: user)
+
+rack.photos.attach(io: file9, filename: "biciestacionamineto9", content_type: "images/jpg")
+rack.save
+
+file10 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/bike_rack_inverted_u.jpg")
+
+rack = BikeRack.new(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
+                    description: "Cinco biciestacionamientos tipo U invertidad",
+                    latitude: 19.39431,
+                    longitude: -99.15960,
+                    user: user)
+
+rack.photos.attach(io: file10, filename: "biciestacionamineto10", content_type: "images/jpg")
+rack.save
 
 Shop.destroy_all
 

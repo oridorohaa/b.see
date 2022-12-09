@@ -9,12 +9,45 @@
   <%= f.input :latitude%>
   <%= f.input :longitude %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "add rack", class:"submit" %>
+  <%= f.submit "add rack", class: "rack-btn" %>
 <% end %>
 </div>
 
 
 <style>
+.new_bike_rack {
+  color: #f5ff6d;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.form-control {
+  border-radius: 0.5em;
+  background-color: #D8DAD3;
+  width: 100%;
+  border: 5px solid #2C312C;
+  padding: 0.75rem;
+}
+
+.rack-btn {
+  background-color: #f5ff6d;
+  margin: 3px;
+  border-radius: 0.5em;
+  padding: 10px;
+}
+
+input[type="file"]::file-selector-button {
+  border: 2px solid #566246;
+  padding: 0.4em 0.6em;
+  border-radius: 0.5em;
+  background-color: #f5ff6d;
+  transition: 1s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+  padding: 12px;
 
 .fa-house{
   position:absolute;
