@@ -45,7 +45,7 @@
   <div class="reports">
     <% @bike_rack.bike_rack_reports.each do |report| %>
       <% r = Report.find(report.report_id) %>
-      <%= r.content %>
+      <%= r.content %><br>
     <% end %>
   </div>
 <% end %>

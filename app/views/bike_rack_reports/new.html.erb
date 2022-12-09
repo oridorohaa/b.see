@@ -1,3 +1,7 @@
+<%= link_to bike_rack_path(@rack) do %>
+  <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+<% end %>
+
 <%= simple_form_for [@rack, @report], url: bike_rack_bike_rack_reports_path do |f| %>
   <%= f.input :content %>
   <%= f.submit "add report", class:"submit" %>
@@ -5,15 +9,27 @@
 
 
  <style>
+.fa-xl{
+  color:#F5FF;
+  position:absolute;
+  font-size:30px;
+  left: 10%;
+  top: 20%;
+}
+body{
+  margin-top:200px;
+  margin-left:10%;
+}
+
  .form-label{
-   color: #F5FF6D;
+   color: #F5FF;
 }
 
 .form-control{
   border-radius:10px;
   width:80%;
   background:none;
-  border: 1px solid #F5FF6D;
+  border: 1px solid #F5FF;
   color:white;
 }
 
@@ -24,7 +40,7 @@
 
 .submit{
 
-  background:#F5FF6D;
+  background:#F5FF;
   width:80%;
   padding: 10px 0;
   border-radius:25px;
