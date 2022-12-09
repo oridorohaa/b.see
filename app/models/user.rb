@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :shops
   has_many :videos
 
+  validates :username, presence: true
+  validates :username, uniqueness: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

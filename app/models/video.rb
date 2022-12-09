@@ -6,8 +6,10 @@ class Video < ApplicationRecord
 
   acts_as_taggable_on :tags
 
-  scope :earliest, -> { order(created_at: :asc, id: :asc) }
-  scope :latest, -> { order(created_at: :desc, id: :desc) }
+  validates :title, presence: true
+  validates :title, uniqueness: true
+  validates :video, presence: true, blob: { content_type: ['video/mov', 'video/mp4', 'video/avi'], size_range: 1..(
+                                          87.5.megabytes) }
 
   include PgSearch::Model
   pg_search_scope :search_by_title_and_description,
