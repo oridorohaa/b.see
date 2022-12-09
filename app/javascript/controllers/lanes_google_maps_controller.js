@@ -14,13 +14,31 @@ export default class extends Controller {
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
 
-    console.log("boob")
+
     let bikeLayer = new google.maps.BicyclingLayer();
     bikeLayer.setMap(map);
 
 
+    // var axios = require('axios');
 
+    // var config = {
+    //   method: 'get',
+    //   url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8',
+    //   headers: { "Access-Control-Allow-Origin": "*",
+    //   "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+    //   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
+    // }
+    // };
+
+    // axios(config)
+    // .then(function (response) {
+    //   console.log(JSON.stringify(response.data));
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   }
+
 
 
 

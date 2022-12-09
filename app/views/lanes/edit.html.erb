@@ -1,7 +1,60 @@
-<%= simple_form_for(@lane) do |f| %>
-<%= f.input :street_name %>
-<%= f.input :start_point %>
-<%= f.input :end_point %>
-<%= f.input :drescription %>
-<%= f.submit "edit lane" %>
-<% end %>
+<div class="container">
+  <%= link_to menu_path do  %>
+    <i class="fa-solid fa-house"></i>
+  <% end %>
+
+  <%= simple_form_for(@lane) do |f| %>
+  <%= f.input :street_name %>
+  <%= f.input :start_point %>
+  <%= f.input :end_point %>
+  <%= f.input :drescription %>
+  <%= f.submit "edit lane", class:"edit" %>
+  <% end %>
+</div>
+
+
+
+<style>
+.fa-house{
+  position:absolute;
+  font-size:30px;
+  left: 86%;
+  top: 3%;
+}
+.edit{
+  background:#F5FF6D;
+  width:80%;
+  padding: 10px 0;
+  border-radius:25px;
+}
+.container{
+  padding-left: 58px;
+  width:100vw;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.simple_form{
+  width:100%;
+}
+.form-control{
+  border-radius:10px;
+  width:80%;
+  background:none;
+  border: 1px solid #F5FF6D;
+  color:white;
+}
+
+.form-control:focus{
+  background:none;
+  color:white;
+}
+
+.form-label{
+  color: #F5FF6D;
+}
+
+
+</style>

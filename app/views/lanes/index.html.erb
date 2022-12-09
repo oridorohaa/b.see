@@ -2,8 +2,8 @@
 <input type="text" class="search-input" placeholder="search location...">
 <i class="fa-solid fa-magnifying-glass"></i>
 </div>
-<%# <div id="map" data-controller="lanes-google-maps" style="height:590px;"></div> %>
-<div id="map" data-controller="lanes-map-display" data-lanes-map-display-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div id="map" data-controller="lanes-google-maps" style="height:590px;"></div>
+<%# <div id="map" data-controller="lanes-map-display" data-lanes-map-display-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div> %>
 <div class="bottom-container">
   <%= link_to "home", menu_path, class:"button" %>
   <%= link_to "add lane", new_lane_path, class:"button"%>
