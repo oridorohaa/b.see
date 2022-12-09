@@ -8,6 +8,8 @@ export default class extends Controller {
   }
 
   connect() {
+    console.log("hola")
+
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: "map",
@@ -71,5 +73,6 @@ export default class extends Controller {
     });
 
     this.map.addControl(draw);
+
   }
 }
