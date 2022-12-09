@@ -162,6 +162,14 @@ $grey: #47473B;
     }
   }
 
+  .reports{
+    border: 1px solid #F5FF;
+    color: #F5FF;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
   .report {
     display: flex;
     justify-content: flex-end;

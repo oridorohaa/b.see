@@ -47,6 +47,15 @@
   <%= @shop.website %><br>
 </div>
 
+<% if @shop.shop_reports.count > 0 %>
+  <div class="reports">
+    <% @shop.shop_reports.each do |report| %>
+      <% r = Report.find(report.report_id) %>
+      <%= r.content %> <br>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="comments">
   <div class="add-comment">
     <div class="comment-top">

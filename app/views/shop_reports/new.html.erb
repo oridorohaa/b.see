@@ -1,4 +1,49 @@
-<%= simple_form_for [@shop, @report], url: shop_shop_reports_path do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "add report" %>
-<% end %>
+<%# <div class="container"> %>
+  <%= simple_form_for [@shop, @report], url: shop_shop_reports_path do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "add report" , class:"submit"%>
+  <% end %>
+<%# </div> %>
+
+
+<style>
+/* 
+.new-report{
+  margin:50px;
+}
+
+.container{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+
+} */
+.form-label{
+   color: #F5FF6D;
+}
+
+.form-control{
+  border-radius:10px;
+  width:80%;
+  background:none;
+  border: 1px solid #F5FF6D;
+  color:white;
+}
+
+.form-control:focus{
+  background:none;
+  color:white;
+}
+
+.submit{
+
+  background:#F5FF6D;
+  width:80%;
+  padding: 10px 0;
+  border-radius:25px;
+
+}
+
+</style>
