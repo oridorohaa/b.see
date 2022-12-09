@@ -6,6 +6,7 @@ $grey: #47473B;
 // @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   body {
     background-color: #1C1C17;
+    overflow-y: scroll;
   }
 
   .right-nav{
