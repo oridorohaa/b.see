@@ -1,7 +1,9 @@
 <%# <h1>MAIN MENU </h1> %>
 <div class="nav">
-<i class="fa-solid fa-globe globe"></i>
-<div class="profile-icon"></div>
+  <i class="fa-solid fa-globe globe"></i>
+  <div class="profile-icon">
+    <%= link_to 'profile', profile_path %>
+  </div>
 </div>
 <div class="menu-container">
   <%= link_to "Racks", bike_racks_path, class:"menu-item"%>

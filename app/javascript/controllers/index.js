@@ -27,8 +27,3 @@ application.register("search-address", SearchAddressController)
 
 import ShopsGoogleMapsController from "./shops_google_maps_controller"
 application.register("shops-google-maps", ShopsGoogleMapsController)
-
-
-import SearchAddressController from "./search_address_controller"
-application.register("search-address", SearchAddressController )
-

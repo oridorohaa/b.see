@@ -41,6 +41,16 @@
   <%= @bike_rack.description %>
 </div>
 
+<% if @bike_rack.bike_rack_reports.count > 0 %>
+  <div class="reports">
+    <% @bike_rack.bike_rack_reports.each do |report| %>
+      <% r = Report.find(report.report_id) %>
+      <%= r.content %><br>
+    <% end %>
+  </div>
+<% end %>
+
+
 <div class="comments">
   <div class="add-comment">
     <div class="comment-top">
