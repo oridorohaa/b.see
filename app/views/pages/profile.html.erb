@@ -1,0 +1,30 @@
+<div class="profile">
+  <div class="navbar">
+    <%= link_to menu_path do %>
+      <i class="fa-solid fa-house fa-xl"></i>
+    <% end %>
+    <%= link_to destroy_user_session_path(current_user) do %>
+      <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+    <% end %>
+  </div>
+  <div class="user-info">
+    <div class="avatar">
+      <i class="fa-regular fa-circle"></i>
+    </div>
+    <div class="user-actions">
+      <%= link_to "edit information", edit_user_registration_path(current_user) %>
+      <%= link_to "change password", edit_user_password_path(current_user) %>
+    </div>
+  </div>
+  <div class="likes">
+    <p>likes</p>
+    <ul>
+      <li>racks</li>
+      <li>lanes</li>
+      <li>shops</li>
+      <li>videos</li>
+    </ul>
+  </div>
+  <div class="user-comments"></div>
+  <div class="videos"></div>
+</div>
