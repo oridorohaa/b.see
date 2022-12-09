@@ -10,7 +10,7 @@
 <%= f.input :phone_number %>
 <%= f.input :description %>
 <%= f.input :website %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
+<%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
 <%= f.submit "add shop", class:"submit" %>
 <% end %>
 </div>
@@ -50,6 +50,19 @@
 
 .form-label{
   color: #F5FF6D;
+}
+
+input[type="file"]::file-selector-button {
+  border: 2px solid #f5ff6d;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: #f5ff6d;
+  transition: 1s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
 }
 
 </style>
