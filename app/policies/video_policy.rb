@@ -5,6 +5,18 @@ class VideoPolicy < ApplicationPolicy
     end
   end
 
+  def tagged?
+    true
+  end
+
+  def recent?
+    true
+  end
+
+  def most_liked?
+    true
+  end
+
   def show?
     true
   end

@@ -9,6 +9,35 @@ class VideosController < ApplicationController
     end
   end
 
+  def recent
+    @videos = policy_scope(Video)
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos.sort_by { |v| v.created_at }.reverse }, formats: [:html] }
+    end
+  end
+
+  def most_liked
+    @videos = policy_scope(Video)
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos.sort_by { |v| v.video_likes.size }.reverse }, formats: [:html] }
+    end
+  end
+
+  def tagged
+    if params[:tag].present?
+      @videos = policy_scope(Video).tagged_with(params[:tag])
+      authorize @videos
+    else
+      @videos = policy_scope(Video).all
+      authorize @videos
+    end
+    render :index
+  end
+
   def show
     authorize @video
     @video_comment = VideoComment.new
@@ -58,6 +87,6 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description, :status, :video)
+    params.require(:video).permit(:title, :description, :status, :video, tag_list: [])
   end
 end

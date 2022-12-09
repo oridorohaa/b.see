@@ -17,12 +17,13 @@ export default class extends Controller {
     let map = sharedMapsInit();
     console.log('hi')
     //custom code
-    if(shop_data && map){
+
       console.log(shop_data)
       for(const shop in shop_data){
       let d = shop_data[shop]
       if(d.lat !== ''){
         console.log("map")
+        console.log(map)
         console.log( parseFloat(d.lat))
         let marker = new google.maps.Marker({
           position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
@@ -37,7 +38,6 @@ export default class extends Controller {
         google.maps.event.addListener(marker, "click", function() {
           window.location.href = this.url;
         });
-      }
       }
 
     }
