@@ -19,24 +19,24 @@ export default class extends Controller {
     bikeLayer.setMap(map);
 
 
-    // var axios = require('axios');
+    var axios = require('axios');
 
-    // var config = {
-    //   method: 'get',
-    //   url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8',
-    //   headers: { "Access-Control-Allow-Origin": "*",
-    //   "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-    //   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
-    // }
-    // };
+    var config = {
+      method: 'get',
+      url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8',
+      headers: { "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
+    }
+    };
 
-    // axios(config)
-    // .then(function (response) {
-    //   console.log(JSON.stringify(response.data));
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
 

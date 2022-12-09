@@ -3,9 +3,17 @@ $yellow: #F5FF6D;
 $white: #E5E2DA;
 $grey: #47473B;
 
-@media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+// @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   body {
     background-color: #1C1C17;
+  }
+
+  .right-nav{
+    display:flex;
+  }
+
+  .fa-user{
+    font-size:22px;
   }
 
   .navbar {
@@ -190,4 +198,4 @@ $grey: #47473B;
     width: 80%;
     margin: 0 auto;
   }
-}
+// }
