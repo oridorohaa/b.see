@@ -15,16 +15,26 @@
       </div>
     </div>
   </div>
-  <div class="heart">
-    <% unless @lane.has_user_liked?(current_user) %>
-      <%= link_to lane_lane_likes_path(@lane), data: {turbo_method: :post}  do %>
-        <i class="fa-regular fa-heart fa-xl"></i>
+
+  <div class="right-nav">
+    <% if current_user %>
+        <div class="profile">
+        <%=link_to profile_path(current_user) do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
+        </div>
       <% end %>
-    <% else %>
-      <%= link_to lane_lane_like_path(@lane), data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-heart fa-xl"></i>
+    <div class="heart">
+      <% unless @lane.has_user_liked?(current_user) %>
+        <%= link_to lane_lane_likes_path(@lane), data: {turbo_method: :post}  do %>
+          <i class="fa-regular fa-heart fa-xl"></i>
+        <% end %>
+      <% else %>
+        <%= link_to lane_lane_like_path(@lane), data: {turbo_method: :delete} do %>
+          <i class="fa-solid fa-heart fa-xl"></i>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
