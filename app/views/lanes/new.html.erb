@@ -1,15 +1,15 @@
 
-<div data-controller='address-input'  class="container">
-  <%= link_to menu_path do  %>
-  <i class="fa-solid fa-house"></i>
-  <% end %>
+<%# <div data-controller='address-input'  class="container"> %>
+<%= link_to menu_path do  %>
+<i class="fa-solid fa-house"></i>
+<% end %>
+
+<div id="map" data-controller="lanes-map" data-lanes-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <%= simple_form_for(@lane) do |f| %>
-<%= f.input :street_name %>
-<%= f.input :start_point %>
-<%= f.input :end_point %>
-<%= f.input :drescription %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit "create lane", class:"submit" %>
+  <%= f.input :drescription %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "create lane", class:"submit" %>
 <% end %>
 </div>
 
@@ -51,6 +51,11 @@
 
 .form-label{
   color: #F5FF6D;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
 }
 
 </style>

@@ -16,8 +16,11 @@ application.register("hello", HelloController)
 import LanesGoogleMapsController from "./lanes_google_maps_controller"
 application.register("lanes-google-maps", LanesGoogleMapsController)
 
-import OrderVideosController from "./order_videos_controller"
-application.register("order-videos", OrderVideosController)
+import LanesMapController from "./lanes_map_controller"
+application.register("lanes-map", LanesMapController)
+
+import LanesMapDisplayController from "./lanes_map_display_controller"
+application.register("lanes-map-display", LanesMapDisplayController)
 
 import RacksGoogleMapsController from "./racks_google_maps_controller"
 application.register("racks-google-maps", RacksGoogleMapsController)
