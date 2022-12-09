@@ -1,0 +1,45 @@
+<div class="profile">
+  <div class="navbar">
+    <%= link_to menu_path do %>
+      <i class="fa-solid fa-house fa-xl"></i>
+    <% end %>
+    <%= link_to destroy_user_session_path(current_user) do %>
+      <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+    <% end %>
+  </div>
+  <div class="user-info">
+    <div class="avatar">
+    </div>
+    <div class="user-actions">
+      <%= link_to "edit information", edit_user_registration_path(current_user), class:"action" %>
+      <%= link_to "change password", edit_user_password_path(current_user), class:"action" %>
+    </div>
+  </div>
+  <div class="likes">
+    <p>my likes</p>
+    <ul>
+      <li>racks</li>
+        <% current_user.bike_rack_likes.each do |rack_like| %>
+          <% bike_rack = BikeRack.find(rack_like.bike_rack_id) %>
+          <a href="/bike_racks/<%=rack_like.bike_rack_id%>"><%= bike_rack.address %></a><br>
+        <% end %>
+      <li>lanes</li>
+        <% current_user.lane_likes.each do |lane_like| %>
+          <% lane = Lane.find(lane_like.lane_id) %>
+          <a href="/lanes/<%=lane_like.lane_id%>"><%= lane.address %></a><br>
+        <% end %>
+      <li>shops</li>
+          <% current_user.shop_likes.each do |shop_like| %>
+            <% shop = Shop.find(shop_like.shop_id) %>
+            <a href="/shops/<%=shop_like.shop_id%>"><%= shop.address %></a><br>
+        <% end %>
+      <li>videos</li>
+          <% current_user.video_likes.each do |video_like| %>
+            <% video = Video.find(video_like.video_id) %>
+            <a href="/videos/<%=video_like.video_id%>"><%= video.title %></a><br>
+        <% end %>
+    </ul>
+  </div>
+  <div class="user-comments"></div>
+  <div class="videos"></div>
+</div>

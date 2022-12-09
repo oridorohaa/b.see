@@ -1,34 +1,87 @@
-<%= @video.title %><br>
-<%= @video.description %><br>
-<%= link_to "back", videos_path %>
-<%= link_to "menu", menu_path %>
-<%= link_to "edit video", edit_video_path(@video) %><br>
-<%= link_to "like", video_video_likes_path(@video), data:{turbo_method: :post} %><br>
-<%= link_to "unlike", video_video_like_path(@video), data:{turbo_method: :delete} %><br>
-<%= link_to "delete video", video_path(@video),  data: {turbo_method: :delete} %><br>
-<%= link_to "report", new_video_video_report_path(@video) %>
+<div class="navbar">
+  <div class="navbar-section">
+    <%= link_to videos_path, class: "button" do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <div class="actions">
+      <i class="fa-solid fa-bars fa-xl"></i>
+      <div class="actions-dropdown">
+        <%= link_to edit_video_path(@video), class: "button" do %>
+          <i class="fa-solid fa-pencil fa-xl"></i>
+        <% end %>
+        <%= link_to video_path(@video), data: {turbo_method: :delete}, class: "button"  do %>
+          <i class="fa-solid fa-trash fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="heart">
+    <% unless @video.has_user_liked?(current_user) %>
+      <%= link_to video_video_likes_path(@video), data: {turbo_method: :post}  do %>
+        <i class="fa-regular fa-heart fa-xl"></i>
+      <% end %>
+    <% else %>
+      <%= link_to video_video_like_path(@video), data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-heart fa-xl"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-<% if @video.video.attached? %>
-  <%= cl_video_tag(@video.video.key,
-  :loop => false, :controls => true,
-  :transformation => [
-    :height=>360, :width=>480, :crop=>"pad",
-    :quality=>70, :duration=>"10"],
-  :fallback_content => "Your browser does not support HTML5 video tags." ) %>
-<% end %>
-
-<ul>
-  <% @video.video_comments.each do |video_comment| %>
-    <li>
-      <%= video_comment.comment.content %>
-      <%= link_to 'delete', video_video_comment_path(video_comment), data: {turbo_method: :delete} %>
-    </li>
+<div class="video">
+  <% if @video.video.attached? %>
+    <%= cl_video_tag(@video.video.key,
+    :loop => false, :controls => true,
+    :transformation => [
+            {:width=>400, :crop=>"pad"},
+            {:height=>250, :crop=>"scale"}
+          ],
+    :fallback_content => "Your browser does not support HTML5 video tags." ) %>
   <% end %>
-</ul>
+</div>
 
-<%= simple_form_for([@video, @video_comment]) do |f| %>
-  <%= f.simple_fields_for :comments do |comments_form| %>
-    <%= comments_form.input :content %>
-  <% end %>
-  <%= f.submit 'add' %>
+<div class="info">
+  <%= @video.title %>
+  <%= @video.description %>
+</div>
+
+<div class="comments">
+  <div class="add-comment">
+    <div class="comment-top">
+      <i class="fa-solid fa-plus fa-xl"></i>
+      <p>comments</p>
+    </div>
+    <%= simple_form_for([@video, @video_comment]) do |f| %>
+      <%= f.simple_fields_for :comments do |comments_form| %>
+        <%= comments_form.input :content, label: false, as: :text %>
+      <% end %>
+      <%= f.submit '+', class: 'submit-btn' %>
+    <% end %>
+  </div>
+  <ul>
+    <% @video.video_comments.each do |video_comment| %>
+      <li>
+        <div class="comment-username">
+          <div>
+            <i class="fa-regular fa-circle fa-lg"></i>
+            <%= video_comment.comment.user.username %>
+          </div>
+          <div>
+            <%= link_to video_comment_path(video_comment), data: {turbo_method: :delete}  do %>
+              <i class="fa-solid fa-trash fa-sm"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="comment-content">
+          <%= video_comment.comment.content %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="report">
+<%= link_to new_video_video_report_path(@video) do %>
+  <p><i class="fa-solid fa-circle-exclamation fa-lg"></i> report</p>
 <% end %>
+</div>

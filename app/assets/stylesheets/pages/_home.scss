@@ -3,6 +3,10 @@ $black: #1C1C17;
 $yellow: #F5FF6D;
 
 @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+  img{
+    width:30px;
+    height:30px;
+  }
   .container {
     height: 100vh;
     padding: 0;
@@ -37,13 +41,29 @@ $yellow: #F5FF6D;
     }
 
     .gear {
-      background-color: $yellow;
+      // background-color: $yellow;
       height: 16px;
       width: 16px;
       margin: 0 10px;
       margin-top: 25%;
+      animation-name: spin;
+      animation-duration: 3000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
 
+    @keyframes spin {
+      from {
+          transform:rotate(0deg);
+      }
+      to {
+          transform:rotate(360deg);
+      }
+  }
+
+    .fa-gear{
+      font-size:20px;
+    }
     p {
       text-transform: uppercase;
       margin-bottom: 0;

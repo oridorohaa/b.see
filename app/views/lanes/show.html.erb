@@ -1,33 +1,85 @@
-<%= @lane.street_name %><br>
-<%= @lane.start_point %><br>
-<%= @lane.end_point %><br>
-<%= @lane.drescription %><br>
-<%= link_to "back", lanes_path %>
-<%= link_to "menu", menu_path %>
-<%= link_to "edit",  edit_lane_path(@lane) %> <br>
-<%= link_to "like",  lane_lane_likes_path(@lane), data: {turbo_method: :post} %><br>
-<%= link_to "unlike",  lane_lane_like_path(@lane), data: {turbo_method: :delete} %><br>
-<%= link_to "delete", lane_path(@lane), data:{turbo_method: :delete} %><br>
-<%= link_to "report", new_lane_lane_report_path(@lane) %>
+<div class="navbar">
+  <div class="navbar-section">
+    <%= link_to lanes_path, class: "button" do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <div class="actions">
+      <i class="fa-solid fa-bars fa-xl"></i>
+      <div class="actions-dropdown">
+        <%= link_to edit_lane_path(@lane), class: "button" do %>
+          <i class="fa-solid fa-pencil fa-xl"></i>
+        <% end %>
+        <%= link_to lane_path(@lane), data: {turbo_method: :delete}, class: "button"  do %>
+          <i class="fa-solid fa-trash fa-xl"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="heart">
+    <% unless @lane.has_user_liked?(current_user) %>
+      <%= link_to lane_lane_likes_path(@lane), data: {turbo_method: :post}  do %>
+        <i class="fa-regular fa-heart fa-xl"></i>
+      <% end %>
+    <% else %>
+      <%= link_to lane_lane_like_path(@lane), data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-heart fa-xl"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-<% if @lane.photos.attached? %>
-  <% @lane.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<div class="photos">
+  <% if @lane.photos.attached? %>
+    <% @lane.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<ul>
-  <% @lane.lane_comments.each do |lane_comment| %>
-    <li>
-      <%= lane_comment.comment.content %>
-      <%= link_to 'delete', lane_lane_comment_path(lane_comment), data: {turbo_method: :delete} %>
-    </li>
-  <% end %>
-</ul>
+<div class="info">
+  <%= @lane.street_name %>
+  <%= @lane.drescription %>
+</div>
 
-<%= simple_form_for([@lane, @lane_comment]) do |f| %>
-  <%= f.simple_fields_for :comments do |comments_form| %>
-    <%= comments_form.input :content %>
+
+
+<div class="comments">
+  <div class="add-comment">
+    <div class="comment-top">
+      <i class="fa-solid fa-plus fa-xl"></i>
+      <p>comments</p>
+    </div>
+    <%= simple_form_for([@lane, @lane_comment]) do |f| %>
+      <%= f.simple_fields_for :comments do |comments_form| %>
+        <%= comments_form.input :content, label: false, as: :text %>
+      <% end %>
+      <%= f.submit '+', class: 'submit-btn' %>
+    <% end %>
+  </div>
+  <ul>
+    <% @lane.lane_comments.each do |lane_comment| %>
+      <li>
+        <div class="comment-username">
+          <div>
+            <i class="fa-regular fa-circle fa-lg"></i>
+            <%= lane_comment.comment.user.username %>
+          </div>
+          <div>
+            <%= link_to lane_comment_path(lane_comment), data: {turbo_method: :delete}  do %>
+              <i class="fa-solid fa-trash fa-sm"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="comment-content">
+          <%= lane_comment.comment.content %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="report">
+  <%= link_to new_lane_lane_report_path(@lane) do %>
+    <p><i class="fa-solid fa-triangle-exclamation fa-xl"></i></i> report</p>
   <% end %>
-  <%= f.submit 'add' %>
-<% end %>
+</div>

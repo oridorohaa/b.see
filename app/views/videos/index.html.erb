@@ -1,14 +1,219 @@
-<%= link_to "add video", new_video_path %>
-<% @videos.each do |video| %>
-  <div class="video-container">
-    <a href="/videos/<%=video.id%>"><%= video.title %></a> <br>
-    <%= video.description %><br>
-  </div>
-<% end %>
+<div class="video-search">
+  <%= form_with url: videos_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "search..."
+    %>
+    <%= submit_tag "search", class: "search-btn" %>
+  <% end %>
+</div>
 
+<div class="video-body" data-controller="filter-videos">
+  <div class="dropdowns">
+    <div class="filter-dropdown">
+      <button class="btn" data-action="click->filter-videos#active">filter</button>
+        <ul>
+          <li>
+            <%= link_to "maintenance", tagged_path(tag: "maintenance"), class: 'tag' %>
+          </li>
+          <li>
+            <%= link_to "repair", tagged_path(tag: "repair"), class: 'tag' %>
+          </li>
+          <li>
+            <%= link_to "styling", tagged_path(tag: "styling"), class: 'tag' %>
+          </li>
+          <li>
+            <%= link_to "other", tagged_path(tag: "other"), class: 'tag' %>
+          </li>
+        </ul>
+    </div>
+    <div class="order-dropdown">
+      <button class="btn" data-action="click->filter-videos#active">order</button>
+        <ul>
+          <li>
+            <button data-action="click->filter-videos#recent">most recent</button>
+          </li>
+          <li>
+            <button data-action="click->filter-videos#liked">most liked</button>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  <%= render "videos/video_list", videos: @videos %>
+
+  <div class="buttons" data-filter-videos-target="buttons">
+    <%= link_to new_video_path, class: 'button' do %>
+      <i class="fa-solid fa-plus fa-xl"></i>
+    <% end %>
+    <%= link_to menu_path, class: 'button' do %>
+      <i class="fa-solid fa-house fa-xl"></i>
+    <% end %>
+  </div>
+</div>
 
 <style>
+body {
+  overflow-y: scroll;
+}
+
+.video-list {
+  border: 1px solid #F5FF6D;
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: all .5s ease;
+}
+
 .video-container{
-  border:1px solid black;
+  background-color: #47473B;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.video {
+  margin: 15px;
+  width: 50%;
+}
+
+.video-info {
+  margin: 15px;
+  color: #E5E2DA;
+  overflow-y: scroll;
+}
+
+.video-info a {
+  text-decoration: none;
+  color: #E5E2DA;
+}
+
+.video-info p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.buttons {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px 10px;
+  transition: all .5s ease;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.btn {
+  color: #F5FF6D;
+  border: 1px solid #F5FF6D;
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  background: none;
+}
+
+.active {
+  background-color: #F5FF6D;
+  color: #1C1C17;
+}
+
+.video-search {
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 0;
+}
+
+.form-control {
+  background-color: #1C1C17;
+  border: 1px solid #F5FF6D;
+  border-radius: 10px 0 0 10px;
+  color: #E5E2DA;
+}
+
+.form-control:focus {
+  background: none;
+  color: #E5E2DA;
+}
+
+.search-btn {
+  color: #1C1C17;
+  background: #F5FF6D;
+  border: 1px solid #F5FF6D;
+  border-radius: 0 10px 10px 0;
+}
+
+.video-body {
+  position: relative;
+}
+
+.filter-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  margin-left: -17.5%;
+  top: 120%;
+  height: 0;
+  overflow-y: hidden;
+  transition: all .5s ease;
+}
+
+.filter-dropdown:focus-within ul {
+  height: 35px;
+  z-index: 2;
+}
+
+.order-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  width: 80%;
+  margin-left: -47%;
+  top: 120%;
+  height: 0;
+  overflow-y: hidden;
+  transition: all .5s ease;
+}
+
+.order-dropdown:focus-within ul {
+  height: 35px;
+  z-index: 2;
+}
+
+.order-dropdown button {
+  border: 1px solid #F5FF6D;
+  color: #F5FF6D;
+  background: none;
+  border-radius: 10px;
+}
+
+.tag {
+  text-decoration: none;
+  color: #F5FF6D;
+  padding: 5px;
+  border: 1px solid #F5FF6D;
+  border-radius: 10px;
+  margin: 5px;
 }
 </style>

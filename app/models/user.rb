@@ -4,12 +4,16 @@ class User < ApplicationRecord
 
   has_many :comments
 
-  has_many :likes
+  has_many :lane_likes
+  has_many :shop_likes
+  has_many :bike_rack_likes
+  has_many :video_likes
+
   has_many :bike_racks
   has_many :lanes
   has_many :shops
   has_many :videos
-  
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

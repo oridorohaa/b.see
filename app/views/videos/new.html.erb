@@ -1,6 +1,80 @@
+<div class="header-icon">
+  <i class="fa-solid fa-video fa-3x"></i>
+</div>
+
+
 <%= simple_form_for(@video) do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :video, as: :file %>
-<%= f.submit "add video" %>
+<%= f.input :title, label: false, placeholder: 'title...' %>
+<%= f.input :description, label: false, placeholder: 'description...' %>
+<%= f.input :video, as: :file, label: false %>
+<%= f.input :tag_list, as: :check_boxes,
+            collection: [ "maintenance", "repair", "styling", "other" ],
+            class: "tag-selector",
+            item_wrapper_class: 'tag-item' %>
+<%= f.submit "add", class: 'add-video-btn' %>
 <% end %>
+
+<style>
+  .form-control {
+    width: 80%;
+    margin: 20px auto;
+    background: none;
+    color: #E5E2DA;
+    border: 1px solid #F5FF6D;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .header-icon {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  legend {
+    display: none;
+  }
+
+  .video_tag_list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  /* .check_boxes {
+    position: absolute;
+    transform: scale(0);
+  } */
+
+  .check_boxes + label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: none;
+    color: #E5E2DA;
+    border: 1px solid #F5FF6D;
+    margin-bottom: 20px;
+  }
+
+  .check_boxes:checked + label {
+    background-color: #F5FF6D;
+    color: #1C1C17;
+  }
+
+  .add-video-btn {
+    border: none;
+    background-color: #F5FF6D;
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #video_video {
+    padding: 15px 5px;
+  }
+</style>

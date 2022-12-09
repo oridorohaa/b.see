@@ -42,19 +42,22 @@
   <%= @bike_rack.description %>
 </div>
 
-<div class="comments">
-  <p>comments</p>
-  <ul>
-    <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>
-      <li>
-        <%= bike_rack_comment.comment.content %>
-        <%= link_to 'delete', bike_rack_bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete} %>
-      </li>
+<% if @bike_rack.bike_rack_reports.count > 0 %>
+  <div class="reports">
+    <% @bike_rack.bike_rack_reports.each do |report| %>
+      <% r = Report.find(report.report_id) %>
+      <%= r.content %><br>
     <% end %>
-  </ul>
+  </div>
+<% end %>
 
+
+<div class="comments">
   <div class="add-comment">
-    <i class="fa-solid fa-plus fa-xl"></i>
+    <div class="comment-top">
+      <i class="fa-solid fa-plus fa-xl"></i>
+      <p>comments</p>
+    </div>
     <%= simple_form_for([@bike_rack, @bike_rack_comment]) do |f| %>
       <%= f.simple_fields_for :comments do |comments_form| %>
         <%= comments_form.input :content, label: false, as: :text %>
@@ -62,6 +65,26 @@
       <%= f.submit '+', class: 'submit-btn' %>
     <% end %>
   </div>
+  <ul>
+    <% @bike_rack.bike_rack_comments.each do |bike_rack_comment| %>
+      <li>
+        <div class="comment-username">
+          <div>
+            <i class="fa-regular fa-circle fa-lg"></i>
+            <%= bike_rack_comment.comment.user.username %>
+          </div>
+          <div>
+            <%= link_to bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete}  do %>
+              <i class="fa-solid fa-trash fa-sm"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="comment-content">
+          <%= bike_rack_comment.comment.content %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="report">
