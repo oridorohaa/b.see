@@ -9,7 +9,7 @@
      <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8&callback=initMap&libraries=places&v=weekly" defer="defer">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8&libraries=drawing,places&callback=initMap&v=weekly" defer="defer">
     </script>
     <script
       src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'>
@@ -25,8 +25,6 @@
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
   </head>
   <body>
-
-
     <% unless controller_name = "pages" %>
       <%= render "shared/navbar" %>
       <p class="notice"><%= notice %></p>
