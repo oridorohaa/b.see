@@ -3,10 +3,18 @@
 <%= link_to menu_path do  %>
 <i class="fa-solid fa-house"></i>
 <% end %>
+<div class="nav-div" data-controller='search-address' >
+  <input type="text" class="search-input" placeholder="search location...">
+  <input type="text" class ="lat" style="display:none">
+  <input type="text" class ="long" style="display:none">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+<div id="map" data-controller="lanes-new-google-maps" style="height:590px;"></div>
 
-<div id="map" data-controller="lanes-map" data-lanes-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<%# <div id="map" data-controller="lanes-map" data-lanes-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div> %>
 
 <%= simple_form_for(@lane) do |f| %>
+  <%= f.input :coords%>
   <%= f.input :drescription %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "create lane", class:"submit" %>

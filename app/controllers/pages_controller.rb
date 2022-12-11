@@ -4,6 +4,16 @@ class PagesController < ApplicationController
   def home
   end
 
+  def set_lines
+
+  end
+  
+  def get_lines
+    lines =  db.getLines()
+
+    render :json => lines
+  end
+
   def profile
   end
 end

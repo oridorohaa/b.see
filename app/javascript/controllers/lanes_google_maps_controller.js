@@ -14,29 +14,23 @@ export default class extends Controller {
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
 
-
     let bikeLayer = new google.maps.BicyclingLayer();
     bikeLayer.setMap(map);
 
+    lanes_data.forEach((lane)=>{
 
-    var axios = require('axios');
+      const flightPath = new google.maps.Polyline({
+        path: lane,
+        geodesic: true,
+        strokeColor: "#0DFB5E",
+        strokeOpacity: 2.0,
+        strokeWeight: 3,
+      });
 
-    var config = {
-      method: 'get',
-      url: 'https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyBKClGaUcZWanoyZGta_wrGZh8t-5q6pu8',
-      headers: { "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
-    }
-    };
-
-    axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
+      flightPath.setMap(map);
     })
-    .catch(function (error) {
-      console.log(error);
-    });
+
+
   }
 
 

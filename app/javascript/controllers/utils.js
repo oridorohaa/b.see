@@ -161,6 +161,8 @@ const sharedMapsInit = function(){
       });
     console.log(map, "before init")
     initAuto(map)
+    window.map = map;
+    console.log(window.map)
     return map
 
   }
