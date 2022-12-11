@@ -1,15 +1,15 @@
+<div data-controller='address-input' class="container">
 
   <%= link_to menu_path do  %>
   <i class="fa-solid fa-house"></i>
   <% end %>
-<div data-controller='address-input' class="container">
 <%= simple_form_for(@bike_rack) do |f| %>
   <%= f.input :address  %>
   <%= f.input :description %>
   <%= f.input :latitude%>
   <%= f.input :longitude %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "add rack", class: "rack-btn" %>
+  <%= f.submit "add rack", class: "submit" %>
 <% end %>
 </div>
 
@@ -53,8 +53,9 @@ input[type="file"]::file-selector-button:hover {
 .fa-house{
   position:absolute;
   font-size:30px;
-  left: 12%;
+  left: 7%;
   top: 9%;
+  color:yellow;
 }
 
 .submit{
@@ -64,6 +65,7 @@ input[type="file"]::file-selector-button:hover {
   border-radius:25px;
 }
 .container{
+  margin-left: 26px;
   position:relative;
   display:flex;
   flex-direction:column;
