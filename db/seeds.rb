@@ -12,7 +12,7 @@ user = User.create(username: 'Joseph', email: 'joseph@email.com', password: '123
 
 BikeRack.destroy_all
 
-file = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida copy 2.jpg")
+file = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
                     description: "Tres biciestacionamientos tipo cuadro",
