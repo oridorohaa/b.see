@@ -134,126 +134,126 @@ shop.save
 
 file12 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "People for Bikes",
-             address: "Zacatecas 55, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
-             hours: "Monday to Saturday 10AM-8PM Sunday 10AM-5PM",
-             phone_number: "+525552641457",
-             description: "Delivery In-store pick-up In-store shopping Same-day delivery",
-             website: "http://pfb.com.mx/",
-             latitude: 19.41670,
-             longitude: -99.15700,
-             user: user)
+shop = Shop.new(name: "People for Bikes",
+                address: "Zacatecas 55, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
+                hours: "Monday to Saturday 10AM-8PM Sunday 10AM-5PM",
+                phone_number: "+525552641457",
+                description: "Delivery In-store pick-up In-store shopping Same-day delivery",
+                website: "http://pfb.com.mx/",
+                latitude: 19.41670,
+                longitude: -99.15700,
+                user: user)
 shop.photos.attach(io: file12, filename: "shop12", content_type: "images/jpg")
 shop.save
 
 file13 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Chop Chop Bikes",
-             address: "Amsterdam 282, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
-             hours: "Monday to Sunday 11AM-8PM",
-             phone_number: "+525519525376",
-             description: "In-store pick-up In-store shopping Free Wifi",
-             website: "http://www.chopchopbikes.com/",
-             latitude: 19.41297,
-             longitude: -99.16746,
-             user: user)
+shop = Shop.new(name: "Chop Chop Bikes",
+                address: "Amsterdam 282, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
+                hours: "Monday to Sunday 11AM-8PM",
+                phone_number: "+525519525376",
+                description: "In-store pick-up In-store shopping Free Wifi",
+                website: "http://www.chopchopbikes.com/",
+                latitude: 19.41297,
+                longitude: -99.16746,
+                user: user)
 shop.photos.attach(io: file13, filename: "shop13", content_type: "images/jpg")
 shop.save
 
 file14 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Bikedemonium Workshop",
-             address: "C. Villahermosa 29, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
-             hours: "Monday to Saturday 11:30AM-8:30PM Sunday Closed",
-             phone_number: "+525520690448",
-             description: "Bicycle repair shop",
-             website: "http://instagram.com/bikedemoniumworkshop",
-             latitude: 19.40499,
-             longitude: -99.16987,
-             user: user)
+shop = Shop.new(name: "Bikedemonium Workshop",
+                address: "C. Villahermosa 29, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
+                hours: "Monday to Saturday 11:30AM-8:30PM Sunday Closed",
+                phone_number: "+525520690448",
+                description: "Bicycle repair shop",
+                website: "http://instagram.com/bikedemoniumworkshop",
+                latitude: 19.40499,
+                longitude: -99.16987,
+                user: user)
 shop.photos.attach(io: file14, filename: "shop14", content_type: "images/jpg")
 shop.save
 
 file15 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Pedal and Crank Bike Shop",
-             address: "Gobernador José María Tornel 44, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX",
-             hours: "Tuesday 9AM-7PM Monday Closed",
-             phone_number: "+525562736707",
-             description: "Delivery In-store pick-up In-store shopping Same-day delivery FreeWifi Debit cards NFC mobile payments",
-             website: "None",
-             latitude: 19.41265,
-             longitude: -99.18469,
-             user: user)
+shop = Shop.new(name: "Pedal and Crank Bike Shop",
+                address: "Gobernador José María Tornel 44, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX",
+                hours: "Tuesday 9AM-7PM Monday Closed",
+                phone_number: "+525562736707",
+                description: "Delivery In-store pick-up In-store shopping Same-day delivery FreeWifi Debit cards NFC mobile payments",
+                website: "None",
+                latitude: 19.41265,
+                longitude: -99.18469,
+                user: user)
 shop.photos.attach(io: file15, filename: "shop15", content_type: "images/jpg")
 shop.save
 
 file16 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "BICIMANIACOS BIKE STORE",
-             address: "Cumbres de Maltrata 160, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
-             hours: "Monday to Saturday 10AM-8PM Sunday Closed",
-             phone_number: "+525555364651",
-             description: "Delivery In-store pick-up In-store shopping Same-day delivery Gender-neutral toilets Free WiFi",
-             website: "https://www.facebook.com/bicimaniacos.bikestore/",
-             latitude: 19.39548,
-             longitude: -99.15480,
-             user: user)
+shop = Shop.new(name: "BICIMANIACOS BIKE STORE",
+                address: "Cumbres de Maltrata 160, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
+                hours: "Monday to Saturday 10AM-8PM Sunday Closed",
+                phone_number: "+525555364651",
+                description: "Delivery In-store pick-up In-store shopping Same-day delivery Gender-neutral toilets Free WiFi",
+                website: "https://www.facebook.com/bicimaniacos.bikestore/",
+                latitude: 19.39548,
+                longitude: -99.15480,
+                user: user)
 shop.photos.attach(io: file16, filename: "shop16", content_type: "images/jpg")
 shop.save
 
 file17 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "LBU Bike Store Patriotismo",
-             address: "Av. Patriotismo 384, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
-             hours: "Monday to Saturday 11AM-6PM Sunday 10AM-3PM",
-             phone_number: "+525552711717",
-             description: "In-store shopping In-store pick-up Delivery Same-day delivery Wheelchair-accessible",
-             website: "http://www.lbushop.mx/",
-             latitude: 19.39058,
-             longitude: -99.18256,
-             user: user)
+shop = Shop.new(name: "LBU Bike Store Patriotismo",
+                address: "Av. Patriotismo 384, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
+                hours: "Monday to Saturday 11AM-6PM Sunday 10AM-3PM",
+                phone_number: "+525552711717",
+                description: "In-store shopping In-store pick-up Delivery Same-day delivery Wheelchair-accessible",
+                website: "http://www.lbushop.mx/",
+                latitude: 19.39058,
+                longitude: -99.18256,
+                user: user)
 shop.photos.attach(io: file17, filename: "shop17", content_type: "images/jpg")
 shop.save
 
 file18 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Group Bcl Imports",
-             address: "C. Carmen 97, Nativitas, Benito Juárez, 03500 Ciudad de México, CDMX",
-             hours: "",
-             phone_number: "Monday to Friday 10AM-6:30PM Saturday 10AM-2:30PM Sunday Closed",
-             description: "In-store shopping In-store pick-up Delivery Wheelchair accessible",
-             website: "None",
-             latitude: 19.38093,
-             longitude: -99.13548,
-             user: user)
+shop = Shop.new(name: "Group Bcl Imports",
+                address: "C. Carmen 97, Nativitas, Benito Juárez, 03500 Ciudad de México, CDMX",
+                hours: "",
+                phone_number: "Monday to Friday 10AM-6:30PM Saturday 10AM-2:30PM Sunday Closed",
+                description: "In-store shopping In-store pick-up Delivery Wheelchair accessible",
+                website: "None",
+                latitude: 19.38093,
+                longitude: -99.13548,
+                user: user)
 shop.photos.attach(io: file18, filename: "shop18", content_type: "images/jpg")
 shop.save
 
-file19= URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
+file19 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Bike Urban Reform",
-             address: "Av. Morelos 70, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
-             hours: "Monday to Saturday 11AM-6PM Sunday 10AM-3PM",
-             phone_number: "+525555350240",
-             description: "Identifies as women-owned Gender-neutral toilets LGBTQ+friendly Transgender safe space",
-             website: "http://www.lbushop.mx/",
-             latitude: 19.43277,
-             longitude: -99.15174,
-             user: user,)
+shop = Shop.new(name: "Bike Urban Reform",
+                address: "Av. Morelos 70, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
+                hours: "Monday to Saturday 11AM-6PM Sunday 10AM-3PM",
+                phone_number: "+525555350240",
+                description: "Identifies as women-owned Gender-neutral toilets LGBTQ+friendly Transgender safe space",
+                website: "http://www.lbushop.mx/",
+                latitude: 19.43277,
+                longitude: -99.15174,
+                user: user,)
 shop.photos.attach(io: file19, filename: "shop19", content_type: "images/jpg")
 shop.save
 
 file20 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
-Shop.create!(name: "Hippixi Bikes",
-             address: "Lamartine 607, Polanco, Bosque de Chapultepec I Secc, Miguel Hidalgo, 11580 Ciudad de México, CDMX",
-             hours: "Monday to Thursday 11AM-7PM Friday Closed Saturday and Sunday 9AM-6PM",
-             phone_number: "+525585006129",
-             description: "",
-             website: "In-store pick-up Delivery Same-day delivery Free ",
-             latitude: 19.42918,
-             longitude: -99.18985,
-             user: user)
+shop = Shop.new(name: "Hippixi Bikes",
+                address: "Lamartine 607, Polanco, Bosque de Chapultepec I Secc, Miguel Hidalgo, 11580 Ciudad de México, CDMX",
+                hours: "Monday to Thursday 11AM-7PM Friday Closed Saturday and Sunday 9AM-6PM",
+                phone_number: "+525585006129",
+                description: "",
+                website: "In-store pick-up Delivery Same-day delivery Free ",
+                latitude: 19.42918,
+                longitude: -99.18985,
+                user: user)
 shop.photos.attach(io: file20, filename: "shop20", content_type: "images/jpg")
 shop.save
