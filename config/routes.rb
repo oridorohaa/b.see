@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   root to: "pages#home"
   get "/menu", to: "pages#menu"
+  get "/data", to: "pages#data"
   get "/profile", to: "pages#profile"
   get '/tagged', to: "videos#tagged", as: :tagged
 

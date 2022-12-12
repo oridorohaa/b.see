@@ -12,8 +12,8 @@
 <div class="video-body" data-controller="filter-videos">
   <div class="dropdowns">
     <div class="filter-dropdown">
-      <button class="btn" data-action="click->filter-videos#active">filter</button>
-        <ul>
+      <button class="btn" data-action="click->filter-videos#active" data-filter-videos-target="filter">filter</button>
+        <ul data-filter-videos-target="filterdropdown">
           <li>
             <%= link_to "maintenance", tagged_path(tag: "maintenance"), class: 'tag' %>
           </li>
@@ -29,8 +29,8 @@
         </ul>
     </div>
     <div class="order-dropdown">
-      <button class="btn" data-action="click->filter-videos#active">order</button>
-        <ul>
+      <button class="btn" data-action="click->filter-videos#active" data-filter-videos-target="order">order</button>
+        <ul data-filter-videos-target="orderdropdown">
           <li>
             <button data-action="click->filter-videos#recent">most recent</button>
           </li>
@@ -98,7 +98,7 @@ body {
 }
 
 .buttons {
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -125,7 +125,7 @@ body {
   background: none;
 }
 
-.active {
+button:target {
   background-color: #F5FF6D;
   color: #1C1C17;
 }
@@ -174,10 +174,10 @@ body {
   transition: all .5s ease;
 }
 
-.filter-dropdown:focus-within ul {
+/* .filter-dropdown:focus-within ul {
   height: 35px;
   z-index: 2;
-}
+} */
 
 .order-dropdown ul {
   list-style: none;
