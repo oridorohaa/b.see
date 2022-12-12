@@ -9,25 +9,20 @@ export default class extends Controller {
   }
 
   active(e) {
-    e.currentTarget.classList.toggle("active");
-    if (e.currentTarget.classList.contains('active')) {
+    if (e.currentTarget === filterTarget) {
+      this.filterTarget.classList.add('active')
+      this.orderdropdownTarget.classList.remove('active')
+    } else if (e.currentTarget === orderTarget) {
+      this.orderTarget.classList.add('active')
+      this.filterTarget.classList.remove('active')
+    }
+
+    if (this.filterTarget.classList.contains('active') && this.orderTarget.classList.contains('active')) {
       this.listTarget.style.transform = "translateY(35px)";
       this.buttonsTarget.style.transform = "translateY(30px)";
     } else {
       this.listTarget.style.transform = "translateY(-5px)";
       this.buttonsTarget.style.transform = "translateY(0px)";
-    }
-
-    if (this.filterTarget.classList.contains('active')) {
-      this.filterdropdownTarget.style.height = '35px';
-    } else {
-      this.filterdropdownTarget.style.height = 0;
-    }
-
-    if (this.orderTarget.classList.contains('active')) {
-      this.orderdropdownTarget.style.height = '35px';
-    } else {
-      this.orderdropdownTarget.style.height = 0;
     }
   }
 

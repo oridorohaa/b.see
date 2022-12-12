@@ -58,13 +58,6 @@ export default class extends Controller {
       console.log(coords)
       lane_coords_input.value = JSON.stringify(coords)
       console.log(lane_coords_input.value)
-
-
     });
-
   }
-
-
-
-
 }

@@ -18,28 +18,52 @@
   <div class="likes">
     <p>my likes</p>
     <ul>
-      <li>racks</li>
-        <% current_user.bike_rack_likes.each do |rack_like| %>
-          <% bike_rack = BikeRack.find(rack_like.bike_rack_id) %>
-          <a href="/bike_racks/<%=rack_like.bike_rack_id%>"><%= bike_rack.address %></a><br>
-        <% end %>
-      <li>lanes</li>
-        <% current_user.lane_likes.each do |lane_like| %>
-          <% lane = Lane.find(lane_like.lane_id) %>
-          <a href="/lanes/<%=lane_like.lane_id%>"><%= lane.address %></a><br>
-        <% end %>
-      <li>shops</li>
+      <li data-controller="liked-racks-map">
+        <button class='btn' data-action="click->liked-racks-map#displayMap">racks <i class="fa-solid fa-plus"></i></button>
+        <div data-liked-racks-map-target="map" id="map"></div>
+      </li>
+      <li data-controller="liked-lanes-map">
+        <button class='btn' data-action="click->liked-lanes-map#displayMap">lanes <i class="fa-solid fa-plus"></i></button>
+        <%# <% <div id="map" data-controller="liked-lanes-map" style="height:590px;"></div> %>
+      </li>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#shopDropdown" data-like-dropdowns-target="shopbtn">shops <i class="fa-solid fa-plus"></i></button>
+        <div class="liked-cards" data-like-dropdowns-target="shopdropdown">
           <% current_user.shop_likes.each do |shop_like| %>
             <% shop = Shop.find(shop_like.shop_id) %>
-            <a href="/shops/<%=shop_like.shop_id%>"><%= shop.address %></a><br>
-        <% end %>
-      <li>videos</li>
-          <% current_user.video_likes.each do |video_like| %>
-            <% video = Video.find(video_like.video_id) %>
-            <a href="/videos/<%=video_like.video_id%>"><%= video.title %></a><br>
-        <% end %>
+            <div class="liked-card">
+              <a href="shops/<%=shop.id%>"><%= shop.name %></a>
+              <p><%= shop.address %></p>
+            </div>
+          <% end %>
+        </div>
+      </li>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus"></i></button>
+          <div class="liked-cards" data-like-dropdowns-target="videodropdown">
+            <% current_user.video_likes.each do |video_like| %>
+              <% video = Video.find(video_like.video_id) %>
+              <div class="liked-card">
+                <a href="/videos/<%=video_like.video_id%>"><%= video.title %></a><br>
+              </div>
+            <% end %>
+          </div>
+      </li>
     </ul>
   </div>
   <div class="user-comments"></div>
   <div class="videos"></div>
 </div>
+
+<script>
+  liked_racks_data = {
+    <% current_user.bike_rack_likes.each do |rack_like| %>
+      <% bike_rack = BikeRack.find(rack_like.bike_rack_id) %>
+      '<%= bike_rack.id %>': {
+        'lat': '<%=bike_rack.latitude%>',
+        'long': '<%=bike_rack.longitude%>',
+        'status': '<%=bike_rack.status%>'
+      },
+    <% end %>
+  }
+</script>

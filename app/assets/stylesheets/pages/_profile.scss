@@ -82,3 +82,35 @@ $grey: #47473B;
     color:$yellow;
   }
 }
+
+#map {
+  transition: all .5s ease;
+}
+
+.liked-cards {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 0;
+  transition: all .5s ease;
+
+  .liked-card {
+    background: $grey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  p {
+    text-transform: lowercase;
+    font-weight: lighter;
+    padding: 0;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-size: 15px;
+  }
+
+  a {
+    padding: 0;
+  }
+}

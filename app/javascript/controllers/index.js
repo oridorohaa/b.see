@@ -16,11 +16,20 @@ application.register("hello", HelloController)
 import LanesGoogleMapsController from "./lanes_google_maps_controller"
 application.register("lanes-google-maps", LanesGoogleMapsController)
 
-import LanesMapController from "./lanes_map_controller"
-application.register("lanes-map", LanesMapController)
+import LanesNewGoogleMapsController from "./lanes_new_google_maps_controller"
+application.register("lanes-new-google-maps", LanesNewGoogleMapsController)
 
-import LanesMapDisplayController from "./lanes_map_display_controller"
-application.register("lanes-map-display", LanesMapDisplayController)
+import LikeDropdownsController from "./like_dropdowns_controller"
+application.register("like-dropdowns", LikeDropdownsController)
+
+import LikedLanesMapController from "./liked_lanes_map_controller"
+application.register("liked-lanes-map", LikedLanesMapController)
+
+import LikedRacksMapController from "./liked_racks_map_controller"
+application.register("liked-racks-map", LikedRacksMapController)
+
+import LikedShopsMapController from "./liked_shops_map_controller"
+application.register("liked-shops-map", LikedShopsMapController)
 
 import RacksGoogleMapsController from "./racks_google_maps_controller"
 application.register("racks-google-maps", RacksGoogleMapsController)
@@ -30,7 +39,3 @@ application.register("search-address", SearchAddressController)
 
 import ShopsGoogleMapsController from "./shops_google_maps_controller"
 application.register("shops-google-maps", ShopsGoogleMapsController)
-
-
-import LanesNewGoogleMapsController from "./lanes_new_google_maps_controller"
-application.register("lanes-new-google-maps", LanesNewGoogleMapsController)
