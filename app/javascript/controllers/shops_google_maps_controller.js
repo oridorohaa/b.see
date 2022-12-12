@@ -22,35 +22,19 @@ export default class extends Controller {
         console.log("map")
         console.log(map)
         console.log( parseFloat(d.lat))
-        if(d.status ==='true'){
-          let marker = new google.maps.Marker({
-            position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
-            map,
-            title:"shop",
-            url: `/shops/${shop}`,
-            icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
-            }
-          })
-          marker.setMap(map);
-          google.maps.event.addListener(marker, "click", function() {
-            window.location.href = this.url;
-          });
-        }else{
-          let marker = new google.maps.Marker({
-            position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
-            map,
-            title:"reported",
-            url: `/shops/${shop}`,
-            icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png"
-            }
-          })
-          marker.setMap(map);
-          google.maps.event.addListener(marker, "click", function() {
-            window.location.href = this.url;
-          });
-        }
+        let marker = new google.maps.Marker({
+          position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
+          map,
+          title:"shop",
+          url: `/shops/${shop}`,
+          icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+          }
+        })
+        marker.setMap(map);
+        google.maps.event.addListener(marker, "click", function() {
+          window.location.href = this.url;
+        });
       }
 
     }

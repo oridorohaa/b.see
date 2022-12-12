@@ -7,10 +7,10 @@
   <% end %>
 </div>
 <div class="menu-container">
-  <%= link_to "Racks", bike_racks_path, class:"menu-item"%>
-  <%= link_to "Lanes", lanes_path,  class:"menu-item" %>
-  <%= link_to "Shops", shops_path,  class:"menu-item" %>
-  <%= link_to "Videos", videos_path,  class:"menu-item" %>
+  <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one"%>
+  <%= link_to "Lanes", lanes_path,  class:"menu-item", id:"two" %>
+  <%= link_to "Shops", shops_path,  class:"menu-item", id:"three" %>
+  <%= link_to "Videos", videos_path,  class:"menu-item", id:"four" %>
 </div>
 
 
@@ -51,15 +51,25 @@ body{
 
 .menu-item{
   text-decoration:none;
-  background:#F5FF6D;
-  color:black;
+  /* background:#F5FF6D; */
+  color:yellow;
   padding:35px 100px;
   font-size:25px;
-  font-weight:bold;
+  /* font-weight:bold; */
   letter-spacing:1px;
   margin-bottom:50px;
   border-radius:10px;
-  /* border: 3px solid #F5FF6D; */
+  border: 3px solid #F5FF6D;
+   text-transform: uppercase;
+}
+
+
+
+#one:hover, #two:hover, #three:hover, #four:hover{
+  background:#F5FF6D;
+  color:black;
+  font-weight:bold;
+
 
 }
 </style>

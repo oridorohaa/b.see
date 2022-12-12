@@ -42,8 +42,6 @@ export default class extends Controller {
 
   recent(e) {
     e.currentTarget.classList.toggle("active")
-    this.listTarget.style.transform = "translateY(35px)";
-    this.buttonsTarget.style.transform = "translateY(60px)";
 
     fetch('/recent', {
       headers: {"Accept": "text/plain"}
@@ -52,6 +50,8 @@ export default class extends Controller {
       .then((data) => {
         console.log(data)
         this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
       })
   }
 
@@ -65,6 +65,8 @@ export default class extends Controller {
       .then((data) => {
         console.log(data)
         this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
       })
   }
 }
