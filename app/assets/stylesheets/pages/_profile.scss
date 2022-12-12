@@ -43,7 +43,7 @@ $grey: #47473B;
   }
 }
 
-.likes {
+.likes, .user-uploads, .user-comments {
   border: 1px solid $yellow;
   width: 80%;
   margin: 20px auto;
@@ -83,8 +83,13 @@ $grey: #47473B;
   }
 }
 
+
 #map {
   transition: all .5s ease;
+}
+
+.btn {
+  color: $yellow;
 }
 
 .liked-cards {
