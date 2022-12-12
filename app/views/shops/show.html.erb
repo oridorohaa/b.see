@@ -37,10 +37,11 @@
   </div>
 </div>
 
-<div class="photos">
+<div class="photos" style="height: 300px; width: 400px;">
   <% if @shop.photos.attached? %>
     <% @shop.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 100%; ">
+      </div>
     <% end %>
   <% end %>
 </div>
