@@ -119,14 +119,20 @@ rack.save
 
 Shop.destroy_all
 
-Shop.create!(name: "Crankset Bicycle Shop (Trek Juárez)",
-             address: "Londres 40, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
-             hours: "Monday to Friday 10:30AM-7PM Saturday 10:30AM-6PM",
-             phone_number: "+525559414753",
-             description: "Delivery In-store pick-up In-store shopping Same-day delivery",
-             latitude: 19.42744,
-             longitude: -99.15946,
-             user: user)
+file11 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
+
+shop = Shop.new(name: "Crankset Bicycle Shop (Trek Juárez)",
+                address: "Londres 40, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
+                hours: "Monday to Friday 10:30AM-7PM Saturday 10:30AM-6PM",
+                phone_number: "+525559414753",
+                description: "Delivery In-store pick-up In-store shopping Same-day delivery",
+                latitude: 19.42744,
+                longitude: -99.15946,
+                user: user)
+shop.photos.attach(io: file11, filename: "shop11", content_type: "images/jpg")
+shop.save
+
+file12 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "People for Bikes",
              address: "Zacatecas 55, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
@@ -137,6 +143,10 @@ Shop.create!(name: "People for Bikes",
              latitude: 19.41670,
              longitude: -99.15700,
              user: user)
+shop.photos.attach(io: file12, filename: "shop12", content_type: "images/jpg")
+shop.save
+
+file13 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Chop Chop Bikes",
              address: "Amsterdam 282, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -147,6 +157,10 @@ Shop.create!(name: "Chop Chop Bikes",
              latitude: 19.41297,
              longitude: -99.16746,
              user: user)
+shop.photos.attach(io: file13, filename: "shop13", content_type: "images/jpg")
+shop.save
+
+file14 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Bikedemonium Workshop",
              address: "C. Villahermosa 29, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -157,6 +171,10 @@ Shop.create!(name: "Bikedemonium Workshop",
              latitude: 19.40499,
              longitude: -99.16987,
              user: user)
+shop.photos.attach(io: file14, filename: "shop14", content_type: "images/jpg")
+shop.save
+
+file15 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Pedal and Crank Bike Shop",
              address: "Gobernador José María Tornel 44, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX",
@@ -167,6 +185,10 @@ Shop.create!(name: "Pedal and Crank Bike Shop",
              latitude: 19.41265,
              longitude: -99.18469,
              user: user)
+shop.photos.attach(io: file15, filename: "shop15", content_type: "images/jpg")
+shop.save
+
+file16 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "BICIMANIACOS BIKE STORE",
              address: "Cumbres de Maltrata 160, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
@@ -177,6 +199,10 @@ Shop.create!(name: "BICIMANIACOS BIKE STORE",
              latitude: 19.39548,
              longitude: -99.15480,
              user: user)
+shop.photos.attach(io: file16, filename: "shop16", content_type: "images/jpg")
+shop.save
+
+file17 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "LBU Bike Store Patriotismo",
              address: "Av. Patriotismo 384, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
@@ -187,6 +213,10 @@ Shop.create!(name: "LBU Bike Store Patriotismo",
              latitude: 19.39058,
              longitude: -99.18256,
              user: user)
+shop.photos.attach(io: file17, filename: "shop17", content_type: "images/jpg")
+shop.save
+
+file18 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Group Bcl Imports",
              address: "C. Carmen 97, Nativitas, Benito Juárez, 03500 Ciudad de México, CDMX",
@@ -197,6 +227,10 @@ Shop.create!(name: "Group Bcl Imports",
              latitude: 19.38093,
              longitude: -99.13548,
              user: user)
+shop.photos.attach(io: file18, filename: "shop18", content_type: "images/jpg")
+shop.save
+
+file19= URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Bike Urban Reform",
              address: "Av. Morelos 70, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
@@ -207,8 +241,10 @@ Shop.create!(name: "Bike Urban Reform",
              latitude: 19.43277,
              longitude: -99.15174,
              user: user,)
+shop.photos.attach(io: file19, filename: "shop19", content_type: "images/jpg")
+shop.save
 
-
+file20 = URI.open("/Users/b.moreno/code/petroloski/b.see/app/assets/images/Biciestacionamiento U invertida.jpg")
 
 Shop.create!(name: "Hippixi Bikes",
              address: "Lamartine 607, Polanco, Bosque de Chapultepec I Secc, Miguel Hidalgo, 11580 Ciudad de México, CDMX",
@@ -219,3 +255,5 @@ Shop.create!(name: "Hippixi Bikes",
              latitude: 19.42918,
              longitude: -99.18985,
              user: user)
+shop.photos.attach(io: file20, filename: "shop20", content_type: "images/jpg")
+shop.save
