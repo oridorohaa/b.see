@@ -2,7 +2,7 @@
 $black: #1C1C17;
 $yellow: #F5FF6D;
 
-@media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+// @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   img{
     width:30px;
     height:30px;
@@ -62,7 +62,7 @@ $yellow: #F5FF6D;
   }
 
     .fa-gear{
-      font-size:20px;
+      font-size:22px;
     }
     p {
       text-transform: uppercase;
@@ -103,4 +103,4 @@ $yellow: #F5FF6D;
       text-align: center;
     }
   }
-}
+// }

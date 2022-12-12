@@ -2,7 +2,7 @@
 const sharedMapsInit = function(){
 
 
-    let mapDiv =document.getElementById("map")
+    let mapDiv = document.getElementById("map")
     let map = null
     if (typeof google !== "undefined" && mapDiv){
       const styledMapType = new google.maps.StyledMapType(
@@ -94,7 +94,6 @@ const sharedMapsInit = function(){
         center: { lat: 19.432608, lng: -99.133209 },
         zoom: 12,
       });
-      console.log(map, "TESTING")
 
       map.mapTypes.set("styled_map", styledMapType);
       map.setMapTypeId("styled_map");

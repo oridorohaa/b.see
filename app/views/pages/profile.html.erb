@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <div class="user-info">
-    <div class="avatar">
+    <div class="avatar">``
     </div>
     <div class="user-actions">
       <%= link_to "edit information", edit_user_registration_path(current_user), class:"action" %>
@@ -20,7 +20,7 @@
     <ul>
       <li data-controller="liked-racks-map">
         <button class='btn' data-action="click->liked-racks-map#displayMap">racks <i class="fa-solid fa-plus"></i></button>
-        <div data-liked-racks-map-target="map" id="map"></div>
+        <div data-liked-racks-map-target="map" id="map" style="height:0"></div>
       </li>
       <li data-controller="liked-lanes-map">
         <button class='btn' data-action="click->liked-lanes-map#displayMap">lanes <i class="fa-solid fa-plus"></i></button>
@@ -33,11 +33,14 @@
             <% shop = Shop.find(shop_like.shop_id) %>
             <div class="liked-card">
               <a href="shops/<%=shop.id%>"><%= shop.name %></a>
-              <p><%= shop.address %></p>
+              <p><%= shop.hours %></p>
             </div>
           <% end %>
         </div>
       </li>
+      <%# <li data-controller="liked-shops-map">
+        <div id="map" style="height:590px;"></div>
+      </li> %>
       <li data-controller="like-dropdowns">
         <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus"></i></button>
           <div class="liked-cards" data-like-dropdowns-target="videodropdown">
@@ -51,8 +54,12 @@
       </li>
     </ul>
   </div>
-  <div class="user-comments"></div>
-  <div class="videos"></div>
+  <div class="user-uploads">
+    <p>my uploads</p>
+  </div>
+  <div class="user-comments">
+    <p>my comments</p>
+  </div>
 </div>
 
 <script>
@@ -63,6 +70,17 @@
         'lat': '<%=bike_rack.latitude%>',
         'long': '<%=bike_rack.longitude%>',
         'status': '<%=bike_rack.status%>'
+      },
+    <% end %>
+  }
+
+  liked_shops_data = {
+    <% current_user.shop_likes.each do |shop_like| %>
+      <% shop = Shop.find(shop_like.shop_id) %>
+      '<%= shop.id %>': {
+        'lat': '<%=shop.latitude%>',
+        'long': '<%=shop.longitude%>',
+        'status': '<%=shop.status%>'
       },
     <% end %>
   }
