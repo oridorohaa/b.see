@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="edit-user">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -15,9 +15,13 @@
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: false,
+                placeholder: "Password confirmation",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
+                label: false,
+                placeholder: "Current password",
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
@@ -28,8 +32,78 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p class="link">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+  <%= link_to :back do %>
+    <div class="fa-solid fa-circle-chevron-left fa-xl">
+    </div>
+  <% end %>
+
+<style>
+
+.edit-user {
+  color: #f5ff6d;
+  margin: 25px;
+}
+
+.simple_form {
+  color: #F5FF6D;
+  border-radius: 10px;
+  background: none;
+  border: 1px solid #F5FF6D;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+.form-control {
+  background-color: #1C1C17 !important;
+  border-radius: 5px;
+  border-color: #F5FF6D;
+  color: white !important;
+  margin-bottom: 10px;
+}
+
+#user_password_confirmation {
+  margin-bottom: 45px;
+}
+
+.btn {
+  color: #f5ff6d;
+}
+
+.cancel-account {
+  color: #f5ff6d;
+  margin: -10px;
+  padding: 2rem;
+}
+
+.link {
+  color: #f5ff6d;
+  margin: -10px;
+  padding: 4rem
+}
+
+.fa-solid {
+  width: 180px;
+  background: #1C1C17;
+  padding: 26px 20px;
+  text-decoration: none;
+  color: #F5FF6D;
+}
+
+.link a {
+  text-decoration: none;
+  color: #F5FF6D;
+  border: 1px solid#1C1C17;
+  border-radius: 13px;
+  letter-spacing: 0px;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+
+</style>
