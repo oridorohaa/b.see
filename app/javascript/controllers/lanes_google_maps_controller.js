@@ -22,7 +22,7 @@ export default class extends Controller {
       const flightPath = new google.maps.Polyline({
         path: lane,
         geodesic: true,
-        strokeColor: "#0DFB5E",
+        strokeColor: "#F2FF3E",
         strokeOpacity: 2.0,
         strokeWeight: 3,
       });
