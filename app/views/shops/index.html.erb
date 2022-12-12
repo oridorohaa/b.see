@@ -7,7 +7,9 @@
 <div id="map" data-controller="shops-google-maps" style="height:590px;"></div>
 
 <div class="bottom-container">
-  <%= link_to "home", menu_path, class:"button" %>
+  <%= link_to menu_path, class:"button"  do %>
+    <i class="fa-solid fa-house fa-xl"></i>
+  <% end %>
   <%= link_to "add shop", new_shop_path, class:"button"%>
 </div>
 
@@ -76,6 +78,14 @@ body{
   border:1px solid #F5FF6D;
   padding:6px;
   border-radius: 0px 10px 10px 0px;
+}
+
+.button {
+  align-items: center;
+}
+
+.button i {
+  color: #1C1C17;
 }
 
 

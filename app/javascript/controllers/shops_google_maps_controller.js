@@ -2,11 +2,9 @@ import { Controller, IndexedMultimap } from "@hotwired/stimulus"
 import { sharedMapsInit } from "./utils";
 
 
-console.log('hh')
 // Connects to data-controller="google-maps"
 export default class extends Controller {
   connect() {
-
     this.initMap();
     console.log('here')
     window.initMap = this.initMap;
@@ -15,7 +13,6 @@ export default class extends Controller {
   initMap(){
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
-    console.log('hi')
     //custom code
 
       console.log(shop_data)

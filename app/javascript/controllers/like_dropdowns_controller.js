@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ['shopbtn', 'shopdropdown', 'videobtn', 'videodropdown']
 
   connect() {
-    console.log('hi')
   }
 
   shopDropdown(e) {

@@ -1,7 +1,7 @@
 import { Controller, IndexedMultimap } from "@hotwired/stimulus"
 import { sharedMapsInit } from "./utils";
 
-// Connects to data-controller="liked-racks-map"
+// Connects to data-controller="liked-shops-map"
 export default class extends Controller {
   static targets = ['map']
 
@@ -15,8 +15,8 @@ export default class extends Controller {
     let map = sharedMapsInit();
 
     if(liked_racks_data && map){
-      for(const rack in liked_racks_data) {
-        let d = liked_racks_data[rack]
+      for(const rack in liked_racks_data){
+        let d =liked_racks_data[rack]
         if(d.lat !== ''){
           if(d.status ==='true'){
             let marker = new google.maps.Marker({
@@ -56,6 +56,8 @@ export default class extends Controller {
     e.currentTarget.classList.toggle('active')
     if (e.currentTarget.classList.contains('active')) {
       this.mapTarget.style.height = '590px';
+      this.initMap();
+    window.initMap = this.initMap;
     } else {
       this.mapTarget.style.height = 0;
     }
