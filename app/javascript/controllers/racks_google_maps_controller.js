@@ -16,7 +16,7 @@ export default class extends Controller {
 
     //custom code
     if(bike_rack_data && map){
-
+      console.log(bike_rack_data)
       for(const rack in bike_rack_data){
         let d = bike_rack_data[rack]
         if(d.lat !== ''){
