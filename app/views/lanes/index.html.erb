@@ -19,7 +19,7 @@
   <% @lanes.each do |lane| %>
     <%if lane.coords %>
       JSON.parse('<%=lane.coords.html_safe%>'),
-      console.log(lane.coords)
+      // console.log(lane.coords)
     <% end %>
   <% end %>
  ]

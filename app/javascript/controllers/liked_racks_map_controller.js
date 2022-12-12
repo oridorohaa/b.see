@@ -8,13 +8,18 @@ export default class extends Controller {
   connect() {
     this.initMap();
     window.initMap = this.initMap;
+    console.log("CONNECT")
   }
 
-  initMap() {
+  initMap(){
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
 
+    console.log("---------------------------boop")
+    console.log("LIKED_RACK_DATA", liked_racks_data)
+
     if(liked_racks_data && map){
+      console.log("hereee---------------------------")
       for(const rack in liked_racks_data) {
         let d = liked_racks_data[rack]
         if(d.lat !== ''){

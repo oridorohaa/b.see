@@ -58,8 +58,6 @@ export default class extends Controller {
   liked(e) {
     e.currentTarget.classList.toggle("active")
 
-    this.listTarget.style.transform = "translateY(35px)";
-    this.buttonsTarget.style.transform = "translateY(60px)";
     fetch('/most_liked', {
       headers: {"Accept": "text/plain"}
     })
