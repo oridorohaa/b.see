@@ -17,4 +17,7 @@ class PagesController < ApplicationController
   def profile
     @reports = Report.all
   end
+
+  def liked_shops_map
+  end
 end
