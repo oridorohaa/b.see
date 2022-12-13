@@ -1,68 +1,22 @@
-<div data-controller='address-input' class="container">
-  <%= link_to menu_path do  %>
-  <i class="fa-solid fa-house"></i>
+<div data-controller='address-input' class="new-container">
+  <div class="navbar">
+    <%= link_to shops_path do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <%= link_to profile_path(current_user) do %>
+      <i class="fa-solid fa-user fa-xl"></i>
+    <% end %>
+  </div>
+
+  <%= simple_form_for(@shop) do |f| %>
+    <%= f.input :address, label: false, placeholder: 'address...' %>
+    <%= f.input :latitude, label: false, placeholder: 'latitude...' %>
+    <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
+    <%= f.input :hours, label: false, placeholder: 'hours...' %>
+    <%= f.input :phone_number, label: false, placeholder: 'phone number...' %>
+    <%= f.input :description, label: false, placeholder: 'description...' %>
+    <%= f.input :website, label: false, placeholder: 'website...' %>
+    <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
+    <%= f.submit "+", class:"submit" %>
   <% end %>
-<%= simple_form_for(@shop) do |f| %>
-<%= f.input :address  %>
-<%= f.input :latitude%>
-<%= f.input :longitude %>
-<%= f.input :hours %>
-<%= f.input :phone_number %>
-<%= f.input :description %>
-<%= f.input :website %>
-<%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
-<%= f.submit "add shop", class:"submit" %>
-<% end %>
 </div>
-
-<style>
-.fa-house{
-  position:absolute;
-  font-size:30px;
-  left: 86%;
-  top: 3%;
-}
-.submit{
-  background:#F5FF6D;
-  width:80%;
-  padding: 10px 0;
-  border-radius:25px;
-}
-.container{
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-end;
-
-}
-.form-control{
-  border-radius:10px;
-  width:80%;
-  background:none;
-  border: 1px solid #F5FF6D;
-  color:white;
-}
-
-.form-control:focus{
-  background:none;
-  color:white;
-}
-
-.form-label{
-  color: #F5FF6D;
-}
-
-input[type="file"]::file-selector-button {
-  border: 2px solid #f5ff6d;
-  padding: 0.2em 0.4em;
-  border-radius: 0.2em;
-  background-color: #f5ff6d;
-  transition: 1s;
-}
-
-input[type="file"]::file-selector-button:hover {
-  background-color: #81ecec;
-  border: 2px solid #00cec9;
-}
-
-</style>

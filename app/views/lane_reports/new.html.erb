@@ -1,4 +1,10 @@
-<%= simple_form_for [@lane, @report], url: lane_lane_reports_path do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "add report" %>
-<% end %>
+<div class="report-container">
+  <%= link_to lane_path(@lane) do %>
+    <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+  <% end %>
+
+  <%= simple_form_for [@lane, @report], url: lane_lane_reports_path do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "add report" %>
+  <% end %>
+</div>
