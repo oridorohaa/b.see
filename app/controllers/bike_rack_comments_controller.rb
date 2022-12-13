@@ -30,7 +30,6 @@ class BikeRackCommentsController < ApplicationController
   end
 
   def set_bike_rack_comment
-    raise
     @bike_rack_comment = BikeRackComment.find(params[:id])
   end
 
