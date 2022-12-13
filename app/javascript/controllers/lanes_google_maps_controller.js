@@ -15,8 +15,8 @@ export default class extends Controller {
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
 
-    let bikeLayer = new google.maps.BicyclingLayer();
-    bikeLayer.setMap(map);
+    // let bikeLayer = new google.maps.BicyclingLayer();
+    // bikeLayer.setMap(map);
 
     lanes_data.forEach((lane)=>{
 

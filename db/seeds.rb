@@ -13,7 +13,7 @@ user = User.create(username: 'Joseph', email: 'joseph@email.com', password: '123
 
 BikeRack.destroy_all
 
-file = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
+file = URI.open(File.join(Rails.root, 'app/assets/images/bike_rack_auto.jpg'))
 
 rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
                     description: "Tres biciestacionamientos tipo cuadro",
@@ -23,7 +23,7 @@ rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro
 rack.photos.attach(io: file, filename: "biciestacionamineto", content_type: "images/jpg")
 rack.save!
 
-file2 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
+file2 = URI.open(File.join(Rails.root, 'app/assets/images/bike_rack_auto.jpg'))
 
 rack = BikeRack.new(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
                     description: "Un biciestacionamiento tipo U invertidad",
@@ -33,7 +33,7 @@ rack = BikeRack.new(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciud
 rack.photos.attach(io: file2, filename: "biciestacionamineto1", content_type: "images/jpg")
 rack.save!
 
-file3 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
+file3 = URI.open(File.join(Rails.root, 'app/assets/images/bike_rack_auto.jpg'))
 
 rack = BikeRack.new(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
                     description: "Cinco biciestacionamientos tipo U invertidad",
@@ -120,7 +120,7 @@ rack.save!
 
 Shop.destroy_all
 
-file11 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
+file11 = URI.open(File.join(Rails.root,'app/assets/images/iloveimg-resized/Crankset.jpg'))
 
 shop = Shop.new(name: "Crankset Bicycle Shop (Trek Juárez)",
                 address: "Londres 40, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
