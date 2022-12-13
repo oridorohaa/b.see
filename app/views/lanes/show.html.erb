@@ -51,7 +51,14 @@
   <%= @lane.drescription %>
 </div>
 
-
+<% if @lane.lane_reports.count > 0 %>
+  <div class="reports">
+    <% @lane.lane_reports.each do |report| %>
+      <% r = Report.find(report.report_id) %>
+      <%= r.content %> <br>
+    <% end %>
+  </div>
+<% end %>
 
 <div class="comments">
   <div class="add-comment">
@@ -75,7 +82,7 @@
             <%= lane_comment.comment.user.username %>
           </div>
           <div>
-            <%= link_to lane_comment_path(lane_comment), data: {turbo_method: :delete}  do %>
+            <%= link_to lane_lane_comment_path(lane_comment), data: {turbo_method: :delete}  do %>
               <i class="fa-solid fa-trash fa-sm"></i>
             <% end %>
           </div>

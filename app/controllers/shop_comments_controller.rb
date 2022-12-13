@@ -1,6 +1,7 @@
 class ShopCommentsController < ApplicationController
-  before_action :set_shop
-  before_action :set_comment
+  before_action :set_shop, only: :create
+  before_action :set_shop_comment, only: :destroy
+  before_action :set_comment, except: :destroy
 
   def create
     if @comment.save
@@ -17,16 +18,19 @@ class ShopCommentsController < ApplicationController
   end
 
   def destroy
-    @shop_comment = ShopComment.find_by(shop: @shop, comment: @comment)
     authorize @shop_comment
     @shop_comment.destroy
-    redirect_to @shop, status: :see_other
+    redirect_back(fallback_location: root_path)
   end
 
   private
 
   def set_shop
     @shop = Shop.find(params[:shop_id])
+  end
+
+  def set_shop_comment
+    @shop_comment = ShopComment.find(params[:shop_id])
   end
 
   def set_comment

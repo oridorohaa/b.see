@@ -1,6 +1,7 @@
 class LaneCommentsController < ApplicationController
-  before_action :set_lane
-  before_action :set_comment
+  before_action :set_lane, only: :create
+  before_action :set_lane_comment, only: :destroy
+  before_action :set_comment, except: :destroy
 
   def create
     if @comment.save
@@ -17,16 +18,19 @@ class LaneCommentsController < ApplicationController
   end
 
   def destroy
-    @lane_comment = LaneComment.find_by(lane: @lane, comment: @comment)
     authorize @lane_comment
     @lane_comment.destroy
-    redirect_to @lane, status: :see_other
+    redirect_back(fallback_location: root_path)
   end
 
   private
 
   def set_lane
     @lane = Lane.find(params[:lane_id])
+  end
+
+  def set_lane_comment
+    @lane_comment = LaneComment.find(params[:id])
   end
 
   def set_comment

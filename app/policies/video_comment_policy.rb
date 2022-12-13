@@ -7,6 +7,7 @@ class VideoCommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    # record.user == user
+    true
   end
 end
