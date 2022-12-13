@@ -8,7 +8,7 @@ class BikeRackCommentsController < ApplicationController
       @bike_rack_comment = BikeRackComment.new(bike_rack: @bike_rack, comment: @comment)
       authorize @bike_rack_comment
       if @bike_rack_comment.save
-        redirect_to @bike_rack
+        redirect_to @bike_rack, notice: "Comment added"
       else
         render 'bike_racks/show', status: :unprocessable_entity
       end
@@ -20,7 +20,7 @@ class BikeRackCommentsController < ApplicationController
   def destroy
     authorize @bike_rack_comment
     @bike_rack_comment.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path, notice: "comment deleted")
   end
 
   private

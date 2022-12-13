@@ -21,7 +21,7 @@ class ShopsController < ApplicationController
     @shop.user = current_user
     authorize @shop
     if @shop.save
-      redirect_to @shop
+      redirect_to @shop, notice: "New SHOP added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ShopsController < ApplicationController
     authorize @shop
     @shop.update(shop_params)
     if @shop.save
-      redirect_to @shop
+      redirect_to @shop, notice: "Edited"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -54,6 +54,6 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit(:address, :hours, :phone_number, :description, :website, :status, :latitude, :longitude, photos: [])
+    params.require(:shop).permit( :name, :address, :hours, :phone_number, :description, :website, :status, :latitude, :longitude, photos: [])
   end
 end

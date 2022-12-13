@@ -28,7 +28,7 @@ export default class extends Controller {
           geodesic: true,
           strokeColor: "#F2FF3E",
           strokeOpacity: 2.0,
-          strokeWeight: 3,
+          strokeWeight: 1,
         });
 
         flightPath.setMap(map);
@@ -42,7 +42,7 @@ export default class extends Controller {
           geodesic: true,
           strokeColor: "#F2FF",
           strokeOpacity: 2.0,
-          strokeWeight: 3,
+          strokeWeight: 1,
         });
 
         flightPath.setMap(map);

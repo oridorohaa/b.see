@@ -8,7 +8,7 @@ class LaneCommentsController < ApplicationController
       @lane_comment = LaneComment.new(lane: @lane, comment: @comment)
       authorize @lane_comment
       if @lane_comment.save
-        redirect_to @lane
+        redirect_to @lane, notice: "Comment added"
       else
         render 'lanes/show', status: :unprocessable_entity
       end
@@ -20,7 +20,7 @@ class LaneCommentsController < ApplicationController
   def destroy
     authorize @lane_comment
     @lane_comment.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path, notice: "comment deleted")
   end
 
   private

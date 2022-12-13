@@ -90,7 +90,7 @@ class VideosController < ApplicationController
     @video.user = current_user
     authorize @video
     if @video.save
-      redirect_to @video
+      redirect_to @video, notice: "New VIDEO added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -104,7 +104,7 @@ class VideosController < ApplicationController
     authorize @video
     @video.update(video_params)
     if @video.save
-      redirect_to @video
+      redirect_to @video, notice: "Edited"
     else
       render :edit, status: :unprocessable_entity
     end

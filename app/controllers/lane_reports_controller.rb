@@ -15,7 +15,7 @@ class LaneReportsController < ApplicationController
       @lane_report = LaneReport.new(lane: @lane, report: @report)
       authorize @report
       if @lane_report.save
-        redirect_to @lane, notice: "report added successfully"
+        redirect_to @lane, notice: "report added"
       else
         render 'lanes/show', status: :unprocessable_entity
       end

@@ -1,4 +1,5 @@
-<h2>Sign up</h2>
+
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
@@ -19,8 +20,110 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"submit" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
+<style>
+  .link{
+    margin-top: 50px;
+    margin-left: 160px;
+  }
+
+  .submit{
+  margin-bottom: 29px;
+  margin-left: 39px;
+  color: black;
+  background:#F5FF6D;
+  width:80%;
+  padding: 10px 0;
+  border-radius:25px;
+  }
+
+  .login-form {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .simple_form{
+    margin-top:100px;
+  }
+
+
+
+
+
+  .form-control {
+    color: yellow;
+
+    background-color: #1C1C17;
+    border: 1px solid #F5FF6D;
+    border-radius: 10px;
+    width: 300px;
+    padding: 8px;
+  }
+
+
+  .form-label{
+    color:yellow;
+  }
+
+  
+
+  .form-control:focus {
+    background: none;
+
+    color: yellow;
+    letter-spacing:1px;
+  }
+
+  .form-control::placeholder {
+    color: #F5FF6D;
+  }
+
+  .form-control:focus::placeholder {
+    color: transparent;
+  }
+
+  .link {
+    color: #F5FF6D;
+    text-decoration: none;
+
+
+  }
+
+  .form-check {
+    color: #F5FF6D;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .login-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1C1C17;
+    background-color: #F5FF6D;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .form-actions {
+    margin: 0 auto;
+  }
+
+
+</style>

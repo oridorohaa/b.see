@@ -21,7 +21,7 @@ class LanesController < ApplicationController
     @lane.user = current_user
     authorize @lane
     if @lane.save
-      redirect_to @lane
+      redirect_to @lane, notice: "New LANE added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class LanesController < ApplicationController
     authorize @lane
     @lane.update(lane_params)
     if @lane.save
-      redirect_to @lane
+      redirect_to @lane, notice: "Edited"
     else
       render :edit, status: :unprocessable_entity
     end

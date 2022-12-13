@@ -98,6 +98,10 @@ $pink: #F5FF;
   transition: all .5s ease;
 }
 
+#shop-map {
+  transition: all .5s ease;
+}
+
 .btn {
   color: $yellow;
 }
@@ -127,5 +131,12 @@ $pink: #F5FF;
 
   a {
     padding: 0;
+  }
+
+  #shop-map {
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
   }
 }

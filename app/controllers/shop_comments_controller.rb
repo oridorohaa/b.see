@@ -8,7 +8,7 @@ class ShopCommentsController < ApplicationController
       @shop_comment = ShopComment.new(shop: @shop, comment: @comment)
       authorize @shop_comment
       if @shop_comment.save
-        redirect_to @shop
+        redirect_to @shop, notice: "Comment added"
       else
         render 'shops/show', status: :unprocessable_entity
       end
@@ -20,7 +20,7 @@ class ShopCommentsController < ApplicationController
   def destroy
     authorize @shop_comment
     @shop_comment.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path, notice: "comment deleted")
   end
 
   private
