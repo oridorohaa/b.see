@@ -41,7 +41,8 @@ export default class extends Controller {
       polylineOptions:{
         strokeColor: "#F5FF",
         strokeWeight: 7,
-      }
+      },
+      drawingControl: falsep
     });
 
     drawingManager.setMap(map);

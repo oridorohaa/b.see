@@ -69,4 +69,56 @@ export default class extends Controller {
         this.buttonsTarget.style.transform = "translateY(60px)";
       })
   }
+
+  maintenance(e) {
+    e.currentTarget.classList.toggle("active")
+    fetch('/maintenance', {
+      headers: {"Accept": "text/plain"}
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
+      })
+  }
+
+  repair(e) {
+    e.currentTarget.classList.toggle("active")
+    fetch('/repair', {
+      headers: {"Accept": "text/plain"}
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
+      })
+  }
+
+  styling(e) {
+    e.currentTarget.classList.toggle("active")
+    fetch('/styling', {
+      headers: {"Accept": "text/plain"}
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
+      })
+  }
+
+  other(e) {
+    e.currentTarget.classList.toggle("active")
+    fetch('/other', {
+      headers: {"Accept": "text/plain"}
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.listTarget.outerHTML = data
+        this.listTarget.style.transform = "translateY(35px)";
+        this.buttonsTarget.style.transform = "translateY(60px)";
+      })
+  }
 }

@@ -16,6 +16,7 @@
 
 <%= simple_form_for(@lane) do |f| %>
   <%= f.input :coords%>
+  <%= f.input :street_name %>
   <%= f.input :drescription %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "create lane", class:"submit" %>

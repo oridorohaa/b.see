@@ -30,7 +30,7 @@ class LaneCommentsController < ApplicationController
   end
 
   def set_lane_comment
-    @lane_comment = LaneComment.find(params[:id])
+    @lane_comment = LaneComment.find(params[:lane_id])
   end
 
   def set_comment
