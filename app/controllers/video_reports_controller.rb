@@ -15,7 +15,7 @@ class VideoReportsController < ApplicationController
       @video_report = VideoReport.new(video: @video, report: @report)
       authorize @report
       if @video_report.save
-        redirect_to @video, notice: "report added successfully"
+        redirect_to @video, notice: "report added"
       else
         render 'videos/show', status: :unprocessable_entity
       end

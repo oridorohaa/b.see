@@ -15,7 +15,7 @@ class ShopReportsController < ApplicationController
       @shop_report = ShopReport.new(shop: @shop, report: @report)
       authorize @report
       if @shop_report.save
-        redirect_to @shop, notice: "report added successfully"
+        redirect_to @shop, notice: "report added"
       else
         render 'shops/show', status: :unprocessable_entity
       end

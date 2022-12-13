@@ -22,7 +22,7 @@ class BikeRacksController < ApplicationController
     @bike_rack.user = current_user
     authorize @bike_rack
     if @bike_rack.save
-      redirect_to @bike_rack
+      redirect_to @bike_rack, notice: "New RACK added"
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class BikeRacksController < ApplicationController
     authorize @bike_rack
     @bike_rack.update(bike_rack_params)
     if @bike_rack.save
-      redirect_to @bike_rack
+      redirect_to @bike_rack, notice: "Edited"
     else
       render :edit, status: :unprocessable_entity
     end
