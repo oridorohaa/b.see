@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   has_many :comments
+  has_many :bike_rack_comments, through: :comments
+  has_many :lane_comments, through: :comments
+  has_many :shop_comments, through: :comments
+  has_many :video_comments, through: :comments
 
   has_many :lane_likes
   has_many :shop_likes

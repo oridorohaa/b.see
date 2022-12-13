@@ -100,9 +100,24 @@
   <div class="user-comments" data-controller="like-dropdowns">
     <p data-action="click->like-dropdowns#commentDropdown" data-like-dropdowns-target="commentbtn">my comments <i class="fa-solid fa-plus"></i></p>
     <div class= "cards" data-like-dropdowns-target="commentdropdown">
-      <% current_user.comments.each do |comment| %>
+      <% current_user.bike_rack_comments.each do |comment| %>
         <div class="card">
-          <%= comment.content %>
+          <a href="bike_racks/<%= comment.bike_rack.id %>"><%= comment.comment.content %></a>
+        </div>
+      <% end %>
+      <% current_user.lane_comments.each do |comment| %>
+        <div class="card">
+          <a href="lanes/<%= comment.lane.id %>"><%= comment.comment.content %></a>
+        </div>
+      <% end %>
+      <% current_user.shop_comments.each do |comment| %>
+        <div class="card">
+          <a href="shops/<%= comment.shop.id %>"><%= comment.comment.content %></a>
+        </div>
+      <% end %>
+      <% current_user.video_comments.each do |comment| %>
+        <div class="card">
+          <a href="videos/<%= comment.video.id %>"><%= comment.comment.content %></a>
         </div>
       <% end %>
     </div>
@@ -111,9 +126,26 @@
     <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">reports <i class="fa-solid fa-plus"></i></p>
     <div class="cards" data-like-dropdowns-target="reportdropdown">
       <% @reports.each do |report| %>
-        <div class="card">
-          <%= report.content %>
-        </div>
+        <% report.bike_rack_reports.each do |report| %>
+          <div class="card">
+            <a href="/bike_racks/<%= report.bike_rack.id %>"><%= report.report.content %></a>
+          </div>
+        <% end %>
+        <% report.lane_reports.each do |report| %>
+          <div class="card">
+            <a href="/lanes/<%= report.lane.id %>"><%= report.report.content %></a>
+          </div>
+        <% end %>
+        <% report.shop_reports.each do |report| %>
+          <div class="card">
+            <a href="/shops/<%= report.shop.id %>"><%= report.report.content %></a>
+          </div>
+        <% end %>
+        <% report.video_reports.each do |report| %>
+          <div class="card">
+            <a href="/videos/<%= report.video.id %>"><%= report.report.content %></a>
+          </div>
+        <% end %>
       <% end %>
     </ul>
   </div>
