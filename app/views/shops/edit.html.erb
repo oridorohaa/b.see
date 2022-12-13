@@ -9,7 +9,11 @@
   </div>
 
   <%= simple_form_for(@shop) do |f| %>
-    <%= f.input :address %>
+    <div class="nav-div" data-controller='search-address' >
+      <input type="text" class="search-input" placeholder="search location...">
+      <input type="text" class ="lat" style="display:none">
+      <input type="text" class ="long" style="display:none">
+    </div>
     <%= f.input :hours %>
     <%= f.input :phone_number %>
     <%= f.input :description %>
@@ -17,4 +21,3 @@
     <%= f.submit "edit", class: "submit" %>
   <% end %>
 </div>
-

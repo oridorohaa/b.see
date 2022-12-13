@@ -3,6 +3,7 @@
   <i class="fa-solid fa-globe globe"></i>
   <%= link_to profile_path do  %>
     <div class="profile-icon">
+      <i class="fa-regular fa-user"></i>
     </div>
   <% end %>
 </div>
@@ -13,3 +14,12 @@
   <%= link_to "Videos", videos_path,  class:"menu-item", id:"four" %>
 </div>
 
+
+<style>
+.profile-icon{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+</style>
