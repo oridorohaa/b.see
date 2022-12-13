@@ -1,10 +1,11 @@
-<%# <h1>MAIN MENU </h1> %>
 <div class="nav">
   <i class="fa-solid fa-globe globe"></i>
   <%= link_to profile_path do  %>
-    <div class="profile-icon">
-      <i class="fa-regular fa-user"></i>
-    </div>
+    <% if current_user.avatar.attached? %>
+      <%= cl_image_tag current_user.avatar.key, height: 100, width: 100, crop: :fill, class: "avatar" %>
+    <% else %>
+      <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+    <% end %>
   <% end %>
 </div>
 <div class="menu-container">
@@ -13,13 +14,3 @@
   <%= link_to "Shops", shops_path,  class:"menu-item", id:"three" %>
   <%= link_to "Videos", videos_path,  class:"menu-item", id:"four" %>
 </div>
-
-
-<style>
-.profile-icon{
-  display:flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-</style>
