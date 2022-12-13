@@ -1,93 +1,19 @@
-<div data-controller='address-input' class="container">
+<div data-controller='address-input' class="new-container">
+  <div class="navbar">
+    <%= link_to bike_racks_path do %>
+      <i class="fa-solid fa-chevron-left fa-xl"></i>
+    <% end %>
+    <%= link_to profile_path(current_user) do %>
+      <i class="fa-solid fa-user fa-xl"></i>
+    <% end %>
+  </div>
 
-  <%= link_to menu_path do  %>
-  <i class="fa-solid fa-house"></i>
+  <%= simple_form_for(@bike_rack) do |f| %>
+    <%= f.input :address, label: false, placeholder: 'address'  %>
+    <%= f.input :description, label: false, placeholder: 'description...' %>
+    <%= f.input :latitude, label: false, placeholder: 'latitude...' %>
+    <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "+", class: "submit" %>
   <% end %>
-<%= simple_form_for(@bike_rack) do |f| %>
-  <%= f.input :address  %>
-  <%= f.input :description %>
-  <%= f.input :latitude%>
-  <%= f.input :longitude %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "add rack", class: "submit" %>
-<% end %>
 </div>
-
-
-<style>
-.new_bike_rack {
-  color: #f5ff6d;
-  padding: 12px;
-  font-size: 20px;
-}
-
-.form-control {
-  border-radius: 0.5em;
-  background-color: #D8DAD3;
-  width: 100%;
-  border: 5px solid #2C312C;
-  /* padding: 0.75rem; */
-}
-
-.rack-btn {
-  background-color: #f5ff6d;
-  margin: 3px;
-  border-radius: 0.5em;
-  padding: 10px;
-}
-
-input[type="file"]::file-selector-button {
-  border: 2px solid #566246;
-  padding: 0.4em 0.6em;
-  border-radius: 0.5em;
-  background-color: #f5ff6d;
-  transition: 1s;
-}
-
-input[type="file"]::file-selector-button:hover {
-  background-color: #81ecec;
-  border: 2px solid #00cec9;
-  padding: 12px;
-}
-
-.fa-house{
-  position:absolute;
-  font-size:30px;
-  left: 7%;
-  top: 9%;
-  color:yellow;
-}
-
-.submit{
-  background:#F5FF6D;
-  width:80%;
-  padding: 10px 0;
-  border-radius:25px;
-}
-.container{
-  margin-left: 26px;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-end;
-
-}
-.form-control{
-  border-radius:10px;
-  width:80%;
-  background:none;
-  border: 1px solid #F5FF6D;
-  color:white;
-}
-
-.form-control:focus{
-  background:none;
-  color:white;
-}
-
-.form-label{
-  color: #F5FF6D;
-}
-
-</style>
