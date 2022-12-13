@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def set_lines
 
   end
-  
+
   def get_lines
     lines =  db.getLines()
 
@@ -15,5 +15,6 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @reports = Report.all
   end
 end

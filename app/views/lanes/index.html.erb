@@ -17,13 +17,16 @@
   <%= link_to "add lane", new_lane_path, class:"button"%>
 </div>
 <script>
- lanes_data = [
+ lanes_data = {
   <% @lanes.each do |lane| %>
     <%if lane.coords %>
-      JSON.parse('<%=lane.coords.html_safe%>'),
+      '<%=lane.id%>': {
+        'coords':JSON.parse('<%=lane.coords.html_safe%>'),
+        'status':'<%=lane.status%>'
+        },
     <% end %>
   <% end %>
- ]
+ }
 </script>
 <style>
 
