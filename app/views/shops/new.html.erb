@@ -9,6 +9,7 @@
   </div>
 
   <%= simple_form_for(@shop) do |f| %>
+    <%= f.input :name, label: false, placeholder: "name..." %>
     <%= f.input :address, label: false, placeholder: 'address...' %>
     <%= f.input :latitude, label: false, placeholder: 'latitude...' %>
     <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
