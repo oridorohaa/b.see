@@ -29,6 +29,7 @@
       <li data-controller="like-dropdowns">
         <button class='btn' data-action="click->like-dropdowns#shopDropdown" data-like-dropdowns-target="shopbtn">shops <i class="fa-solid fa-plus"></i></button>
         <div class="cards" data-like-dropdowns-target="shopdropdown">
+          <a href="/liked_shops_map" id="shop-map">see map</a>
           <% current_user.shop_likes.each do |shop_like| %>
             <% shop = Shop.find(shop_like.shop_id) %>
             <div class="card">
@@ -38,9 +39,6 @@
           <% end %>
         </div>
       </li>
-      <%# <li data-controller="liked-shops-map">
-        <div id="map" style="height:590px;"></div>
-      </li> %>
       <li data-controller="like-dropdowns">
         <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus"></i></button>
           <div class="cards" data-like-dropdowns-target="videodropdown">
