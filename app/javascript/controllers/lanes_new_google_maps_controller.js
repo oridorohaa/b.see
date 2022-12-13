@@ -42,7 +42,7 @@ export default class extends Controller {
         strokeColor: "#F5FF",
         strokeWeight: 7,
       },
-      drawingControl: falsep
+
     });
 
     drawingManager.setMap(map);

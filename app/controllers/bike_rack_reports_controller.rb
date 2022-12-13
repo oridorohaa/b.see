@@ -15,7 +15,7 @@ class BikeRackReportsController < ApplicationController
       @bike_rack_report = BikeRackReport.new(bike_rack: @rack, report: @report)
       authorize @report
       if @bike_rack_report.save
-        redirect_to @rack, notice: "report added successfully"
+        redirect_to @rack, notice: "report added"
 
       else
         render 'bike_racks/show', status: :unprocessable_entity

@@ -7,7 +7,7 @@ class VideoCommentsController < ApplicationController
       @video_comment = VideoComment.new(video: @video, comment: @comment)
       authorize @video_comment
       if @video_comment.save
-        redirect_to @video
+        redirect_to @video, notice: "Comment added"
       else
         render 'videos/show', status: :unprocessable_entity
       end
