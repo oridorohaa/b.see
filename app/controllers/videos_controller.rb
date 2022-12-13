@@ -27,6 +27,42 @@ class VideosController < ApplicationController
     end
   end
 
+  def maintenance
+    @videos = policy_scope(Video).filter { |video| video.tag_list.include?('maintenance') }
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos }, formats: [:html] }
+    end
+  end
+
+  def repair
+    @videos = policy_scope(Video).filter { |video| video.tag_list.include?('repair') }
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos }, formats: [:html] }
+    end
+  end
+
+  def styling
+    @videos = policy_scope(Video).filter { |video| video.tag_list.include?('styling') }
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos }, formats: [:html] }
+    end
+  end
+
+  def other
+    @videos = policy_scope(Video).filter { |video| video.tag_list.include?('other') }
+    authorize @videos
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: @videos }, formats: [:html] }
+    end
+  end
+
   def tagged
     if params[:tag].present?
       @videos = policy_scope(Video).tagged_with(params[:tag])

@@ -38,4 +38,9 @@ Rails.application.routes.draw do
 
   get "/recent", to: "videos#recent"
   get "/most_liked", to: "videos#most_liked"
+  get "/maintenance", to: "videos#maintenance"
+  get "/repair", to: "videos#repair"
+  get "/styling", to: "videos#styling"
+  get "/other", to: "videos#other"
+  get "/liked_shops_map", to: "pages#liked_shops_map"
 end

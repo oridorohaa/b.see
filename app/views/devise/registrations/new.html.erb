@@ -1,5 +1,6 @@
 
 
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
@@ -54,9 +55,13 @@
     margin-top:100px;
   }
 
-  .form-control {
 
-    color:yellow;
+
+
+
+  .form-control {
+    color: yellow;
+
     background-color: #1C1C17;
     border: 1px solid #F5FF6D;
     border-radius: 10px;
@@ -64,12 +69,16 @@
     padding: 8px;
   }
 
+
   .form-label{
     color:yellow;
   }
 
+  
+
   .form-control:focus {
-    background-color: #1C1C17;
+    background: none;
+
     color: yellow;
     letter-spacing:1px;
   }
@@ -85,6 +94,8 @@
   .link {
     color: #F5FF6D;
     text-decoration: none;
+
+
   }
 
   .form-check {
@@ -97,6 +108,22 @@
     align-items: center;
   }
 
+
+  .login-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1C1C17;
+    background-color: #F5FF6D;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .form-actions {
+    margin: 0 auto;
+  }
 
 
 </style>

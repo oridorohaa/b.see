@@ -5,6 +5,22 @@ class VideoPolicy < ApplicationPolicy
     end
   end
 
+  def maintenance?
+    true
+  end
+
+  def repair?
+    true
+  end
+
+  def styling?
+    true
+  end
+
+  def other?
+    true
+  end
+
   def tagged?
     true
   end
