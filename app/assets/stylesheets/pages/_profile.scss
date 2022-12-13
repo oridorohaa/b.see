@@ -2,6 +2,7 @@ $black: #1C1C17;
 $yellow: #F5FF6D;
 $white: #E5E2DA;
 $grey: #47473B;
+$pink: #F5FF;
 
 .navbar {
   margin: 20px 30px;
@@ -43,7 +44,7 @@ $grey: #47473B;
   }
 }
 
-.likes, .user-uploads, .user-comments {
+.likes, .user-uploads, .user-comments, .admin-reports {
   border: 1px solid $yellow;
   width: 80%;
   margin: 20px auto;
@@ -74,7 +75,7 @@ $grey: #47473B;
     padding: 5px 10px;
   }
 
-  a{
+  a {
     padding:5px;
     border-radius:15px;
     text-decoration: none;
@@ -83,6 +84,15 @@ $grey: #47473B;
   }
 }
 
+#admin-reports {
+  border: 1px solid $pink;
+
+  p { color: $pink }
+
+  li { color: $pink }
+
+  i { color: $pink }
+}
 
 #map {
   transition: all .5s ease;
@@ -92,14 +102,14 @@ $grey: #47473B;
   color: $yellow;
 }
 
-.liked-cards {
+.cards {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   height: 0;
   transition: all .5s ease;
 
-  .liked-card {
+  .card {
     background: $grey;
     margin: 10px;
     padding: 10px;
