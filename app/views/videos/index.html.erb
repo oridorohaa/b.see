@@ -1,5 +1,4 @@
-
-  <div class="video-search">
+<div class="video-search">
   <%= form_with url: videos_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -16,16 +15,16 @@
       <button class="btn" data-action="click->filter-videos#active" data-filter-videos-target="filter">filter</button>
         <ul data-filter-videos-target="filterdropdown">
           <li>
-            <%= link_to "maintenance", tagged_path(tag: "maintenance"), class: 'tag' %>
+            <button data-action="click->filter-videos#maintenance">maintenance</button>
           </li>
           <li>
-            <%= link_to "repair", tagged_path(tag: "repair"), class: 'tag' %>
+            <button data-action="click->filter-videos#repair">repair</button>
           </li>
           <li>
-            <%= link_to "styling", tagged_path(tag: "styling"), class: 'tag' %>
+            <button data-action="click->filter-videos#styling">styling</button>
           </li>
           <li>
-            <%= link_to "other", tagged_path(tag: "other"), class: 'tag' %>
+            <button data-action="click->filter-videos#other">other</button>
           </li>
         </ul>
     </div>
@@ -55,6 +54,7 @@
 </div>
 
 <style>
+
 body {
   overflow-y: scroll;
 }
@@ -168,11 +168,13 @@ body {
   margin-bottom: 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   margin-left: -17.5%;
   top: 120%;
   height: 0;
+  width: 100%;
   overflow-y: hidden;
   transition: all .5s ease;
 }
@@ -194,7 +196,7 @@ body {
   transition: all .5s ease;
 }
 
-.order-dropdown button {
+button {
   border: 1px solid #F5FF6D;
   color: #F5FF6D;
   background: none;
