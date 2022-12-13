@@ -1,12 +1,17 @@
-<div class="container">
-  <%= link_to menu_path do  %>
-    <i class="fa-solid fa-house"></i>
-  <% end %>
+<div class="edit-container">
+  <div class="navbar">
+    <%= link_to videos_path do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <%=link_to profile_path(current_user) do %>
+      <i class="fa-solid fa-user fa-xl"></i>
+    <% end %>
+  </div>
 
   <%= simple_form_for(@video) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit "edit video", class:"edit" %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.submit "edit video", class: "submit" %>
   <% end %>
 </div>
 
@@ -25,13 +30,11 @@
   padding: 10px 0;
   border-radius:25px;
 }
-.container{
-  padding-left: 58px;
-  width:100vw;
+.edit-container{
+  width:100%;
   display:flex;
   flex-direction:column;
   justify-content: center;
-  align-items: flex-end;
 }
 
 .simple_form{
