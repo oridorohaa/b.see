@@ -19,7 +19,11 @@
     <% if current_user %>
       <div class="profile">
       <%=link_to profile_path(current_user) do %>
-        <i class="fa-solid fa-user"></i>
+        <% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-medium" %>
+        <% else %>
+          <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+        <% end %>
       <% end %>
       </div>
     <% end %>
@@ -84,7 +88,11 @@
       <li>
         <div class="comment-username">
           <div>
-            <i class="fa-regular fa-circle fa-lg"></i>
+            <% if current_user.avatar.attached? %>
+              <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-small" %>
+            <% else %>
+              <i class="fa-solid fa-circle-user fa-sm"></i>
+            <% end %>
             <%= shop_comment.comment.user.username %>
           </div>
           <div>
