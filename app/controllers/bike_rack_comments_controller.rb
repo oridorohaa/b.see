@@ -18,7 +18,6 @@ class BikeRackCommentsController < ApplicationController
   end
 
   def destroy
-    raise
     authorize @bike_rack_comment
     @bike_rack_comment.destroy
     redirect_to @bike_rack, notice: "comment deleted"
