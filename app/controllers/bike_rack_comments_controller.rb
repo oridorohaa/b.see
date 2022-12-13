@@ -20,7 +20,7 @@ class BikeRackCommentsController < ApplicationController
   def destroy
     authorize @bike_rack_comment
     @bike_rack_comment.destroy
-    redirect_to @bike_rack, notice: "comment deleted"
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -30,6 +30,7 @@ class BikeRackCommentsController < ApplicationController
   end
 
   def set_bike_rack_comment
+    raise
     @bike_rack_comment = BikeRackComment.find(params[:id])
   end
 
