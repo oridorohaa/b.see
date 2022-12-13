@@ -28,10 +28,10 @@
       </li>
       <li data-controller="like-dropdowns">
         <button class='btn' data-action="click->like-dropdowns#shopDropdown" data-like-dropdowns-target="shopbtn">shops <i class="fa-solid fa-plus"></i></button>
-        <div class="liked-cards" data-like-dropdowns-target="shopdropdown">
+        <div class="cards" data-like-dropdowns-target="shopdropdown">
           <% current_user.shop_likes.each do |shop_like| %>
             <% shop = Shop.find(shop_like.shop_id) %>
-            <div class="liked-card">
+            <div class="card">
               <a href="shops/<%=shop.id%>"><%= shop.name %></a>
               <p><%= shop.hours %></p>
             </div>
@@ -43,10 +43,10 @@
       </li> %>
       <li data-controller="like-dropdowns">
         <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus"></i></button>
-          <div class="liked-cards" data-like-dropdowns-target="videodropdown">
+          <div class="cards" data-like-dropdowns-target="videodropdown">
             <% current_user.video_likes.each do |video_like| %>
               <% video = Video.find(video_like.video_id) %>
-              <div class="liked-card">
+              <div class="card">
                 <a href="/videos/<%=video_like.video_id%>"><%= video.title %></a><br>
               </div>
             <% end %>
@@ -56,9 +56,68 @@
   </div>
   <div class="user-uploads">
     <p>my uploads</p>
+    <ul>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#myRackDropdown" data-like-dropdowns-target="myrackbtn">racks <i class="fa-solid fa-plus"></i></button>
+        <div class="cards" data-like-dropdowns-target="myrackdropdown">
+          <% current_user.bike_racks.each do |rack| %>
+            <div class="card">
+              <a href="/bike_racks/<%=rack.id%>"><%= rack.description %></a><br>
+            </div>
+          <% end %>
+        </div>
+      </li>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#myLaneDropdown" data-like-dropdowns-target="mylanebtn">lanes <i class="fa-solid fa-plus"></i></button>
+        <div class="cards" data-like-dropdowns-target="mylanedropdown">
+          <% current_user.lanes.each do |lane| %>
+            <div class="card">
+              <a href="/lanes/<%=lane.id%>"><%= lane.id %></a><br>
+            </div>
+          <% end %>
+        </div>
+      </li>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#myShopDropdown" data-like-dropdowns-target="myshopbtn">shops <i class="fa-solid fa-plus"></i></button>
+        <div class="cards" data-like-dropdowns-target="myshopdropdown">
+          <% current_user.shops.each do |shop| %>
+            <div class="card">
+              <a href="/shops/<%=shop.id%>"><%= shop.address %></a><br>
+            </div>
+          <% end %>
+        </div>
+      </li>
+      <li data-controller="like-dropdowns">
+        <button class='btn' data-action="click->like-dropdowns#myVideoDropdown" data-like-dropdowns-target="myvideobtn">videos <i class="fa-solid fa-plus"></i></button>
+        <div class="cards" data-like-dropdowns-target="myvideodropdown">
+          <% current_user.videos.each do |video| %>
+            <div class="card">
+              <a href="/videos/<%=video.id%>"><%= video.title %></a><br>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div class="user-comments">
-    <p>my comments</p>
+  <div class="user-comments" data-controller="like-dropdowns">
+    <p data-action="click->like-dropdowns#commentDropdown" data-like-dropdowns-target="commentbtn">my comments <i class="fa-solid fa-plus"></i></p>
+    <div class= "cards" data-like-dropdowns-target="commentdropdown">
+      <% current_user.comments.each do |comment| %>
+        <div class="card">
+          <%= comment.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
+    <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">reports <i class="fa-solid fa-plus"></i></p>
+    <div class="cards" data-like-dropdowns-target="reportdropdown">
+      <% @reports.each do |report| %>
+        <div class="card">
+          <%= report.content %>
+        </div>
+      <% end %>
+    </ul>
   </div>
 </div>
 
