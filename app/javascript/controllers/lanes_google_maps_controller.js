@@ -16,6 +16,9 @@ export default class extends Controller {
     let map = sharedMapsInit();
 
 
+
+
+
     for(const lane in lanes_data){
       let l = lanes_data[lane]
       if(l.status ==='true'){

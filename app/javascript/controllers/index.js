@@ -13,6 +13,9 @@ application.register("filter-videos", FilterVideosController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import LanguageController from "./language_controller"
+application.register("language", LanguageController)
+
 import LanesGoogleMapsController from "./lanes_google_maps_controller"
 application.register("lanes-google-maps", LanesGoogleMapsController)
 

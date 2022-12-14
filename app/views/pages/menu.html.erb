@@ -8,11 +8,38 @@
         <i class="fa-solid fa-user fa-2xl default-avatar"></i>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="menu-container">
+    <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one",  data: { language_target: "rack" }  %>
+    <%= link_to "Lanes", lanes_path,  class:"menu-item", id:"two", data:{ language_target: "lane" } %>
+    <%= link_to "Shops", shops_path,  class:"menu-item", id:"three", data:{ language_target: "shop" } %>
+    <%= link_to "Videos", videos_path,  class:"menu-item", id:"four", data:{ language_target: "video" } %>
+  </div>
 </div>
-<div class="menu-container">
-  <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one"%>
-  <%= link_to "Lanes", lanes_path,  class:"menu-item", id:"two" %>
-  <%= link_to "Shops", shops_path,  class:"menu-item", id:"three" %>
-  <%= link_to "Videos", videos_path,  class:"menu-item", id:"four" %>
-</div>
+
+<style>
+.profile-icon{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropdown{
+  color: yellow;
+}
+
+p {
+  background: #333;
+  padding: 3px 23px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+p:hover{
+  border:1px solid yellow;
+}
+
+</style>
+
+
