@@ -3,42 +3,48 @@
     <%= link_to shops_path, class: "button" do %>
       <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
     <% end %>
-    <div class="actions">
-      <i class="fa-solid fa-bars fa-xl"></i>
-      <div class="actions-dropdown">
-        <%= link_to edit_shop_path(@shop), class: "button" do %>
-          <i class="fa-solid fa-pencil fa-xl"></i>
-        <% end %>
-        <%= link_to shop_path(@shop), data: {turbo_method: :delete}, class: "button"  do %>
-          <i class="fa-solid fa-trash fa-xl"></i>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="right-nav">
-    <% if current_user %>
-      <div class="profile">
-      <%=link_to profile_path(current_user) do %>
-        <% if current_user.avatar.attached? %>
-          <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-medium" %>
-        <% else %>
-          <i class="fa-solid fa-user fa-2xl default-avatar"></i>
-        <% end %>
+    <% if user_signed_in? %>
+      <% if policy(@shop).update? %>
+        <div class="actions">
+          <i class="fa-solid fa-bars fa-xl"></i>
+          <div class="actions-dropdown">
+            <%= link_to edit_shop_path(@shop), class: "button" do %>
+              <i class="fa-solid fa-pencil fa-xl"></i>
+            <% end %>
+            <%= link_to shop_path(@shop), data: {turbo_method: :delete}, class: "button"  do %>
+              <i class="fa-solid fa-trash fa-xl"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-      </div>
     <% end %>
-    <div class="heart">
-      <% unless @shop.has_user_liked?(current_user) %>
-        <%= link_to shop_shop_likes_path(@shop), data: {turbo_method: :post}  do %>
-          <i class="fa-regular fa-heart fa-xl"></i>
-        <% end %>
-      <% else %>
-        <%= link_to shop_shop_like_path(@shop), data: {turbo_method: :delete} do %>
-          <i class="fa-solid fa-heart fa-xl"></i>
-        <% end %>
-      <% end %>
-    </div>
   </div>
+  <% if user_signed_in? %>
+    <div class="right-nav">
+      <% if current_user %>
+        <div class="profile">
+        <%=link_to profile_path(current_user) do %>
+          <% if current_user.avatar.attached? %>
+            <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-medium" %>
+          <% else %>
+            <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+          <% end %>
+        <% end %>
+        </div>
+      <% end %>
+      <div class="heart">
+        <% unless @shop.has_user_liked?(current_user) %>
+          <%= link_to shop_shop_likes_path(@shop), data: {turbo_method: :post}  do %>
+            <i class="fa-regular fa-heart fa-xl"></i>
+          <% end %>
+        <% else %>
+          <%= link_to shop_shop_like_path(@shop), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-heart fa-xl"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="photos" style="height: 300px; width: 400px;">
@@ -67,30 +73,39 @@
     <% @shop.shop_reports.each do |report| %>
       <% r = Report.find(report.report_id) %>
       <%= r.content %> <br>
+      <% if user_signed_in? %>
+        <% if policy(ShopReport).destroy? %>
+          <%= link_to shop_shop_report_path(@shop, report), data: {turbo_method: :delete } do %>
+            <i class="fa-solid fa-trash fa-sm"></i>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
 
 <div class="comments">
-  <div class="add-comment">
-    <div class="comment-top">
-      <i class="fa-solid fa-plus fa-xl"></i>
-      <p>comments</p>
-    </div>
-    <%= simple_form_for([@shop, @shop_comment]) do |f| %>
-      <%= f.simple_fields_for :comments do |comments_form| %>
-        <%= comments_form.input :content, label: false, as: :text %>
+  <% if user_signed_in? %>
+    <div class="add-comment">
+      <div class="comment-top">
+        <i class="fa-solid fa-plus fa-xl"></i>
+        <p>comments</p>
+      </div>
+      <%= simple_form_for([@shop, @shop_comment]) do |f| %>
+        <%= f.simple_fields_for :comments do |comments_form| %>
+          <%= comments_form.input :content, label: false, as: :text %>
+        <% end %>
+        <%= f.submit '+', class: 'submit-btn' %>
       <% end %>
-      <%= f.submit '+', class: 'submit-btn' %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
   <ul>
     <% @shop.shop_comments.each do |shop_comment| %>
       <li>
         <div class="comment-username">
           <div>
-            <% if current_user.avatar.attached? %>
-              <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-small" %>
+            <% if shop_comment.comment.user.avatar.attached? %>
+              <%= cl_image_tag shop_comment.comment.user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-small" %>
             <% else %>
               <i class="fa-solid fa-circle-user fa-sm"></i>
             <% end %>

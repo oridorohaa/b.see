@@ -2,6 +2,7 @@ class Video < ApplicationRecord
   belongs_to :user
   has_many :video_likes
   has_many :video_comments
+  has_many :video_reports
   has_one_attached :video
 
   acts_as_taggable_on :tags

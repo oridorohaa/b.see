@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @reports = Report.all
+    @reports = policy_scope(Report)
+    # @reports = Report.all
   end
 
   def liked_shops_map

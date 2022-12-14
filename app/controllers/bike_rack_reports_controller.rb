@@ -16,13 +16,21 @@ class BikeRackReportsController < ApplicationController
       authorize @report
       if @bike_rack_report.save
         redirect_to @rack, notice: "report added"
-
       else
-        render 'bike_racks/show', status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
     else
-      render 'bike_racks/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @bike_rack_report = BikeRackReport.find(params[:id])
+    authorize @bike_rack_report
+    @bike_rack_report.destroy
+    @rack.status = true
+    @rack.save
+    redirect_to @rack, status: :see_other
   end
 
   private

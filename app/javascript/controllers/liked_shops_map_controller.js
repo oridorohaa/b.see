@@ -13,8 +13,7 @@ export default class extends Controller {
   initMap() {
     if (typeof google === 'undefined') return;
     let map = sharedMapsInit();
-    let map1;
-    let map2;
+
 
     if(liked_shops_data && map){
       for(const shop in liked_shops_data){

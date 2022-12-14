@@ -24,6 +24,15 @@ class VideoReportsController < ApplicationController
     end
   end
 
+  def destroy
+    @video_report = VideoReport.find(params[:id])
+    authorize @video_report
+    @video_report.destroy
+    @video.status = true
+    @video.save
+    redirect_to @video, status: :see_other
+  end
+
   private
 
   def report_params
