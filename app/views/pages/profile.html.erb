@@ -8,8 +8,13 @@
     <% end %>
   </div>
   <div class="user-info">
-    <div class="avatar">``
-     </div>
+    <div class="avatar-icon">
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, height: 100, width: 100, crop: :fill, class: "avatar" %>
+      <% else %>
+        <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+      <% end %>
+    </div>
     <div class="user-actions">
       <%= link_to "edit information", edit_user_registration_path(current_user), class:"action" %>
       <%= link_to "change password", edit_user_password_path(current_user), class:"action" %>
