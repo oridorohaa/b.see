@@ -15,6 +15,8 @@ $pink: #F5FF;
   }
   .right-nav{
     display:flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .fa-user{
@@ -26,6 +28,7 @@ $pink: #F5FF;
     flex-direction: row;
     background-color: $black;
     justify-content: space-between;
+    align-items: center;
 
     a {
       text-decoration: none;

@@ -19,8 +19,19 @@
       <% end %>
     <% end %>
   </div>
+  <div class="right-nav">
   <% if user_signed_in? %>
-    <div class="right-nav">
+  <div class="heart">
+        <% unless @shop.has_user_liked?(current_user) %>
+          <%= link_to shop_shop_likes_path(@shop), data: {turbo_method: :post}  do %>
+            <i class="fa-regular fa-heart fa-xl"></i>
+          <% end %>
+        <% else %>
+          <%= link_to shop_shop_like_path(@shop), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-heart fa-xl"></i>
+          <% end %>
+        <% end %>
+      </div>
       <% if current_user %>
         <div class="profile">
         <%=link_to profile_path(current_user) do %>
@@ -32,17 +43,7 @@
         <% end %>
         </div>
       <% end %>
-      <div class="heart">
-        <% unless @shop.has_user_liked?(current_user) %>
-          <%= link_to shop_shop_likes_path(@shop), data: {turbo_method: :post}  do %>
-            <i class="fa-regular fa-heart fa-xl"></i>
-          <% end %>
-        <% else %>
-          <%= link_to shop_shop_like_path(@shop), data: {turbo_method: :delete} do %>
-            <i class="fa-solid fa-heart fa-xl"></i>
-          <% end %>
-        <% end %>
-      </div>
+
     </div>
   <% end %>
 </div>
@@ -50,7 +51,7 @@
 <div class="photos" style="height: 300px; width: 400px;">
   <% if @shop.photos.attached? %>
     <% @shop.photos.each do |photo| %>
-      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 100%; ">
+      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 90%; position:relative; border:1px solid yellow; left:16px;  border-radius:13px ">
       </div>
     <% end %>
   <% end %>
