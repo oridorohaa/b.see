@@ -3,8 +3,12 @@
     <%= link_to shop_path(@shop) do %>
       <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
     <% end %>
-    <%=link_to profile_path(current_user) do %>
-      <i class="fa-solid fa-user fa-xl"></i>
+    <%= link_to profile_path(current_user) do %>
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-medium" %>
+      <% else %>
+        <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+      <% end %>
     <% end %>
   </div>
 

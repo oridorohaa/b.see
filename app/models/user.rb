@@ -1,3 +1,5 @@
+require "open-uri"
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,6 +9,8 @@ class User < ApplicationRecord
   has_many :lane_comments, through: :comments
   has_many :shop_comments, through: :comments
   has_many :video_comments, through: :comments
+
+  has_one_attached :avatar
 
   has_many :lane_likes
   has_many :shop_likes
