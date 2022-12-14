@@ -1,6 +1,6 @@
 <div class="report-container">
-  <%= link_to shop_path(@shop) do %>
-      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+  <%= link_to video_path(@video) do %>
+    <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
   <% end %>
 
   <%= simple_form_for [@video, @report], url:  video_video_reports_path do |f| %>

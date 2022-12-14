@@ -24,6 +24,15 @@ class LaneReportsController < ApplicationController
     end
   end
 
+  def destroy
+    @lane_report = LaneReport.find(params[:id])
+    authorize @lane_report
+    @lane_report.destroy
+    @lane.status = true
+    @lane.save
+    redirect_to @lane, status: :see_other
+  end
+
   private
 
   def report_params

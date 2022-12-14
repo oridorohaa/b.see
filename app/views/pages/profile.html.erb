@@ -127,8 +127,37 @@
       <% end %>
     </div>
   </div>
+  <% if current_user.admin? %>
+    <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
+      <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">reports <i class="fa-solid fa-plus"></i></p>
+      <div class="cards" data-like-dropdowns-target="reportdropdown">
+        <% @reports.each do |report| %>
+          <% report.bike_rack_reports.each do |report| %>
+            <div class="card">
+              <a href="/bike_racks/<%= report.bike_rack.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.lane_reports.each do |report| %>
+            <div class="card">
+              <a href="/lanes/<%= report.lane.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.shop_reports.each do |report| %>
+            <div class="card">
+              <a href="/shops/<%= report.shop.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.video_reports.each do |report| %>
+            <div class="card">
+              <a href="/videos/<%= report.video.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
-    <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">reports <i class="fa-solid fa-plus"></i></p>
+    <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">my reports <i class="fa-solid fa-plus"></i></p>
     <div class="cards" data-like-dropdowns-target="reportdropdown">
       <% @reports.each do |report| %>
         <% report.bike_rack_reports.each do |report| %>
@@ -152,7 +181,7 @@
           </div>
         <% end %>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
 

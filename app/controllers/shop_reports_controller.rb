@@ -25,6 +25,15 @@ class ShopReportsController < ApplicationController
 
   end
 
+  def destroy
+    @shop_report = ShopReport.find(params[:id])
+    authorize @shop_report
+    @shop_report.destroy
+    @shop.status = true
+    @shop.save
+    redirect_to @shop, status: :see_other
+  end
+
   private
 
   def report_params

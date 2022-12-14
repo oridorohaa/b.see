@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -220,7 +220,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -270,6 +270,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
   add_foreign_key "bike_rack_likes", "users"
   add_foreign_key "bike_rack_reports", "bike_racks"
   add_foreign_key "bike_rack_reports", "reports"
+  add_foreign_key "bike_racks", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "lane_comments", "comments"
   add_foreign_key "lane_comments", "lanes"
@@ -277,6 +278,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
   add_foreign_key "lane_likes", "users"
   add_foreign_key "lane_reports", "lanes"
   add_foreign_key "lane_reports", "reports"
+  add_foreign_key "lanes", "users"
   add_foreign_key "reports", "users"
   add_foreign_key "shop_comments", "comments"
   add_foreign_key "shop_comments", "shops"
@@ -284,6 +286,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
   add_foreign_key "shop_likes", "users"
   add_foreign_key "shop_reports", "reports"
   add_foreign_key "shop_reports", "shops"
+  add_foreign_key "shops", "users"
   add_foreign_key "taggings", "tags"
   add_foreign_key "video_comments", "comments"
   add_foreign_key "video_comments", "videos"
@@ -291,4 +294,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_220728) do
   add_foreign_key "video_likes", "videos"
   add_foreign_key "video_reports", "reports"
   add_foreign_key "video_reports", "videos"
+  add_foreign_key "videos", "users"
 end

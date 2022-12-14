@@ -24,10 +24,15 @@ $pink: #F5FF;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 
   .user-actions {
     display: flex;
     flex-direction: column;
+  }
+
+  .avatar-icon {
+    margin: 10px 10px 10px 0;
   }
 
   .action{

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :bike_racks do
     resources :bike_rack_likes, only: %i[create destroy]
     resources :bike_rack_comments, only: %i[create]
-    resources :bike_rack_reports, only: %i[new create]
+    resources :bike_rack_reports, only: %i[new create destroy]
   end
 
   resources :bike_rack_comments, only: :destroy
@@ -21,19 +21,19 @@ Rails.application.routes.draw do
   resources :lanes do
     resources :lane_likes, only: %i[create destroy]
     resources :lane_comments, only: %i[create destroy]
-    resources :lane_reports, only: %i[new create]
+    resources :lane_reports, only: %i[new create destroy]
   end
 
   resources :shops do
     resources :shop_likes, only: %i[create destroy]
     resources :shop_comments, only: %i[create destroy]
-    resources :shop_reports, only: %i[new create]
+    resources :shop_reports, only: %i[new create destroy]
   end
 
   resources :videos do
     resources :video_likes, only: %i[create destroy]
     resources :video_comments, only: %i[create destroy]
-    resources :video_reports, only: %i[new create]
+    resources :video_reports, only: %i[new create destroy]
   end
 
   get "/recent", to: "videos#recent"

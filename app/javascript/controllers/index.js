@@ -34,6 +34,9 @@ application.register("liked-racks-map", LikedRacksMapController)
 import LikedShopsMapController from "./liked_shops_map_controller"
 application.register("liked-shops-map", LikedShopsMapController)
 
+import ProfileMapsController from "./profile_maps_controller"
+application.register("profile-maps", ProfileMapsController)
+
 import RacksGoogleMapsController from "./racks_google_maps_controller"
 application.register("racks-google-maps", RacksGoogleMapsController)
 

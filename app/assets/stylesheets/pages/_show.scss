@@ -2,6 +2,7 @@ $black: #1C1C17;
 $yellow: #F5FF6D;
 $white: #E5E2DA;
 $grey: #47473B;
+$pink: #F5FF;
 
 // @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   body {
@@ -172,11 +173,18 @@ $grey: #47473B;
   }
 
   .reports{
-    border: 1px solid #F5FF;
-    color: #F5FF;
+    border: 1px solid $pink;
+    color: $pink;
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    i {
+      color: $pink;
+    }
   }
 
   .report {
