@@ -9,6 +9,9 @@ $grey: #47473B;
     overflow-y: scroll;
   }
 
+  a{
+    text-decoration: none;
+  }
   .right-nav{
     display:flex;
   }
@@ -199,4 +202,7 @@ $grey: #47473B;
     width: 80%;
     margin: 0 auto;
   }
+.fa-solid{
+  margin-right: 10px;
+}
 // }

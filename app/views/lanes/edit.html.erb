@@ -2,15 +2,17 @@
   <%= link_to menu_path do  %>
     <i class="fa-solid fa-house"></i>
   <% end %>
+</div>
+
+ <div id="map" data-controller="lanes-new-google-maps" style="height:590px; width:100%;"></div>
+
 
   <%= simple_form_for(@lane) do |f| %>
+  <%= f.input :coords %>
   <%= f.input :street_name %>
-  <%= f.input :start_point %>
-  <%= f.input :end_point %>
   <%= f.input :drescription %>
   <%= f.submit "edit lane", class:"edit" %>
   <% end %>
-</div>
 
 
 
@@ -28,8 +30,9 @@
   border-radius:25px;
 }
 .container{
+  height:45px;
   padding-left: 58px;
-  width:100vw;
+  /* width:100vw; */
   display:flex;
   flex-direction:column;
   justify-content: center;
@@ -37,6 +40,7 @@
 }
 
 .simple_form{
+  margin-left: 30px;
   width:100%;
 }
 .form-control{
