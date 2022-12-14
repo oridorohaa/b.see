@@ -44,11 +44,11 @@
   <%= render "videos/video_list", videos: @videos %>
 
   <div class="buttons" data-filter-videos-target="buttons">
-    <%= link_to new_video_path, class: 'button' do %>
-      <i class="fa-solid fa-plus fa-xl"></i>
-    <% end %>
     <%= link_to menu_path, class: 'button' do %>
       <i class="fa-solid fa-house fa-xl"></i>
+    <% end %>
+    <%= link_to new_video_path, class: 'button' do %>
+      <i class="fa-solid fa-plus fa-xl"></i>
     <% end %>
   </div>
 </div>
@@ -104,7 +104,7 @@ body {
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 20px 10px;
   transition: all .5s ease;
 }

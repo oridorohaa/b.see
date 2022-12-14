@@ -1,58 +1,58 @@
-
-<div class="top-nav">
-  <%= link_to menu_path do  %>
-  <i class="fa-solid fa-house"></i>
-  <% end %>
-  <div class="nav-div" data-controller='search-address' >
-    <input type="text" class="search-input" placeholder="search location...">
-    <input type="text" class ="lat" style="display:none">
-    <input type="text" class ="long" style="display:none">
-  <i class="fa-solid fa-magnifying-glass"></i>
+<div class="new-container">
+  <div class="lanes-navbar">
+    <%= link_to lanes_path do %>
+      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+    <% end %>
+    <div class="nav-div" data-controller='search-address' >
+        <input type="text" class="search-input" placeholder="search location...">
+        <input type="text" class ="lat" style="display:none">
+        <input type="text" class ="long" style="display:none">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <%= link_to profile_path(current_user) do %>
+      <% if current_user.avatar.attached? %>
+        <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-medium" %>
+      <% else %>
+        <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+      <% end %>
+    <% end %>
   </div>
+
+  <div id="map" data-controller="lanes-new-google-maps" style="height:590px;"></div>
+
+  <%= simple_form_for(@lane) do |f| %>
+    <%= f.input :coords %>
+    <%= f.input :street_name %>
+    <%= f.input :drescription %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "+", class:"submit" %>
+  <% end %>
 </div>
-<div id="map" data-controller="lanes-new-google-maps" style="height:590px;"></div>
-
-<%# <div id="map" data-controller="lanes-map" data-lanes-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div> %>
-
-<%= simple_form_for(@lane) do |f| %>
-  <%= f.input :coords%>
-  <%= f.input :street_name %>
-  <%= f.input :drescription %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "create lane", class:"submit" %>
-<% end %>
-</div>
-
 <style>
 
-.top-nav{
-  display:flex;
-}
 
-.nav-div{
-  display:flex;
-  padding:10px;
-}
-.search-input{
+
+/* .search-input{
   background-color: #1C1C17;
   border: 1px solid #F5FF6D;
   border-radius: 10px 0 0 10px;
-  margin-left:30px;
-  width:80%;
-  padding:6px;
-  color:white;
-  padding-left:20px;
+  margin: 0;
+  width: 80%;
+  padding: 6px;
+  color: white;
+  padding-left: 20px;
 }
 
 .fa-magnifying-glass{
-  font-size:25px;
-  color:#F5FF6D;
-  border:1px solid #F5FF6D;
-  padding:6px;
+  font-size: 25px;
+  color: #F5FF6D;
+  border: 1px solid #F5FF6D;
+  padding: 6px;
+  margin: 0;
   border-radius: 0px 10px 10px 0px;
-}
+} */
 
-a{
+/* a {
   display:flex;
   align-items:center;
   margin-left:10px;
@@ -82,9 +82,9 @@ a{
   background:none;
   border: 1px solid #F5FF6D;
   color:white;
-}
+} */
 
-.simple_form{
+/* .simple_form{
   margin-left: 36px;
 }
 
@@ -95,14 +95,14 @@ a{
 
 .form-label{
   color: #F5FF6D;
-}
+} */
 
 #map {
   width: 100%;
   height: 400px;
 }
 
-input[type="file"]::file-selector-button {
+/* input[type="file"]::file-selector-button {
   border: 2px solid #f5ff6d;
   padding: 0.2em 0.4em;
   border-radius: 0.2em;
@@ -113,6 +113,6 @@ input[type="file"]::file-selector-button {
 input[type="file"]::file-selector-button:hover {
   background-color: #81ecec;
   border: 2px solid #00cec9;
-}
+} */
 
 </style>

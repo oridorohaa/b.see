@@ -6,11 +6,13 @@
 </div>
 <div id="map" data-controller="shops-google-maps" style="height:590px;"></div>
 
-<div class="bottom-container">
-  <%= link_to menu_path, class:"button"  do %>
+<div class="buttons">
+  <%= link_to menu_path, class: 'button' do %>
     <i class="fa-solid fa-house fa-xl"></i>
   <% end %>
-  <%= link_to "add shop", new_shop_path, class:"button"%>
+  <%= link_to new_shop_path, class: 'button' do %>
+    <i class="fa-solid fa-plus fa-xl"></i>
+  <% end %>
 </div>
 
 <script>
@@ -32,11 +34,12 @@
 .shop-container{
   border: 1px solid black;
 }
+
 body{
   background:#1C1C17;
 }
 
-.button{
+/* .button{
   font-weight: bold;
   letter-spacing: 1px;
   width:180px;
@@ -47,14 +50,21 @@ body{
   border-radius:20px;
   display:flex;
   justify-content:space-around;
+} */
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 10px;
+  transition: all .5s ease;
 }
 
-.bottom-container{
-  display:flex;
-  justify-content:space-between;
-  padding:0px 10px;
-  margin-top:30px;
-
+.button {
+  /* border: 1px solid #F5FF6D; */
+  color: #F5FF6D;
+  background: none;
+  border-radius: 10px;
 }
 
 .nav-div{
@@ -80,13 +90,7 @@ body{
   border-radius: 0px 10px 10px 0px;
 }
 
-.button {
-  align-items: center;
-}
 
-.button i {
-  color: #1C1C17;
-}
 
 
 </style>

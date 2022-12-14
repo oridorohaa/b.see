@@ -6,16 +6,18 @@
 </div>
 
 <%# <div id="map" data-controller="lanes-google-maps" style="height:590px;"></div> %>
-<%# <div id="map" data-controller="lanes-map-display" data-lanes-map-display-api-key-value="<%= ENV['MAPBOX_API_KEY']%>"></div> %>
 
 <div id="map" data-controller="lanes-google-maps" style="height:590px;"></div>
-<%# <div id="map" data-controller="lanes-map-display" data-lanes-map-display-api-key-value="<%= ENV['MAPBOX_API_KEY']%>"></div> %>
-<div class="bottom-container">
-  <%= link_to menu_path, class:"button"  do %>
+
+<div class="buttons">
+  <%= link_to new_lane_path, class: 'button' do %>
+    <i class="fa-solid fa-plus fa-xl"></i>
+  <% end %>
+  <%= link_to menu_path, class: 'button' do %>
     <i class="fa-solid fa-house fa-xl"></i>
   <% end %>
-  <%= link_to "add lane", new_lane_path, class:"button"%>
 </div>
+
 <script>
  lanes_data = {
   <% @lanes.each do |lane| %>
@@ -34,7 +36,7 @@ body{
   background:#1C1C17;
 }
 
-.button{
+/* .button{
   font-weight: bold;
   letter-spacing: 1px;
   width:180px;
@@ -53,6 +55,21 @@ body{
   padding:0px 10px;
   margin-top:7px;
 
+} */
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 10px;
+  transition: all .5s ease;
+}
+
+.button {
+  /* border: 1px solid #F5FF6D; */
+  color: #F5FF6D;
+  background: none;
+  border-radius: 10px;
 }
 
 .nav-div{
