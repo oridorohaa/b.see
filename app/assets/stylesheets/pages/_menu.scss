@@ -33,10 +33,14 @@ body {
   align-items: center;
 
   .menu-item{
+    display: flex;
+    justify-content: space-around;
+    min-width: 316px;
+    max-width: 316px;
     text-decoration: none;
     /* background:#F5FF6D; */
     color: #F5FF6D;
-    padding: 35px 100px;
+    padding: 35px 0px;
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 1px;

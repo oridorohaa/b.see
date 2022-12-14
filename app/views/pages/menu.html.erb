@@ -1,16 +1,49 @@
-<div class="nav">
-  <i class="fa-solid fa-globe globe"></i>
-  <%= link_to profile_path do  %>
-    <% if current_user.avatar.attached? %>
-      <%= cl_image_tag current_user.avatar.key, height: 100, width: 100, crop: :fill, class: "avatar" %>
-    <% else %>
-      <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+
+<%# <h1>MAIN MENU </h1> %>
+<div data-controller="language">
+  <div class="nav" >
+    <i class="fa-solid fa-globe globe" data-action="click->language#action" data-language-target='globe'></i>
+    <div class="dropdown" data-language-target='dropdown' style="display:none">
+      <p data-language-target='english' data-action="click->language#language">English</p>
+      <p data-language-target='spanish' data-action="click->language#language">Spanish</p>
+    </div>
+    <%= link_to profile_path do  %>
+      <div class="profile-icon">
+        <i class="fa-regular fa-user"></i>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+  <div class="menu-container">
+    <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one",  data: { language_target: "rack" }  %>
+    <%= link_to "Lanes", lanes_path,  class:"menu-item", id:"two", data:{ language_target: "lane" } %>
+    <%= link_to "Shops", shops_path,  class:"menu-item", id:"three", data:{ language_target: "shop" } %>
+    <%= link_to "Videos", videos_path,  class:"menu-item", id:"four", data:{ language_target: "video" } %>
+  </div>
 </div>
-<div class="menu-container">
-  <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one"%>
-  <%= link_to "Lanes", lanes_path,  class:"menu-item", id:"two" %>
-  <%= link_to "Shops", shops_path,  class:"menu-item", id:"three" %>
-  <%= link_to "Videos", videos_path,  class:"menu-item", id:"four" %>
-</div>
+
+<style>
+.profile-icon{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropdown{
+  color: yellow;
+}
+
+p {
+  background: #333;
+  padding: 3px 23px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+p:hover{
+  border:1px solid yellow;
+}
+
+</style>
+
+
