@@ -8,11 +8,13 @@
 <div id="map" data-controller="racks-google-maps" style="height:590px;"></div>
 
 
-<div class="bottom-container">
-  <%= link_to menu_path, class:"button" do %>
+<div class="buttons">
+  <%= link_to menu_path, class: 'button' do %>
     <i class="fa-solid fa-house fa-xl"></i>
   <% end %>
-  <%= link_to "add rack", new_bike_rack_path, class:"button"%>
+  <%= link_to new_bike_rack_path, class: 'button' do %>
+    <i class="fa-solid fa-plus fa-xl"></i>
+  <% end %>
 </div>
 
 
@@ -35,7 +37,7 @@ body{
   background:#1C1C17;
 }
 
-.button{
+/* .button{
   font-weight: bold;
   letter-spacing: 1px;
   width:180px;
@@ -54,6 +56,21 @@ body{
   padding:0px 10px;
   margin-top:30px;
 
+} */
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 10px;
+  transition: all .5s ease;
+}
+
+.button {
+  /* border: 1px solid #F5FF6D; */
+  color: #F5FF6D;
+  background: none;
+  border-radius: 10px;
 }
 
 .nav-div{
