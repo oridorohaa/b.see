@@ -7,7 +7,7 @@ class VideoLikesController < ApplicationController
     @video_like.video = @video
     authorize @video_like
     if @video_like.save
-      redirect_to @video, notice: 'liked'
+      redirect_to @video
     else
       redirect_to @video, notice: 'did not save'
     end
@@ -17,7 +17,7 @@ class VideoLikesController < ApplicationController
     @video_like = VideoLike.find_by(user: current_user, video: @video)
     authorize @video_like
     @video_like.destroy
-    redirect_to @video, notice: 'unliked'
+    redirect_to @video
   end
 
   private

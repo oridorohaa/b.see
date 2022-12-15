@@ -8,7 +8,7 @@ class BikeRackCommentsController < ApplicationController
       @bike_rack_comment = BikeRackComment.new(bike_rack: @bike_rack, comment: @comment)
       authorize @bike_rack_comment
       if @bike_rack_comment.save
-        redirect_to @bike_rack, notice: "Comment added"
+        redirect_to @bike_rack, notice: "comment added"
       else
         render 'bike_racks/show', status: :unprocessable_entity
       end
@@ -30,7 +30,7 @@ class BikeRackCommentsController < ApplicationController
   end
 
   def set_bike_rack_comment
-    @bike_rack_comment = BikeRackComment.find(params[:id])
+    @bike_rack_comment = BikeRackComment.find(params[:bike_rack_id])
   end
 
   def set_comment

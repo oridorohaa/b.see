@@ -35,7 +35,7 @@ class ShopsController < ApplicationController
     authorize @shop
     @shop.update(shop_params)
     if @shop.save
-      redirect_to @shop, notice: "Edited"
+      redirect_to @shop, notice: "changes saved"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -54,6 +54,6 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).permit( :name, :address, :hours, :phone_number, :description, :website, :status, :latitude, :longitude, photos: [])
+    params.require(:shop).permit(:name, :address, :hours, :phone_number, :description, :website, :status, :latitude, :longitude, photos: [])
   end
 end

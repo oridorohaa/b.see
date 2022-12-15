@@ -35,7 +35,7 @@ class BikeRacksController < ApplicationController
     authorize @bike_rack
     @bike_rack.update(bike_rack_params)
     if @bike_rack.save
-      redirect_to @bike_rack, notice: "Edited"
+      redirect_to @bike_rack, notice: "changes saved"
     else
       render :edit, status: :unprocessable_entity
     end

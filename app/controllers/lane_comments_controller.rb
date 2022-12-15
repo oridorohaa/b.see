@@ -8,7 +8,7 @@ class LaneCommentsController < ApplicationController
       @lane_comment = LaneComment.new(lane: @lane, comment: @comment)
       authorize @lane_comment
       if @lane_comment.save
-        redirect_to @lane, notice: "Comment added"
+        redirect_to @lane, notice: "comment added"
       else
         render 'lanes/show', status: :unprocessable_entity
       end

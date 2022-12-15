@@ -1,0 +1,14 @@
+$pink: #F5FF;
+$white: #E5E2DA;
+$black: #1C1C17;
+
+.notice {
+  background-color: $black;
+  border: 1px solid $pink;
+  font-weight: bold;
+  transition: all 1s ease;
+}
+
+.fade {
+  opacity: 0;
+}

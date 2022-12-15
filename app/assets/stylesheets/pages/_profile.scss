@@ -10,12 +10,14 @@ $pink: #F5FF;
   justify-content: space-between;
 
   a {
-    margin: 0px 10px;
+    margin: 0;
+    width: 25px;
   }
 }
 
 .profile-nav{
-  margin-top:30px !important;
+  width: 80%;
+  margin: 20px auto;
 }
 
 .user-info {
@@ -31,14 +33,21 @@ $pink: #F5FF;
   .user-actions {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   .avatar-icon {
     margin: 10px 10px 10px 0;
   }
 
-  .action{
+  p {
+    color: $yellow;
+    text-align: center;
+  }
 
+  a {color: $yellow}
+
+  .action{
     text-decoration: none;
     color: $yellow;
   }
@@ -73,6 +82,7 @@ $pink: #F5FF;
     color: $yellow;
     font-weight:bold;
     padding: 5px 10px;
+    height: 48px;
   }
 
   a {
@@ -131,6 +141,7 @@ button:focus:not(:focus-visible) {
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
+    height: auto;
   }
 
   p {

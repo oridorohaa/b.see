@@ -7,7 +7,7 @@ class BikeRackLikesController < ApplicationController
     @bike_rack_like.bike_rack = @bike_rack
     authorize @bike_rack_like
     if @bike_rack_like.save
-      redirect_to @bike_rack, notice: 'liked'
+      redirect_to @bike_rack
     else
       redirect_to @bike_rack, notice: 'did not save'
     end
@@ -17,7 +17,7 @@ class BikeRackLikesController < ApplicationController
     @bike_rack_like = BikeRackLike.find_by(user: current_user, bike_rack: @bike_rack)
     authorize @bike_rack_like
     @bike_rack_like.destroy
-    redirect_to @bike_rack, notice: 'unliked'
+    redirect_to @bike_rack
   end
 
   private

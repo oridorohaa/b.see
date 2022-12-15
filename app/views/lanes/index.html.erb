@@ -7,9 +7,7 @@
 
 <%# <div id="map" data-controller="lanes-google-maps" style="height:590px;"></div> %>
 
-
-<div id="map" class="map" data-controller="lanes-google-maps" style="height:564px; width:90%; border:2px solid yellow; left:20px; border-radius:7px;"></div>
-
+<div id="map" class="map" data-controller="lanes-google-maps" style="height:564px; width:90%; border:2px solid #F5FF6D; left:20px; border-radius:7px;"></div>
 
 <div class="buttons">
   <%= link_to menu_path, class: 'button' do %>
@@ -38,27 +36,6 @@ body{
   background:#1C1C17;
 }
 
-/* .button{
-  font-weight: bold;
-  letter-spacing: 1px;
-  width:180px;
-  background:#F5FF6D;
-  padding:13px 30px;
-  text-decoration:none;
-  color:black;
-  border-radius:20px;
-  display:flex;
-  justify-content:space-around;
-}
-
-.bottom-container{
-  display:flex;
-  justify-content:space-between;
-  padding:0px 10px;
-  margin-top:7px;
-
-} */
-
 .buttons {
   display: flex;
   flex-direction: row;
@@ -76,29 +53,6 @@ body{
 
 i {
   color: #F5FF6D;
-}
-
-.nav-div{
-  display:flex;
-  padding:10px;
-}
-.search-input{
-  background-color: #1C1C17;
-  border: 2px solid #F5FF6D;
-  border-radius: 10px 0 0 10px;
-  margin-left:10px;
-  width:100%;
-  padding:6px;
-  color:white;
-  padding-left:20px;
-}
-
-.fa-magnifying-glass{
-  font-size:25px;
-  color:#F5FF6D;
-  border:2px solid #F5FF6D;
-  padding:6px;
-  border-radius: 0px 10px 10px 0px;
 }
 
 .lane-container{
@@ -124,11 +78,4 @@ input[type="file"]::file-selector-button:hover {
   border: 2px solid #00cec9;
 }
 
-/* .button {
-  align-items: center;
-}
-
-.button i {
-  color: #1C1C17;
-} */
 </style>

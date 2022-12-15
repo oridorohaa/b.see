@@ -107,8 +107,10 @@
             <%= bike_rack_comment.comment.user.username %>
           </div>
           <div>
-            <%= link_to bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete}  do %>
-              <i class="fa-solid fa-trash fa-sm"></i>
+            <% if policy(bike_rack_comment).destroy? %>
+              <%= link_to bike_rack_bike_rack_comment_path(bike_rack_comment), data: {turbo_method: :delete}  do %>
+                <i class="fa-solid fa-trash fa-sm"></i>
+              <% end %>
             <% end %>
           </div>
         </div>

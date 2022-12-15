@@ -13,14 +13,14 @@ application.register("filter-videos", FilterVideosController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import LanguageController from "./language_controller"
-application.register("language", LanguageController)
-
 import LanesGoogleMapsController from "./lanes_google_maps_controller"
 application.register("lanes-google-maps", LanesGoogleMapsController)
 
 import LanesNewGoogleMapsController from "./lanes_new_google_maps_controller"
 application.register("lanes-new-google-maps", LanesNewGoogleMapsController)
+
+import LanguageController from "./language_controller"
+application.register("language", LanguageController)
 
 import LikeDropdownsController from "./like_dropdowns_controller"
 application.register("like-dropdowns", LikeDropdownsController)
@@ -33,6 +33,9 @@ application.register("liked-racks-map", LikedRacksMapController)
 
 import LikedShopsMapController from "./liked_shops_map_controller"
 application.register("liked-shops-map", LikedShopsMapController)
+
+import NotificationFadeController from "./notification_fade_controller"
+application.register("notification-fade", NotificationFadeController)
 
 import ProfileMapsController from "./profile_maps_controller"
 application.register("profile-maps", ProfileMapsController)

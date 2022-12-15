@@ -1,10 +1,13 @@
-<h2 class="edit-user">Edit <%= resource_name.to_s.humanize %></h2>
+<%# <h2 class="edit-user">Edit <%= resource_name.to_s.humanize %></h2>
+<%= link_to :back do %>
+  <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+<% end %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, required: true, autofocus: true, label: false %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -13,15 +16,17 @@
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                label: false,
+                placeholder: "password" %>
     <%= f.input :password_confirmation,
                 label: false,
-                placeholder: "Password confirmation",
+                placeholder: "password confirmation",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
                 label: false,
-                placeholder: "Current password",
+                placeholder: "current password",
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
@@ -29,24 +34,15 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "submit" %>
   </div>
 <% end %>
 
 
 <p class="link">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-  <%= link_to :back do %>
-    <div class="fa-solid fa-circle-chevron-left fa-xl">
-    </div>
-  <% end %>
 
 <style>
-
-.edit-user {
-  color: #f5ff6d;
-  margin: 25px;
-}
 
 .simple_form {
   color: #F5FF6D;
@@ -57,23 +53,43 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  width: 80%;
+  margin: 20px auto;
 }
 
+.email {
+  margin-top: 20px;
+}
 
 .form-control {
   background-color: #1C1C17 !important;
   border-radius: 5px;
   border-color: #F5FF6D;
-  color: white !important;
-  margin-bottom: 10px;
+  color: #E5E2DA !important;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-label {
+  color: #E5E2DA;
+  margin-left: 5%;
+}
+
+.form-text {
+  margin-left: 5%;
 }
 
 #user_password_confirmation {
   margin-bottom: 45px;
 }
 
-.btn {
-  color: #f5ff6d;
+.submit {
+  color: #1C1C17;
+  background-color: #f5ff6d;
+  border-radius: 10px;
+  margin: 10px 0;
+  margin-left: 5%;
+  width: 90%;
 }
 
 .cancel-account {
@@ -82,29 +98,32 @@
   padding: 2rem;
 }
 
-.link {
-  color: #f5ff6d;
-  margin: -10px;
-  padding: 4rem
-}
-
 .fa-solid {
-  width: 180px;
+  width: 25px;
   background: #1C1C17;
   padding: 26px 20px;
   text-decoration: none;
   color: #F5FF6D;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.link {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E5E2DA;
 }
 
 .link a {
   text-decoration: none;
   color: #F5FF6D;
-  border: 1px solid#1C1C17;
+  border: 1px solid #1C1C17;
   border-radius: 13px;
   letter-spacing: 0px;
   padding: 10px;
   font-weight: bolder;
 }
-
 
 </style>
