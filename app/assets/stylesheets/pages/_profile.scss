@@ -11,7 +11,6 @@ $pink: #F5FF;
 
   a {
     margin: 0px 10px;
-
   }
 }
 
@@ -93,6 +92,8 @@ $pink: #F5FF;
   li { color: $pink }
 
   i { color: $pink }
+
+  a { color: $pink }
 }
 
 .map {
@@ -107,6 +108,15 @@ $pink: #F5FF;
 
 .btn {
   color: $yellow;
+}
+
+button.btn.active {
+  border: none;
+}
+
+button:focus:not(:focus-visible) {
+  border: none;
+  outline: none;
 }
 
 .cards {
@@ -135,11 +145,4 @@ $pink: #F5FF;
   a {
     padding: 0;
   }
-
-  // #shop-map {
-  //   width: 40%;
-  //   text-align: center;
-  //   margin: 10px;
-  //   padding: 10px;
-  // }
 }

@@ -21,23 +21,23 @@
     </div>
   </div>
   <div class="likes" data-controller="like-dropdowns">
-    <p data-action="click->like-dropdowns#likeDropdown" data-like-dropdowns-target="likebtn">my likes <i class="fa-solid fa-plus"></i></p>
+    <p data-action="click->like-dropdowns#likeDropdown" data-like-dropdowns-target="likebtn">my likes <i class="fa-solid fa-plus plus" id="plus"></i></p>
     <div data-like-dropdowns-target="likedropdown" id="like-dropdown">
       <ul>
         <li data-controller="profile-maps">
-          <button class='btn' data-action="click->profile-maps#displayRackMap">racks <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->profile-maps#displayRackMap">racks <i class="fa-solid fa-plus plus" id="plus11"></i></button>
           <div id="map" class="map" style="height:0;" data-profile-maps-target="rackmap"></div>
         </li>
         <li data-controller="profile-maps">
-          <button class='btn' data-action="click->profile-maps#displayLaneMap">lanes <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->profile-maps#displayLaneMap">lanes <i class="fa-solid fa-plus plus" id="plus12"></i></button>
           <div id="map2" class="map" style="height:0;" data-profile-maps-target="lanemap"></div>
         </li>
         <li data-controller="profile-maps">
-          <button class='btn' data-action="click->profile-maps#displayShopMap">shops <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->profile-maps#displayShopMap">shops <i class="fa-solid fa-plus plus" id="plus13"></i></button>
           <div id="map3" class="map" style="height:0;" data-profile-maps-target="shopmap"></div>
         </li>
         <li>
-          <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->like-dropdowns#videoDropdown" data-like-dropdowns-target="videobtn">videos <i class="fa-solid fa-plus plus" id="plus2"></i></button>
             <div class="cards" data-like-dropdowns-target="videodropdown">
               <% current_user.video_likes.each do |video_like| %>
                 <% video = Video.find(video_like.video_id) %>
@@ -51,11 +51,11 @@
     </div>
   </div>
   <div class="user-uploads" data-controller="like-dropdowns">
-    <p data-action="click->like-dropdowns#uploadDropdown" data-like-dropdowns-target="uploadbtn">my uploads <i class="fa-solid fa-plus"></i></p>
+    <p data-action="click->like-dropdowns#uploadDropdown" data-like-dropdowns-target="uploadbtn">my uploads <i class="fa-solid fa-plus plus" id="plus3"></i></p>
     <div data-like-dropdowns-target="uploaddropdown" id="upload-dropdown">
       <ul>
         <li>
-          <button class='btn' data-action="click->like-dropdowns#myRackDropdown" data-like-dropdowns-target="myrackbtn">racks <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->like-dropdowns#myRackDropdown" data-like-dropdowns-target="myrackbtn">racks <i class="fa-solid fa-plus plus" id="plus6"></i></button>
           <div class="cards" data-like-dropdowns-target="myrackdropdown">
             <% current_user.bike_racks.each do |rack| %>
               <div class="card">
@@ -65,7 +65,7 @@
           </div>
         </li>
         <li>
-          <button class='btn' data-action="click->like-dropdowns#myLaneDropdown" data-like-dropdowns-target="mylanebtn">lanes <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->like-dropdowns#myLaneDropdown" data-like-dropdowns-target="mylanebtn">lanes <i class="fa-solid fa-plus plus" id="plus7"></i></button>
           <div class="cards" data-like-dropdowns-target="mylanedropdown">
             <% current_user.lanes.each do |lane| %>
               <div class="card">
@@ -75,7 +75,7 @@
           </div>
         </li>
         <li>
-          <button class='btn' data-action="click->like-dropdowns#myShopDropdown" data-like-dropdowns-target="myshopbtn">shops <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->like-dropdowns#myShopDropdown" data-like-dropdowns-target="myshopbtn">shops <i class="fa-solid fa-plus plus" id="plus8"></i></button>
           <div class="cards" data-like-dropdowns-target="myshopdropdown">
             <% current_user.shops.each do |shop| %>
               <div class="card">
@@ -85,7 +85,7 @@
           </div>
         </li>
         <li>
-          <button class='btn' data-action="click->like-dropdowns#myVideoDropdown" data-like-dropdowns-target="myvideobtn">videos <i class="fa-solid fa-plus"></i></button>
+          <button class='btn' data-action="click->like-dropdowns#myVideoDropdown" data-like-dropdowns-target="myvideobtn">videos <i class="fa-solid fa-plus plus" id="plus9"></i></button>
           <div class="cards" data-like-dropdowns-target="myvideodropdown">
             <% current_user.videos.each do |video| %>
               <div class="card">
@@ -98,7 +98,7 @@
     </div>
   </div>
   <div class="user-comments" data-controller="like-dropdowns">
-    <p data-action="click->like-dropdowns#commentDropdown" data-like-dropdowns-target="commentbtn">my comments <i class="fa-solid fa-plus"></i></p>
+    <p data-action="click->like-dropdowns#commentDropdown" data-like-dropdowns-target="commentbtn">my comments <i class="fa-solid fa-plus plus" id="plus4"></i></p>
     <div class= "cards" data-like-dropdowns-target="commentdropdown">
       <% current_user.bike_rack_comments.each do |comment| %>
         <div class="card">
@@ -122,37 +122,8 @@
       <% end %>
     </div>
   </div>
-  <% if current_user.admin? %>
-    <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
-      <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">reports <i class="fa-solid fa-plus"></i></p>
-      <div class="cards" data-like-dropdowns-target="reportdropdown">
-        <% @reports.each do |report| %>
-          <% report.bike_rack_reports.each do |report| %>
-            <div class="card">
-              <a href="/bike_racks/<%= report.bike_rack.id %>"><%= report.report.content %></a>
-            </div>
-          <% end %>
-          <% report.lane_reports.each do |report| %>
-            <div class="card">
-              <a href="/lanes/<%= report.lane.id %>"><%= report.report.content %></a>
-            </div>
-          <% end %>
-          <% report.shop_reports.each do |report| %>
-            <div class="card">
-              <a href="/shops/<%= report.shop.id %>"><%= report.report.content %></a>
-            </div>
-          <% end %>
-          <% report.video_reports.each do |report| %>
-            <div class="card">
-              <a href="/videos/<%= report.video.id %>"><%= report.report.content %></a>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
   <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
-    <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">my reports <i class="fa-solid fa-plus"></i></p>
+    <p data-action="click->like-dropdowns#reportDropdown" data-like-dropdowns-target="reportbtn">my reports <i class="fa-solid fa-plus plus" id="plus5"></i></p>
     <div class="cards" data-like-dropdowns-target="reportdropdown">
       <% @reports.each do |report| %>
         <% report.bike_rack_reports.each do |report| %>
@@ -178,8 +149,36 @@
       <% end %>
     </div>
   </div>
+  <% if current_user.admin? %>
+    <div class="admin-reports" id="admin-reports" data-controller="like-dropdowns">
+      <p data-action="click->like-dropdowns#adminReportDropdown" data-like-dropdowns-target="adminreportbtn">reports <i class="fa-solid fa-plus plus" id="plus10"></i></p>
+      <div class="cards" data-like-dropdowns-target="adminreportdropdown">
+        <% @reports.each do |report| %>
+          <% report.bike_rack_reports.each do |report| %>
+            <div class="card">
+              <a href="/bike_racks/<%= report.bike_rack.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.lane_reports.each do |report| %>
+            <div class="card">
+              <a href="/lanes/<%= report.lane.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.shop_reports.each do |report| %>
+            <div class="card">
+              <a href="/shops/<%= report.shop.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+          <% report.video_reports.each do |report| %>
+            <div class="card">
+              <a href="/videos/<%= report.video.id %>"><%= report.report.content %></a>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
-
 <script>
   liked_racks_data = {
     <% current_user.bike_rack_likes.each do |rack_like| %>

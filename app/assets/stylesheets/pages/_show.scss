@@ -120,6 +120,10 @@ $pink: #F5FF;
 
     .comment-top p {
       margin: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $white;
     }
 
     .comment-username {
@@ -140,8 +144,8 @@ $pink: #F5FF;
       margin-bottom: 10%;
       display: flex;
       flex-direction: column;
-      height: 0;
       overflow-y: hidden;
+      height: 0;
       transition: all .5s ease;
     }
 
@@ -167,10 +171,6 @@ $pink: #F5FF;
 
     .add-comment {
       margin-top: 10px;
-    }
-
-    .add-comment:hover form {
-      height: 150px;
     }
 
     .mb-3 {
@@ -213,6 +213,7 @@ $pink: #F5FF;
     width: 80%;
     margin: 0 auto;
   }
+
 .fa-solid{
   margin-right: 10px;
 }

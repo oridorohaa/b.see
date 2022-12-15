@@ -79,9 +79,9 @@
 
 <div class="comments">
   <% if user_signed_in? %>
-    <div class="add-comment">
+    <div class="add-comment" data-controller="like-dropdowns">
       <div class="comment-top">
-        <i class="fa-solid fa-plus fa-xl"></i>
+        <i data-action="click->like-dropdowns#addCommentDropdown" data-like-dropdowns-target="addcomment" class="fa-solid fa-plus fa-xl plus" id="plus"></i>
         <p>comments</p>
       </div>
       <%= simple_form_for([@lane, @lane_comment]) do |f| %>
