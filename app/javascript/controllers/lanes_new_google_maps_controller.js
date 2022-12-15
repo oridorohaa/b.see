@@ -12,7 +12,7 @@ export default class extends Controller {
 
   initMap(){
     if (typeof google === 'undefined') return;
-    let map = sharedMapsInit();
+    let map = sharedMapsInit()[0];
 
     const drawingManager = new google.maps.drawing.DrawingManager({
       drawingMode: google.maps.drawing.OverlayType.POLYLINE,
