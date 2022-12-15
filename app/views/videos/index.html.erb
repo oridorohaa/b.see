@@ -5,7 +5,9 @@
       class: "form-control",
       placeholder: "search..."
     %>
-    <%= submit_tag "search", class: "search-btn" %>
+    <%= submit_tag "search", class: "search-btn"  do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
   <% end %>
 </div>
 

@@ -14,8 +14,7 @@ export default class extends Controller {
 
     if (e.currentTarget.classList.contains('active')) {
       // console.log("list target", this.listTarget)
-      this.listTarget.style.transform = "translateY(35px)";
-      this.buttonsTarget.style.transform = "translateY(60px)";
+      this.moveList();
     } else {
       this.listTarget.style.transform = "translateY(-5px)";
       this.buttonsTarget.style.transform = "translateY(0px)";
@@ -42,29 +41,121 @@ export default class extends Controller {
 
   recent(e) {
     e.currentTarget.classList.toggle("active")
-    this.listTarget.style.transform = "translateY(35px)";
-    this.buttonsTarget.style.transform = "translateY(60px)";
+    this.moveList();
 
-    fetch('/recent', {
-      headers: {"Accept": "text/plain"}
-    })
-      .then(response => response.text())
-      .then((data) => {
-        console.log(data)
-        this.listTarget.outerHTML = data
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/recent', {
+        headers: {"Accept": "text/plain"}
       })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
   }
 
   liked(e) {
     e.currentTarget.classList.toggle("active")
 
-    fetch('/most_liked', {
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/most_liked', {
+        headers: {"Accept": "text/plain"}
+      })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
+  }
+
+  maintenance(e) {
+    e.currentTarget.classList.toggle("active")
+
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/maintenance', {
+        headers: {"Accept": "text/plain"}
+      })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
+  }
+
+  repair(e) {
+    e.currentTarget.classList.toggle("active")
+
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/repair', {
+        headers: {"Accept": "text/plain"}
+      })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
+  }
+
+  styling(e) {
+    e.currentTarget.classList.toggle("active")
+
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/styling', {
+        headers: {"Accept": "text/plain"}
+      })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
+  }
+
+  other(e) {
+    e.currentTarget.classList.toggle("active")
+
+    if (e.currentTarget.classList.contains('active')) {
+      fetch('/other', {
+        headers: {"Accept": "text/plain"}
+      })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data
+          this.moveList();
+        })
+    } else {
+      this.fetchAll();
+    }
+  }
+
+  fetchAll() {
+    fetch('/videos', {
       headers: {"Accept": "text/plain"}
     })
       .then(response => response.text())
       .then((data) => {
         console.log(data)
         this.listTarget.outerHTML = data
+        this.moveList();
       })
+  }
+
+  moveList() {
+    this.listTarget.style.transform = "translateY(35px)";
+    this.buttonsTarget.style.transform = "translateY(60px)";
   }
 }
