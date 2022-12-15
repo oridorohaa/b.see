@@ -34,6 +34,8 @@ export default class extends Controller {
             google.maps.event.addListener(marker, "click", function() {
               window.location.href = this.url;
             });
+            console.log(map)
+            console.log(marker)
           }else{
             let marker = new google.maps.Marker({
               position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },
