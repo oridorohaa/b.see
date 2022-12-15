@@ -134,8 +134,8 @@ const sharedMapsInit = () => {
       });
       console.log(map, "before init")
       initAuto(map)
-      window.Map = map;
-      console.log(window.Map)
+      window.map = map;
+      console.log(window.map)
     });
     return mapObjects;
   }
