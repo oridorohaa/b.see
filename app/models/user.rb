@@ -20,6 +20,8 @@ class User < ApplicationRecord
   has_many :shops, dependent: :destroy
   has_many :videos, dependent: :destroy
 
+  has_many :reports, dependent: :destroy
+
   validates :username, presence: true
   validates :username, uniqueness: true
 
