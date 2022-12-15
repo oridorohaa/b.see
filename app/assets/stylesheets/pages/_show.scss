@@ -218,6 +218,23 @@ $pink: #F5FF;
   margin-right: 10px;
 }
 
-.rotate {
-  transform: rotate(45deg);
+.name{
+  margin-bottom:1px;
+  text-transform: uppercase;
+  color:$yellow;
+}
+
+.hours{
+  color: $yellow;
+  margin-bottom: 0px;
+}
+.address{
+  // font-weight: bold;
+}
+.email{
+  width:80%;
+  display:inline-block;
+  // overflow: hidden;
+  word-wrap: break-word;
+  // white-space: initial;
 }

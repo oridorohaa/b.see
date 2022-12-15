@@ -58,15 +58,15 @@
 </div>
 
 <div class="info">
-  <%= @shop.name %> -
-  <%= @shop.address %>
+  <p class="name"><%= @shop.name %></p>
+  <p class="address"><%= @shop.address %></p>
   <%= @shop.description %>
 </div>
 
 <div class="info">
-  <%= @shop.hours %><br>
-  <%= @shop.phone_number %><br>
-  <%= @shop.website %><br>
+  <p class="hours"><%= @shop.hours %></p>
+  <%= @shop.phone_number %>
+  <p class="email"><%= @shop.website %></p>
 </div>
 
 <% if @shop.shop_reports.count > 0 %>
