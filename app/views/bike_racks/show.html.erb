@@ -1,7 +1,7 @@
 <div class="navbar">
   <div class="navbar-section">
     <%= link_to bike_racks_path, class: "button" do %>
-      <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+      <i class="fa-solid fa-circle-chevron-left fa-xl" style = "margin: 21px -15px;"></i>
     <% end %>
     <% if user_signed_in? %>
       <% if policy(@bike_rack).update? %>
@@ -48,10 +48,10 @@
   <% end %>
 </div>
 
-<div class="photos" style="height: 300px; width: 400px;">
+<div class="photos" style="height: 300px;">
   <% if @bike_rack.photos.attached? %>
     <% @bike_rack.photos.each do |photo| %>
-      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 87%; position:relative; border:1px solid yellow; left:22px; border-radius:13px ">
+      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 90%; position:relative; border:1px solid yellow; left:22px; border-radius:13px ">
       </div>
     <% end %>
   <% end %>
