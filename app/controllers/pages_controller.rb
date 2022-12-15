@@ -10,7 +10,6 @@ class PagesController < ApplicationController
 
   def get_lines
     lines =  db.getLines()
-
     render :json => lines
   end
 
