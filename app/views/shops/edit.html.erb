@@ -19,6 +19,7 @@
     <%= f.input :phone_number %>
     <%= f.input :description %>
     <%= f.input :website %>
+    <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
     <%= f.submit "edit", class: "submit" %>
   <% end %>
 </div>

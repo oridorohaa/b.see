@@ -5,7 +5,7 @@
         <%= cl_video_tag(video.video.key,
           :controls => true,
           :transformation => [
-            {:width=>200, :crop=>"pad"},
+            {:width=>200, :crop=>"fill"},
             {:height=>100, :crop=>"scale"}
           ],
           :fallback_content => "Your browser does not support HTML5 video tags.")
@@ -13,9 +13,9 @@
       </div>
       <div class="video-info">
         <a href="/videos/<%=video.id%>"><%= video.title %></a>
-        <p><%= video.user.username %> | <%= video.created_at.strftime("%b %e %Y") %></p>
+        <p><%= video.user.username %></p>
         <%= video.description %>
-        <%= video.video_likes.size %>
+        <p><%= video.video_likes.size %> <i class="fa-solid fa-heart"></i></p>
       </div>
     </div>
   <% end %>

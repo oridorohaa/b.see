@@ -108,7 +108,7 @@ class VideosController < ApplicationController
     authorize @video
     @video.update(video_params)
     if @video.save
-      redirect_to @video, notice: "Edited"
+      redirect_to @video, notice: "changes saved"
     else
       render :edit, status: :unprocessable_entity
     end

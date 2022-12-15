@@ -6,4 +6,7 @@ class BikeRackCommentPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    record.comment.user == user
+  end
 end

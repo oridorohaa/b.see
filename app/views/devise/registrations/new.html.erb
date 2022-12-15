@@ -1,22 +1,29 @@
-
-
+<%= link_to :back do %>
+  <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+<% end %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :username %>
+    <%= f.input :username, label: false, placeholder: "username" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email" },
+                label: false,
+                placeholder: "email" %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                label: false,
+                placeholder: "password" %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                label: false,
+                placeholder: "confirm password" %>
     <%= f.input :avatar, as: :file %>
   </div>
 
@@ -58,11 +65,12 @@
 
 
 
-
+  p {
+    color: #E5E2DA;
+  }
 
   .form-control {
-    color: yellow;
-
+    color: #E5E2DA;
     background-color: #1C1C17;
     border: 1px solid #F5FF6D;
     border-radius: 10px;
@@ -72,7 +80,7 @@
 
 
   .form-label{
-    color:yellow;
+    color: #F5FF6D;
   }
 
 
@@ -126,5 +134,12 @@
     margin: 0 auto;
   }
 
+  i {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #F5FF6D;
+  }
 
 </style>

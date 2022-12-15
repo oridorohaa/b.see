@@ -71,6 +71,7 @@ body {
   margin: 20px auto;
   border-radius: 10px;
   transition: all .5s ease;
+  overflow-y: scroll;
 }
 
 .video-container{
@@ -80,6 +81,8 @@ body {
   border-radius: 10px;
   display: flex;
   flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .video {
@@ -216,6 +219,15 @@ button {
 .active{
   background:#F5FF6D  !important;
   color: black !important;
+}
+
+.video-info {
+  margin-bottom: 0;
+}
+
+.video-info a {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 </style>

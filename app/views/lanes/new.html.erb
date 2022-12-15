@@ -18,12 +18,12 @@
     <% end %>
   </div>
 
-  <div id="map" data-controller="lanes-new-google-maps" style="height:564px; width:90%; border:2px solid yellow; left:20px; border-radius:7px;"></div>
+  <div id="map" class="map" data-controller="lanes-new-google-maps" style="height:564px; width:90%; border:2px solid #F5FF6D; left:20px; border-radius:7px;"></div>
 
   <%= simple_form_for(@lane) do |f| %>
-    <%= f.input :coords %>
-    <%= f.input :street_name %>
-    <%= f.input :drescription %>
+    <%= f.input :coords, label: false, placeholder: "coords..." %>
+    <%#= f.input :street_name %>
+    <%= f.input :drescription, label: false, placeholder: "description..." %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "+", class:"submit" %>
   <% end %>
