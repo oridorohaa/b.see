@@ -51,7 +51,7 @@
 <div class="photos" style="height: 300px; width: 400px;">
   <% if @bike_rack.photos.attached? %>
     <% @bike_rack.photos.each do |photo| %>
-      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 90%; position:relative; border:1px solid yellow; left:16px; border-radius:13px ">
+      <div class="photo" style="background-image: url('<%= cl_image_path photo.key, effect: "trim" , gravity: "center", height: 300, width: 400, crop: :fill %>'); height: 100%; width: 93%; position:relative; border:1px solid yellow; left:22px; border-radius:13px ">
       </div>
     <% end %>
   <% end %>

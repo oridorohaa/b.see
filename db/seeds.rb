@@ -13,7 +13,7 @@ user = User.create(username: 'Joseph', email: 'joseph@email.com', password: '123
 
 BikeRack.destroy_all
 
-file = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro, Benito Juárez, 03103 Ciudad de México, CDMX",
                     description: "Tres biciestacionamientos tipo cuadro",
@@ -23,7 +23,7 @@ rack = BikeRack.new(address: "Adolfo Prieto 303, código 2, Col del Valle Centro
 rack.photos.attach(io: file, filename: "biciestacionamineto", content_type: "images/jpg")
 rack.save!
 
-file2 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file2 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX",
                     description: "Un biciestacionamiento tipo U invertidad",
@@ -33,7 +33,7 @@ rack = BikeRack.new(address: "Amsterdam 244, Hipódromo, Cuauhtémoc, 06100 Ciud
 rack.photos.attach(io: file2, filename: "biciestacionamineto1", content_type: "images/jpg")
 rack.save!
 
-file3 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file3 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
                     description: "Cinco biciestacionamientos tipo U invertidad",
@@ -43,7 +43,7 @@ rack = BikeRack.new(address: "C. Amberes 6, Juárez, Cuauhtémoc, 06600 Ciudad d
 rack.photos.attach(io: file3, filename: "biciestacionamineto2", content_type: "images/jpg")
 rack.save!
 
-file4 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file4 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "C. Liverpool 34, Juárez, Cuauhtémoc, 06600 Juárez, CDMX",
                     description: "Cuatro biciestacionamientos tipo U invertidad",
@@ -53,7 +53,7 @@ rack = BikeRack.new(address: "C. Liverpool 34, Juárez, Cuauhtémoc, 06600 Juár
 rack.photos.attach(io: file4, filename: "biciestacionamineto4", content_type: "images/jpg")
 rack.save!
 
-file5 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file5 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Cda. Ernesto Pugibet 17, Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
                     description: "Tres biciestacionamientos tipo U invertidad",
@@ -63,7 +63,7 @@ rack = BikeRack.new(address: "Cda. Ernesto Pugibet 17, Colonia Centro, Centro, C
 rack.photos.attach(io: file5, filename: "biciestacionamineto5", content_type: "images/jpg")
 rack.save!
 
-file6 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file6 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Revillagigedo 20, Colonia Centro, Centro, Cuauhtémoc, 06050 Ciudad de México, CDMX",
                     description: "Tres biciestacionamiento tipo U invertidad",
@@ -85,7 +85,7 @@ rack = BikeRack.new(address: "Calle Julio Verne 233, Polanco, Polanco IV Secc, M
 rack.photos.attach(io: file7, filename: "biciestacionamineto7", content_type: "images/jpg")
 rack.save!
 
-file8 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file8 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Parroquia 517, Col del Valle Sur, Benito Juárez, 03100 Ciudad de México, CDMX",
                     description: "Cinco biciestacionamientos tipo U invertidad",
@@ -96,7 +96,7 @@ rack = BikeRack.new(address: "Parroquia 517, Col del Valle Sur, Benito Juárez, 
 rack.photos.attach(io: file8, filename: "biciestacionamineto8", content_type: "images/jpg")
 rack.save!
 
-file9 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file9 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Torres Adalid 1359, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
                     description: "Cinco biciestacionamientos tipo U invertidad",
@@ -107,7 +107,7 @@ rack = BikeRack.new(address: "Torres Adalid 1359, Narvarte Poniente, Benito Juá
 rack.photos.attach(io: file9, filename: "biciestacionamineto9", content_type: "images/jpg")
 rack.save!
 
-file10 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/r_29/v1670951395/racks/Biciestacionamiento_U_invertida_copy_2_t6lxab.jpg')
+file10 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119853/racks/U_inver_mex_endj2e.png')
 
 rack = BikeRack.new(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
                     description: "Cinco biciestacionamientos tipo U invertidad",
