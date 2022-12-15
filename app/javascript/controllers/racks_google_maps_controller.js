@@ -8,11 +8,12 @@ export default class extends Controller {
 
     this.initMap();
     window.initMap = this.initMap;
+    console.log('hi')
   }
 
   initMap(){
     if (typeof google === 'undefined') return;
-    let map = sharedMapsInit();
+    let map = sharedMapsInit()[0];
 
     //custom code
     if(bike_rack_data && map){

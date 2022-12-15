@@ -13,7 +13,7 @@ export default class extends Controller {
   initMap(){
    console.log( "-----------------------insdide initMap LAANES")
     if (typeof google === 'undefined') return;
-    let map = sharedMapsInit();
+    let map = sharedMapsInit()[0];
 
 
 
