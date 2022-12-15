@@ -11,22 +11,16 @@ export default class extends Controller {
                     'commentbtn', 'commentdropdown',
                     'reportbtn', 'reportdropdown',
                     'uploadbtn', 'uploaddropdown',
-                    'likebtn', 'likedropdown']
+                    'likebtn', 'likedropdown',
+                    'adminreportbtn', 'adminreportdropdown',
+                    'addcomment']
 
   connect() {
   }
 
-  shopDropdown(e) {
-    e.currentTarget.classList.toggle('active')
-    if (this.shopbtnTarget.classList.contains('active')) {
-      this.shopdropdownTarget.style.height = "250px";
-    } else {
-      this.shopdropdownTarget.style.height = 0;
-    }
-  }
-
   videoDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus2').classList.toggle('rotate')
     if (this.videobtnTarget.classList.contains('active')) {
       this.videodropdownTarget.style.height = "250px";
     } else {
@@ -36,6 +30,7 @@ export default class extends Controller {
 
   myRackDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus6').classList.toggle('rotate')
     if (this.myrackbtnTarget.classList.contains('active')) {
       this.myrackdropdownTarget.style.height = "250px";
     } else {
@@ -45,6 +40,7 @@ export default class extends Controller {
 
   myLaneDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus7').classList.toggle('rotate')
     if (this.mylanebtnTarget.classList.contains('active')) {
       this.mylanedropdownTarget.style.height = "250px";
     } else {
@@ -54,6 +50,7 @@ export default class extends Controller {
 
   myShopDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus8').classList.toggle('rotate')
     if (this.myshopbtnTarget.classList.contains('active')) {
       this.myshopdropdownTarget.style.height = "250px";
     } else {
@@ -63,6 +60,7 @@ export default class extends Controller {
 
   myVideoDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus9').classList.toggle('rotate')
     if (this.myvideobtnTarget.classList.contains('active')) {
       this.myvideodropdownTarget.style.height = "250px";
     } else {
@@ -72,6 +70,7 @@ export default class extends Controller {
 
   commentDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus4').classList.toggle('rotate')
     if (this.commentbtnTarget.classList.contains('active')) {
       this.commentdropdownTarget.style.height = "250px";
     } else {
@@ -81,6 +80,7 @@ export default class extends Controller {
 
   reportDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus5').classList.toggle('rotate')
     if (this.reportbtnTarget.classList.contains('active')) {
       this.reportdropdownTarget.style.height = "250px";
     } else {
@@ -88,8 +88,19 @@ export default class extends Controller {
     }
   }
 
+  adminReportDropdown(e) {
+    e.currentTarget.classList.toggle('active')
+    document.getElementById('plus10').classList.toggle('rotate')
+    if (this.adminreportbtnTarget.classList.contains('active')) {
+      this.adminreportdropdownTarget.style.height = "250px";
+    } else {
+      this.adminreportdropdownTarget.style.height = 0;
+    }
+  }
+
   uploadDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus3').classList.toggle('rotate')
     if (this.uploadbtnTarget.classList.contains('active')) {
       this.uploaddropdownTarget.style.height = "200px";
     } else {
@@ -99,10 +110,21 @@ export default class extends Controller {
 
   likeDropdown(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus').classList.toggle('rotate')
     if (this.likebtnTarget.classList.contains('active')) {
       this.likedropdownTarget.style.height = "500px";
     } else {
       this.likedropdownTarget.style.height = 0;
+    }
+  }
+
+  addCommentDropdown(e) {
+    e.currentTarget.classList.toggle('active')
+    document.getElementById('plus').classList.toggle('rotate')
+    if (this.addcommentTarget.classList.contains('active')) {
+      document.querySelector('form').style.height = "150px";
+    } else {
+      document.querySelector('form').style.height = 0;
     }
   }
 }

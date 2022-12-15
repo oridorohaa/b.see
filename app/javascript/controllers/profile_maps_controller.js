@@ -142,6 +142,7 @@ export default class extends Controller {
 
   displayRackMap(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus11').classList.toggle('rotate')
     if (e.currentTarget.classList.contains('active')) {
       this.rackmapTarget.style.height = '420px';
       this.rackmapTarget.style.border = '1px solid yellow'
@@ -156,6 +157,7 @@ export default class extends Controller {
 
   displayLaneMap(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus12').classList.toggle('rotate')
     if (e.currentTarget.classList.contains('active')) {
       this.lanemapTarget.style.height = '420px';
       this.lanemapTarget.style.border = '1px solid yellow'
@@ -169,6 +171,7 @@ export default class extends Controller {
 
   displayShopMap(e) {
     e.currentTarget.classList.toggle('active')
+    document.getElementById('plus13').classList.toggle('rotate')
     if (e.currentTarget.classList.contains('active')) {
       this.shopmapTarget.style.height = '420px';
       this.shopmapTarget.style.border = '1px solid yellow'
