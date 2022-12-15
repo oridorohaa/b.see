@@ -5,7 +5,9 @@
       class: "form-control",
       placeholder: "search..."
     %>
-    <%= submit_tag "search", class: "search-btn" %>
+    <%= submit_tag "search", class: "search-btn"  do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
   <% end %>
 </div>
 
@@ -60,12 +62,12 @@ body {
 }
 
 .d-flex input {
-  height:100% !important;
+
 }
 .video-list {
   border: 1px solid #F5FF6D;
   width: 80%;
-  height: 400px;
+  height: 475px;
   margin: 20px auto;
   border-radius: 10px;
   transition: all .5s ease;

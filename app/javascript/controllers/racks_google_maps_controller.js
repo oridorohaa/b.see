@@ -8,11 +8,12 @@ export default class extends Controller {
 
     this.initMap();
     window.initMap = this.initMap;
+    console.log('hi')
   }
 
   initMap(){
     if (typeof google === 'undefined') return;
-    let map = sharedMapsInit();
+    let map = sharedMapsInit()[0];
 
     //custom code
     if(bike_rack_data && map){
@@ -34,6 +35,8 @@ export default class extends Controller {
             google.maps.event.addListener(marker, "click", function() {
               window.location.href = this.url;
             });
+            console.log(map)
+            console.log(marker)
           }else{
             let marker = new google.maps.Marker({
               position: { lat: parseFloat(d.lat), lng: parseFloat(d.long) },

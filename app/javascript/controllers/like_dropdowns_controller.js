@@ -9,7 +9,9 @@ export default class extends Controller {
                     'myshopbtn', 'myshopdropdown',
                     'myvideobtn', 'myvideodropdown',
                     'commentbtn', 'commentdropdown',
-                    'reportbtn', 'reportdropdown']
+                    'reportbtn', 'reportdropdown',
+                    'uploadbtn', 'uploaddropdown',
+                    'likebtn', 'likedropdown']
 
   connect() {
   }
@@ -83,6 +85,24 @@ export default class extends Controller {
       this.reportdropdownTarget.style.height = "250px";
     } else {
       this.reportdropdownTarget.style.height = 0;
+    }
+  }
+
+  uploadDropdown(e) {
+    e.currentTarget.classList.toggle('active')
+    if (this.uploadbtnTarget.classList.contains('active')) {
+      this.uploaddropdownTarget.style.height = "200px";
+    } else {
+      this.uploaddropdownTarget.style.height = 0;
+    }
+  }
+
+  likeDropdown(e) {
+    e.currentTarget.classList.toggle('active')
+    if (this.likebtnTarget.classList.contains('active')) {
+      this.likedropdownTarget.style.height = "500px";
+    } else {
+      this.likedropdownTarget.style.height = 0;
     }
   }
 }

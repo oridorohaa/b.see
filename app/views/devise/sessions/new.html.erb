@@ -4,11 +4,11 @@
   <% end %>
 
   <div class="bsee">
-    <h1>b</h1>
-    <div class="gear"></div>
-    <h1>s</h1>
-    <h1>e</h1>
-    <h1>e</h1>
+    <img src="https://res.cloudinary.com/dsfuck1dv/image/upload/v1671036918/racks/bsee_logo_wowheel_neon_yihgzz_ntu5ji.png" alt="bsee-logo" class="gt">
+    <div class="gear">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+
   </div>
 
   <div class="login-form">
@@ -145,6 +145,7 @@ $yellow: #F5FF6D; %>
       display: flex;
       flex-direction: row;
       justify-content: center;
+      margin: 75px;
     }
 
     .bsee h1 {
@@ -153,11 +154,32 @@ $yellow: #F5FF6D; %>
     }
 
     .gear {
-      background-color: #F5FF6D;
+      /* background-color: #F5FF6D; */
       height: 16px;
       width: 16px;
       margin: 0 10px;
       margin-top: 25%;
+       position: absolute;
+       animation-name: spin;
+      animation-duration: 3000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      left: 117px;
+      top: 93px;
+      font-size:22px;
+    }
+      @keyframes spin {
+      from {
+          transform:rotate(0deg);
+      }
+      to {
+          transform:rotate(360deg);
+      }
+  }
+
+    .gt {
+      width: 285px;
+      height: 100px;
     }
 
 </style>

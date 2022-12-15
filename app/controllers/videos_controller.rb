@@ -7,6 +7,10 @@ class VideosController < ApplicationController
     else
       @videos = policy_scope(Video)
     end
+    respond_to do |format|
+      format.html
+      format.text { render partial: "videos/video_list", locals: { videos: policy_scope(Video) }, formats: [:html] }
+    end
   end
 
   def recent
@@ -63,16 +67,16 @@ class VideosController < ApplicationController
     end
   end
 
-  def tagged
-    if params[:tag].present?
-      @videos = policy_scope(Video).tagged_with(params[:tag])
-      authorize @videos
-    else
-      @videos = policy_scope(Video).all
-      authorize @videos
-    end
-    render :index
-  end
+  # def tagged
+  #   if params[:tag].present?
+  #     @videos = policy_scope(Video).tagged_with(params[:tag])
+  #     authorize @videos
+  #   else
+  #     @videos = policy_scope(Video).all
+  #     authorize @videos
+  #   end
+  #   render :index
+  # end
 
   def show
     authorize @video

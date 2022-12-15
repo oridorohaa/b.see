@@ -14,6 +14,8 @@
 
   <%= simple_form_for(@bike_rack) do |f| %>
     <%= f.input :address %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
     <%= f.input :description %>
     <%= f.submit "edit", class: "submit" %>
   <% end %>
