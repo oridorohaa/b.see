@@ -5,7 +5,6 @@ $grey: #47473B;
 $pink: #F5FF;
 
 .navbar {
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -92,12 +91,14 @@ $pink: #F5FF;
   i { color: $pink }
 }
 
-#map {
+.map {
   transition: all .5s ease;
 }
 
-#shop-map {
+#upload-dropdown, #like-dropdown {
+  height: 0;
   transition: all .5s ease;
+  overflow-y: scroll;
 }
 
 .btn {
@@ -131,10 +132,10 @@ $pink: #F5FF;
     padding: 0;
   }
 
-  #shop-map {
-    width: 40%;
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-  }
+  // #shop-map {
+  //   width: 40%;
+  //   text-align: center;
+  //   margin: 10px;
+  //   padding: 10px;
+  // }
 }
