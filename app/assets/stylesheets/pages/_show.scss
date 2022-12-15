@@ -84,6 +84,7 @@ $pink: #F5FF;
     color: $white;
     margin: 20px;
     padding: 10px;
+    width:90%;
     border-radius: 10px;
   }
 
@@ -94,6 +95,7 @@ $pink: #F5FF;
     padding: 0 10px;
     border-radius: 10px;
     height: 220px;
+    width: 90%;
     overflow: scroll;
 
     ul {
@@ -179,6 +181,7 @@ $pink: #F5FF;
   }
 
   .reports{
+    width:90%;
     border: 1px solid $pink;
     color: $pink;
     margin: 20px;
