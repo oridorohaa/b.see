@@ -143,27 +143,40 @@ export default class extends Controller {
   displayRackMap(e) {
     e.currentTarget.classList.toggle('active')
     if (e.currentTarget.classList.contains('active')) {
-      this.rackmapTarget.style.height = '590px';
+      this.rackmapTarget.style.height = '420px';
+      this.rackmapTarget.style.border = '1px solid yellow'
+      this.rackmapTarget.style.borderRadius = '7px'
+
     } else {
       this.rackmapTarget.style.height = 0;
+      this.rackmapTarget.style.border = 'none'
+
     }
   }
 
   displayLaneMap(e) {
     e.currentTarget.classList.toggle('active')
     if (e.currentTarget.classList.contains('active')) {
-      this.lanemapTarget.style.height = '590px';
+      this.lanemapTarget.style.height = '420px';
+      this.lanemapTarget.style.border = '1px solid yellow'
+      this.lanemapTarget.style.borderRadius = '7px'
     } else {
       this.lanemapTarget.style.height = 0;
+      this.lanemapTarget.style.border = 'none'
+
     }
   }
 
   displayShopMap(e) {
     e.currentTarget.classList.toggle('active')
     if (e.currentTarget.classList.contains('active')) {
-      this.shopmapTarget.style.height = '590px';
+      this.shopmapTarget.style.height = '420px';
+      this.shopmapTarget.style.border = '1px solid yellow'
+      this.shopmapTarget.style.borderRadius = '7px'
     } else {
       this.shopmapTarget.style.height = 0;
+      this.shopmapTarget.style.border = 'none'
+
     }
   }
 }
