@@ -14,10 +14,11 @@
       <% else %>
         <i class="fa-solid fa-user fa-2xl default-avatar"></i>
       <% end %>
+      <p><%= current_user.username %></p>
     </div>
     <div class="user-actions">
       <%= link_to "edit information", edit_user_registration_path(current_user), class:"action" %>
-      <%= link_to "change password", edit_user_password_path(current_user), class:"action" %>
+      <a href="#">become an admin</a>
     </div>
   </div>
   <div class="likes" data-controller="like-dropdowns">
@@ -59,7 +60,7 @@
           <div class="cards" data-like-dropdowns-target="myrackdropdown">
             <% current_user.bike_racks.each do |rack| %>
               <div class="card">
-                <a href="/bike_racks/<%=rack.id%>"><%= rack.description %></a><br>
+                <a href="/bike_racks/<%=rack.id%>"><%= rack.description %></a>
               </div>
             <% end %>
           </div>
@@ -69,7 +70,7 @@
           <div class="cards" data-like-dropdowns-target="mylanedropdown">
             <% current_user.lanes.each do |lane| %>
               <div class="card">
-                <a href="/lanes/<%=lane.id%>"><%= lane.id %></a><br>
+                <a href="/lanes/<%=lane.id%>"><%= lane.id %></a>
               </div>
             <% end %>
           </div>
@@ -79,7 +80,7 @@
           <div class="cards" data-like-dropdowns-target="myshopdropdown">
             <% current_user.shops.each do |shop| %>
               <div class="card">
-                <a href="/shops/<%=shop.id%>"><%= shop.address %></a><br>
+                <a href="/shops/<%=shop.id%>"><%= shop.address %></a>
               </div>
             <% end %>
           </div>
@@ -89,7 +90,7 @@
           <div class="cards" data-like-dropdowns-target="myvideodropdown">
             <% current_user.videos.each do |video| %>
               <div class="card">
-                <a href="/videos/<%=video.id%>"><%= video.title %></a><br>
+                <a href="/videos/<%=video.id%>"><%= video.title %></a>
               </div>
             <% end %>
           </div>

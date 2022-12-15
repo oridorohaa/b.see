@@ -8,7 +8,7 @@ class ShopCommentsController < ApplicationController
       @shop_comment = ShopComment.new(shop: @shop, comment: @comment)
       authorize @shop_comment
       if @shop_comment.save
-        redirect_to @shop, notice: "Comment added"
+        redirect_to @shop, notice: "comment added"
       else
         render 'shops/show', status: :unprocessable_entity
       end

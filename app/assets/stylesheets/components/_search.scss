@@ -1,0 +1,32 @@
+$black: #1C1C17;
+$yellow: #F5FF6D;
+$white: #E5E2DA;
+$grey: #47473B;
+
+.nav-div {
+  display: flex;
+  padding: 10px;
+}
+
+.search-input {
+  background-color: $black;
+  border: 2px solid $yellow;
+  border-radius: 10px 0 0 10px;
+  margin-left: 10px;
+  width: 100%;
+  padding: 6px;
+  color: $white;
+  padding-left: 20px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.fa-magnifying-glass{
+  font-size: 25px;
+  color: $yellow;
+  border: 2px solid $yellow;
+  padding: 6px;
+  border-radius: 0px 10px 10px 0px;
+}

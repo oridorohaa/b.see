@@ -16,6 +16,10 @@ $grey: #47473B;
     margin: 10px;
   }
 
+  a {
+    margin-right: 10%;
+  }
+
   i {
     color: $yellow;
     padding: 10px;
@@ -37,6 +41,10 @@ $grey: #47473B;
       background: none;
       color: $yellow;
     }
+  }
+
+  form {
+    width: 100%;
   }
 
   .form-control {
@@ -61,4 +69,8 @@ $grey: #47473B;
     margin-left: 10%;
     margin-bottom: 0;
   }
+}
+
+#map {
+  margin: 20px 0;
 }

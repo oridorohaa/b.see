@@ -7,7 +7,6 @@ class ShopCommentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    # record.user == user
-    true
+    record.comment.user == user
   end
 end

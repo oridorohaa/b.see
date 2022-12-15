@@ -35,7 +35,7 @@ class LanesController < ApplicationController
     authorize @lane
     @lane.update(lane_params)
     if @lane.save
-      redirect_to @lane, notice: "Edited"
+      redirect_to @lane, notice: "changes saved"
     else
       render :edit, status: :unprocessable_entity
     end
