@@ -19,6 +19,8 @@
     <%#= f.input :street_name %>
     <%= f.input :drescription %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
-    <%= f.submit "edit lane", class: "submit" %>
+   <%= button_tag(class:"submit") do  %>
+      <i class="fa-solid fa-pencil"></i>
+    <% end %>
   <% end %>
 </div>
