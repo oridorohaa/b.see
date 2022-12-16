@@ -14,7 +14,7 @@
 
   <%= simple_form_for(@bike_rack) do |f| %>
     <%= f.input :address, label: false, placeholder: 'address'  %>
-    <%= f.input :description, label: false, placeholder: 'description...' %>
+    <%= f.input :description, as: :text, label: false, placeholder: 'description...' %>
     <%= f.input :latitude, label: false, placeholder: 'latitude...' %>
     <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>

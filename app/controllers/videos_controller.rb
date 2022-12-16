@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show recent most_liked maintenance repair styling other]
+
 
   def index
     if params[:query].present?

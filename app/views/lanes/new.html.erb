@@ -23,7 +23,7 @@
   <%= simple_form_for(@lane) do |f| %>
     <%= f.input :coords, label: false, placeholder: "coords..." %>
     <%#= f.input :street_name %>
-    <%= f.input :drescription, label: false, placeholder: "description..." %>
+    <%= f.input :drescription, as: :text, label: false, placeholder: "description..." %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= button_tag(class: "submit") do %>
       <i class="fa-solid fa-plus fa-lg"></i>

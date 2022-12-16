@@ -70,7 +70,7 @@
           <div class="cards" data-like-dropdowns-target="mylanedropdown">
             <% current_user.lanes.each do |lane| %>
               <div class="card">
-                <a href="/lanes/<%=lane.id%>"><%= lane.id %></a>
+                <a href="/lanes/<%=lane.id%>"><%= lane.drescription %></a>
               </div>
             <% end %>
           </div>
@@ -80,7 +80,7 @@
           <div class="cards" data-like-dropdowns-target="myshopdropdown">
             <% current_user.shops.each do |shop| %>
               <div class="card">
-                <a href="/shops/<%=shop.id%>"><%= shop.address %></a>
+                <a href="/shops/<%=shop.id%>"><%= shop.name %></a>
               </div>
             <% end %>
           </div>

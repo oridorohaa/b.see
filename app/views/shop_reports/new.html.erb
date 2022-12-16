@@ -4,7 +4,7 @@
   <% end %>
 
   <%= simple_form_for [@shop, @report], url: shop_shop_reports_path do |f| %>
-    <%= f.input :content %>
+    <%= f.input :content, as: :text %>
     <%= button_tag(class:"submit") do %>
       <i class="fa-solid fa-plus fa-xl"></i>
     <% end %>

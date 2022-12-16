@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_16_203715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
 
   create_table "bike_racks", force: :cascade do |t|
     t.string "address"
-    t.string "description"
+    t.text "description"
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -120,7 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
     t.string "street_name"
     t.string "start_point"
     t.string "end_point"
-    t.string "drescription"
+    t.text "drescription"
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -130,7 +130,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -168,7 +168,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
     t.string "address"
     t.string "hours"
     t.string "phone_number"
-    t.string "description"
+    t.text "description"
     t.string "website"
     t.boolean "status", default: true
     t.datetime "created_at", null: false
@@ -254,7 +254,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_172443) do
 
   create_table "videos", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

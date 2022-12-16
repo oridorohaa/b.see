@@ -19,7 +19,7 @@
     <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
     <%= f.input :hours, label: false, placeholder: 'hours...' %>
     <%= f.input :phone_number, label: false, placeholder: 'phone number...' %>
-    <%= f.input :description, label: false, placeholder: 'description...' %>
+    <%= f.input :description, as: :text, label: false, placeholder: 'description...' %>
     <%= f.input :website, label: false, placeholder: 'website...' %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
     <%= button_tag(class: "submit") do %>
