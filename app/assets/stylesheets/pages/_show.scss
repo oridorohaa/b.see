@@ -252,11 +252,13 @@ $pink: #F5FF;
 // .address{
 //   // font-weight: bold;
 // }
-// .email{
-//   width:80%;
-//   margin: 0 auto;
-//   display:inline-block;
-//   // overflow: hidden;
-//   word-wrap: break-word;
-//   // white-space: initial;
-// }
+
+.show-email{
+  width:80%;
+  margin: 0 auto;
+  display:inline-block;
+  // overflow: hidden;
+  word-wrap: break-word;
+  white-space: initial;
+}
+
