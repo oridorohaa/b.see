@@ -74,7 +74,7 @@ rack = BikeRack.new(address: "Revillagigedo 20, Colonia Centro, Centro, Cuauhté
 rack.photos.attach(io: file6, filename: "biciestacionamineto6", content_type: "images/jpg")
 rack.save!
 
-file7 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
+file7 = URI.open('app/assets/images/bike_rack_auto.jpg')
 
 rack = BikeRack.new(address: "Calle Julio Verne 233, Polanco, Polanco IV Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
                     description: "biciestacionamiento tipo Auto",
@@ -118,10 +118,90 @@ rack = BikeRack.new(address: "Pedro Romero de Terreros 1102, Narvarte Poniente, 
 rack.photos.attach(io: file10, filename: "biciestacionamineto10", content_type: "images/jpg")
 rack.save!
 
+file11 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "C. Artículo 123 123, Colonia Centro, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
+                    description: "Cuatro biciestacionamientos tipo U invertida",
+                    latitude: 19.43437,
+                    longitude: -99.14957,
+                    user: user)
+
+file12 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "Serapio Rendon 76, San Rafael, Cuauhtémoc, 06470 Ciudad de México, CDMX",
+                    description: "Cuatro biciestacionamientos tipo U invertida",
+                    latitude: 19.43704,
+                    longitude: -99.15956,
+                    user: user)
+
+file13 = URI.open('app/assets/images/bike_rack_auto.jpg')
+
+rack = BikeRack.new(address: "Euler 152, Polanco, Polanco V Secc, Miguel Hidalgo, 11550 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo Auto",
+                    latitude: 19.43311,
+                    longitude: -99.18320,
+                    user: user)
+
+file14 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "Parroquia 179, Actipan, Benito Juárez, 03230 Ciudad de México, CDMX",
+                    description: "Cinco biciestacionamientos tipo U invertida",
+                    latitude: 19.372081685463268,
+                    longitude: -99.1783359316581,
+                    user: user)
+
+file15 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "Orizaba 99, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo u invertida",
+                    latitude: 19.419818339932245,
+                    longitude: -99.16016087413234,
+                    user: user)
+
+file16 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671202973/racks/bicies_tipo_x_rgbtx1.png')
+
+rack = BikeRack.new(address: "C. Bajío 350, código 2, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo X",
+                    latitude: 19.403646746626848,
+                    longitude:  -99.16928740799037,
+                    user: user)
+
+file17 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "Av. Paseo de la Reforma 199, Col. Renacimiento, Cuauhtémoc, 06500 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo U invertida",
+                    latitude: 19.431534852821184,
+                    longitude: -99.16173647259465,
+                    user: user)
+
+file18 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "Av. Paseo de la Reforma 175, Col. Renacimiento, Cuauhtémoc, 06500 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo U invertida",
+                    latitude: 19.43194761704681,
+                    longitude: -99.16075065359571,
+                    user: user)
+
+file19 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
+
+rack = BikeRack.new(address: "C. Río Lerma 63, Cuauhtémoc, 06500 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo U invertida",
+                    latitude: 19.431387050759646,
+                    longitude: -99.16495887192086,
+                    user: user)
+
+file20 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671202995/racks/Bici_tipo_bici_ruhnuh.png')
+
+rack = BikeRack.new(address: "Frontera 122, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
+                    description: "biciestacionamiento tipo bicicleta",
+                    latitude: 19.41947063828734,
+                    longitude: -99.15559771463155,
+                    user: user)
+
 Shop.destroy_all
 
 # file11 = URI.open(File.join(Rails.root,'app/assets/images/iloveimg-resized/Crankset.jpg'))
-file11 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Crankset_z5h2b6.jpg')
+file1 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671203631/Crankset2_ttyqjk.png')
 
 shop = Shop.new(name: "Crankset Bicycle Shop (Trek Juárez)",
                 address: "Londres 40, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
@@ -131,11 +211,11 @@ shop = Shop.new(name: "Crankset Bicycle Shop (Trek Juárez)",
                 latitude: 19.42744,
                 longitude: -99.15946,
                 user: user)
-shop.photos.attach(io: file11, filename: "shop11", content_type: "images/jpg")
+shop.photos.attach(io: file1, filename: "shop1", content_type: "images/jpg")
 shop.save!
 
 # file12 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file12 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/People_for_Bikes_pcsd7m.jpg')
+file2 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/People_for_Bikes_pcsd7m.jpg')
 
 shop = Shop.new(name: "People for Bikes",
                 address: "Zacatecas 55, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX",
@@ -146,11 +226,11 @@ shop = Shop.new(name: "People for Bikes",
                 latitude: 19.41670,
                 longitude: -99.15700,
                 user: user)
-shop.photos.attach(io: file12, filename: "shop12", content_type: "images/jpg")
+shop.photos.attach(io: file2, filename: "shop2", content_type: "images/jpg")
 shop.save!
 
 # file13 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file13 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Chop_Chop_Bikes_zgvbyg.jpg')
+file3 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671203759/chop_chop_2_rrbrea.png')
 
 shop = Shop.new(name: "Chop Chop Bikes",
                 address: "Amsterdam 282, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -161,11 +241,11 @@ shop = Shop.new(name: "Chop Chop Bikes",
                 latitude: 19.41297,
                 longitude: -99.16746,
                 user: user)
-shop.photos.attach(io: file13, filename: "shop13", content_type: "images/jpg")
+shop.photos.attach(io: file3, filename: "shop3", content_type: "images/jpg")
 shop.save!
 
 # file14 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file14 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Bikedomonium_zd059n.jpg')
+file4 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Bikedomonium_zd059n.jpg')
 
 shop = Shop.new(name: "Bikedemonium Workshop",
                 address: "C. Villahermosa 29, Colonia Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX",
@@ -176,11 +256,11 @@ shop = Shop.new(name: "Bikedemonium Workshop",
                 latitude: 19.40499,
                 longitude: -99.16987,
                 user: user)
-shop.photos.attach(io: file14, filename: "shop14", content_type: "images/jpg")
+shop.photos.attach(io: file4, filename: "shop4", content_type: "images/jpg")
 shop.save!
 
 # file15 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file15 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Pedal_and_Crank_bike_shop_mxo41f.jpg')
+file5 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Pedal_and_Crank_bike_shop_mxo41f.jpg')
 
 shop = Shop.new(name: "Pedal and Crank Bike Shop",
                 address: "Gobernador José María Tornel 44, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX",
@@ -191,11 +271,11 @@ shop = Shop.new(name: "Pedal and Crank Bike Shop",
                 latitude: 19.41265,
                 longitude: -99.18469,
                 user: user)
-shop.photos.attach(io: file15, filename: "shop15", content_type: "images/jpg")
+shop.photos.attach(io: file5, filename: "shop5", content_type: "images/jpg")
 shop.save!
 
 # file16 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file16 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Bicimaniacos_tht7vt.jpg')
+file6 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Bicimaniacos_tht7vt.jpg')
 
 shop = Shop.new(name: "BICIMANIACOS BIKE STORE",
                 address: "Cumbres de Maltrata 160, Narvarte Poniente, Benito Juárez, 03020 Ciudad de México, CDMX",
@@ -206,11 +286,11 @@ shop = Shop.new(name: "BICIMANIACOS BIKE STORE",
                 latitude: 19.39548,
                 longitude: -99.15480,
                 user: user)
-shop.photos.attach(io: file16, filename: "shop16", content_type: "images/jpg")
+shop.photos.attach(io: file6, filename: "shop6", content_type: "images/jpg")
 shop.save!
 
 # file17 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file17 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/LBU_Bike_store_jxwqez.jpg')
+file7 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/LBU_Bike_store_jxwqez.jpg')
 
 shop = Shop.new(name: "LBU Bike Store Patriotismo",
                 address: "Av. Patriotismo 384, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
@@ -221,7 +301,7 @@ shop = Shop.new(name: "LBU Bike Store Patriotismo",
                 latitude: 19.39058,
                 longitude: -99.18256,
                 user: user)
-shop.photos.attach(io: file17, filename: "shop17", content_type: "images/jpg")
+shop.photos.attach(io: file7, filename: "shop7", content_type: "images/jpg")
 shop.save!
 
 # file18 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
@@ -236,11 +316,11 @@ shop = Shop.new(name: "Group Bcl Imports",
                 latitude: 19.38093,
                 longitude: -99.13548,
                 user: user)
-shop.photos.attach(io: file18, filename: "shop18", content_type: "images/jpg")
+shop.photos.attach(io: file8, filename: "shop8", content_type: "images/jpg")
 shop.save!
 
 # file19 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file19 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Bike_Urban_kem9wh.jpg')
+file9 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948061/Bike_Urban_kem9wh.jpg')
 
 shop = Shop.new(name: "Bike Urban Reform",
                 address: "Av. Morelos 70, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX",
@@ -251,11 +331,11 @@ shop = Shop.new(name: "Bike Urban Reform",
                 latitude: 19.43277,
                 longitude: -99.15174,
                 user: user,)
-shop.photos.attach(io: file19, filename: "shop19", content_type: "images/jpg")
+shop.photos.attach(io: file9, filename: "shop9", content_type: "images/jpg")
 shop.save!
 
 # file20 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
-file20 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Hippixi_Bikes_agqylr.jpg')
+file10 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1670948062/Hippixi_Bikes_agqylr.jpg')
 
 shop = Shop.new(name: "Hippixi Bikes",
                 address: "Lamartine 607, Polanco, Bosque de Chapultepec I Secc, Miguel Hidalgo, 11580 Ciudad de México, CDMX",
@@ -266,5 +346,5 @@ shop = Shop.new(name: "Hippixi Bikes",
                 latitude: 19.42918,
                 longitude: -99.18985,
                 user: user)
-shop.photos.attach(io: file20, filename: "shop20", content_type: "images/jpg")
+shop.photos.attach(io: file10, filename: "shop10", content_type: "images/jpg")
 shop.save!
