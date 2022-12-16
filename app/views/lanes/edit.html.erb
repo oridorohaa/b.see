@@ -17,7 +17,7 @@
   <%= simple_form_for(@lane) do |f| %>
     <%= f.input :coords %>
     <%#= f.input :street_name %>
-    <%= f.input :drescription %>
+    <%= f.input :drescription, as: :text %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
    <%= button_tag(class:"submit") do  %>
       <i class="fa-solid fa-pencil"></i>

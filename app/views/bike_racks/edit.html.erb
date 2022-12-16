@@ -16,7 +16,7 @@
     <%= f.input :address %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :text %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
      <%= button_tag(class:"submit") do  %>
       <i class="fa-solid fa-pencil"></i>

@@ -1,0 +1,88 @@
+$black: #1C1C17;
+$yellow: #F5FF6D;
+$white: #E5E2DA;
+
+.edit-user-container {
+
+  .simple_form {
+    color: $yellow;
+    border-radius: 10px;
+    background: none;
+    border: 1px solid $yellow;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .email {
+    margin-top: 20px;
+  }
+
+  .form-control {
+    background-color: $black !important;
+    border-radius: 5px;
+    border-color: $yellow;
+    color: $white !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .form-label {
+    color: $white;
+    margin-left: 5%;
+  }
+
+  .form-text {
+    margin-left: 5%;
+  }
+
+  #user_password_confirmation {
+    margin-bottom: 45px;
+  }
+
+  .submit {
+    color: $black;
+    background-color: $yellow;
+    border-radius: 10px;
+    margin: 10px 0;
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .cancel-account {
+    color: $yellow;
+    margin: -10px;
+    padding: 2rem;
+  }
+
+  .fa-solid {
+    width: 25px;
+    background: $black;
+    padding: 26px 20px;
+    text-decoration: none;
+    color: $yellow;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .link {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: $yellow;
+    border: 1px solid $black;
+    border-radius: 13px;
+    letter-spacing: 0px;
+    padding: 10px;
+    font-weight: bolder;
+  }
+}
