@@ -20,8 +20,8 @@
     <% end %>
   </div>
   <div class="right-nav">
-  <% if user_signed_in? %>
-  <div class="heart">
+    <% if user_signed_in? %>
+    <div class="heart">
         <% unless @shop.has_user_liked?(current_user) %>
           <%= link_to shop_shop_likes_path(@shop), data: {turbo_method: :post}  do %>
             <i class="fa-regular fa-heart fa-xl"></i>
@@ -43,9 +43,9 @@
         <% end %>
         </div>
       <% end %>
-
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class="photos" style="height: 300px; width:100%;">
@@ -113,8 +113,10 @@
             <%= shop_comment.comment.user.username %>
           </div>
           <div>
-            <%= link_to shop_shop_comment_path(shop_comment), data: {turbo_method: :delete}  do %>
-              <i class="fa-solid fa-trash fa-sm"></i>
+            <% if policy(shop_comment).destroy? %>
+              <%= link_to shop_shop_comment_path(shop_comment), data: {turbo_method: :delete}  do %>
+                <i class="fa-solid fa-trash fa-sm"></i>
+              <% end %>
             <% end %>
           </div>
         </div>

@@ -17,7 +17,10 @@ $pink: #F5FF;
     top: 20%;
   }
 
-  i { color: $pink }
+  i {
+    color: $pink;
+    margin: 0;
+  }
 
   .form-label{ color: $pink }
 
@@ -37,10 +40,11 @@ $pink: #F5FF;
   .submit {
     background: none;
     color: $pink;
-    width: 80%;
+    width: 20%;
+    margin-left: 30%;
     padding: 10px 0;
     border-radius:25px;
-    border: none;
+    border: 1px solid $pink;
   }
 }
 
@@ -70,12 +74,12 @@ $pink: #F5FF;
 
   .submit{
     background: none;
-    border: none;
-    width: 80%;
+    border: 1px solid $yellow;
+    width: 20%;
+    padding: 10px 0;
     margin: 40px auto;
     display: flex;
     justify-content: center;
-    padding: 5px 10px;
     border-radius: 10px;
     font-size: 25px;
 
@@ -181,20 +185,20 @@ input[type='file']::file-selector-button {
   }
 
   .search-input{
-    background-color: #1C1C17;
-    border: 1px solid #F5FF6D;
+    background-color: $black;
+    border: 1px solid $yellow;
     border-radius: 10px 0 0 10px;
     margin: 0;
     width: 80%;
     padding: 6px;
-    color: white;
+    color: $white;
     padding-left: 20px;
   }
 
   .fa-magnifying-glass{
     font-size: 25px;
-    color: #F5FF6D;
-    border: 1px solid #F5FF6D;
+    color: $black;
+    border: 1px solid $yellow;
     padding: 6px;
     margin: 0;
     border-radius: 0px 10px 10px 0px;

@@ -5,8 +5,11 @@
         <%= cl_video_tag(video.video.key,
           :controls => true,
           :transformation => [
-            {:width=>200, :crop=>"fill"},
-            {:height=>100, :crop=>"scale"}
+            :width=>140,
+            :height=>100,
+            :gravity=>"north",
+            :background=>"#000000",
+            :crop=>"pad"
           ],
           :fallback_content => "Your browser does not support HTML5 video tags.")
         %>

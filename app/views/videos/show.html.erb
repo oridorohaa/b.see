@@ -52,8 +52,11 @@
     <%= cl_video_tag(@video.video.key,
     :loop => false, :controls => true,
     :transformation => [
-            {:width=>400, :crop=>"pad"},
-            {:height=>250, :crop=>"scale"}
+            :width=>400,
+            :height=>250,
+            :gravity=>"north",
+            :background=>"#000000",
+            :crop=>"pad"
           ],
     :fallback_content => "Your browser does not support HTML5 video tags." ) %>
   <% end %>
@@ -109,8 +112,10 @@
             <%= video_comment.comment.user.username %>
           </div>
           <div>
-            <%= link_to video_video_comment_path(video_comment), data: {turbo_method: :delete}  do %>
-              <i class="fa-solid fa-trash fa-sm"></i>
+            <% if policy(video_comment).destroy? %>
+              <%= link_to video_video_comment_path(video_comment), data: {turbo_method: :delete}  do %>
+                <i class="fa-solid fa-trash fa-sm"></i>
+              <% end %>
             <% end %>
           </div>
         </div>
