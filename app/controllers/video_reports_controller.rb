@@ -17,10 +17,10 @@ class VideoReportsController < ApplicationController
       if @video_report.save
         redirect_to @video, notice: "report added"
       else
-        render 'videos/show', status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
     else
-      render 'videos/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

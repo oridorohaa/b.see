@@ -4,9 +4,14 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     setTimeout(() => {this.fadeNotice()}, 4000)
+    setTimeout(() => {this.hideNotice()}, 5000)
   }
 
   fadeNotice() {
     document.querySelector('.notice').classList.add('fade')
+  }
+
+  hideNotice() {
+    document.querySelector('.notice').classList.add('hide')
   }
 }

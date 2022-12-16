@@ -17,10 +17,10 @@ class ShopReportsController < ApplicationController
       if @shop_report.save
         redirect_to @shop, notice: "report added"
       else
-        render 'shops/show', status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
     else
-      render 'shops/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
 
   end

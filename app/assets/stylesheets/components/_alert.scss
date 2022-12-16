@@ -1,6 +1,23 @@
+$pink: #F5FF;
+$white: #E5E2DA;
+$black: #1C1C17;
+
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  position: absolute;
+  color: $pink;
+  background-color: $black;
+  top: 0%;
+  right: 0%;
+  width: 70%;
+  height: 10%;
+  border: 1px solid $pink;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.alert:empty {
+  display: none;
 }

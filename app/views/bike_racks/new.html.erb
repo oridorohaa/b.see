@@ -18,6 +18,8 @@
     <%= f.input :latitude, label: false, placeholder: 'latitude...' %>
     <%= f.input :longitude, label: false, placeholder: 'longitude...' %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "+", class: "submit" %>
+    <%= button_tag(class: "submit") do %>
+      <i class="fa-solid fa-plus fa-lg"></i>
+    <% end %>
   <% end %>
 </div>

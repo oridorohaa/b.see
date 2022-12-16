@@ -8,8 +8,16 @@ $black: #1C1C17;
   border: 1px solid $pink;
   font-weight: bold;
   transition: all 1s ease;
+  position: absolute;
+  top: 10%;
+  z-index: 2;
+  height: 150px;
 }
 
 .fade {
   opacity: 0;
+}
+
+.hide {
+  display: none;
 }
