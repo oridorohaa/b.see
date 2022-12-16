@@ -17,10 +17,10 @@ class LaneReportsController < ApplicationController
       if @lane_report.save
         redirect_to @lane, notice: "report added"
       else
-        render 'lanes/show', status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
     else
-      render 'lanes/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

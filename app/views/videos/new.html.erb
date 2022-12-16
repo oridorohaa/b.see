@@ -20,6 +20,8 @@
                 collection: [ "maintenance", "repair", "styling", "other" ],
                 class: "tag-selector",
                 item_wrapper_class: 'tag-item' %>
-    <%= f.submit "+", class: 'submit'%>
+    <%= button_tag(class: "submit") do %>
+      <i class="fa-solid fa-plus fa-lg"></i>
+    <% end %>
   <% end %>
 </div>

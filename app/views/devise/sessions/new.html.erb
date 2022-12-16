@@ -1,6 +1,4 @@
-
-
-<div class="login">
+<div class="login-container">
   <%= link_to root_path, class: "back-btn" do %>
     <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
   <% end %>
@@ -45,8 +43,6 @@
   </div>
 </div>
 
-<%# $black: #1C1C17;
-$yellow: #F5FF6D; %>
 
 <style>
 
@@ -93,7 +89,7 @@ $yellow: #F5FF6D; %>
   }
 
   .form-control {
-    color:yellow;
+    color: #F5FF6D;
     background-color: #1C1C17;
     border: 1px solid #F5FF6D;
     border-radius: 10px;
@@ -103,7 +99,7 @@ $yellow: #F5FF6D; %>
 
   .form-control:focus {
     background-color: #1C1C17;
-    color: yellow;
+    color: #F5FF6D;
     letter-spacing:1px;
   }
 
@@ -127,7 +123,7 @@ $yellow: #F5FF6D; %>
   }
 
   .links p {
-    color: white;
+    color: #E5E2DA;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -161,8 +157,8 @@ $yellow: #F5FF6D; %>
       width: 16px;
       margin: 0 10px;
       margin-top: 25%;
-       position: absolute;
-       animation-name: spin;
+      position: absolute;
+      animation-name: spin;
       animation-duration: 3000ms;
       animation-iteration-count: infinite;
       animation-timing-function: linear;

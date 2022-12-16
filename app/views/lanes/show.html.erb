@@ -63,17 +63,21 @@
 
 <% if @lane.lane_reports.count > 0 %>
   <div class="reports">
-    <% @lane.lane_reports.each do |report| %>
-      <% r = Report.find(report.report_id) %>
-      <%= r.content %> <br>
-      <% if user_signed_in? %>
-        <% if policy(LaneReport).destroy? %>
-          <%= link_to lane_lane_report_path(@lane, report), data: {turbo_method: :delete } do %>
-            <i class="fa-solid fa-trash fa-sm"></i>
+    <ul>
+      <% @lane.lane_reports.each do |report| %>
+        <% r = Report.find(report.report_id) %>
+        <li>
+          <%= r.content %> <br>
+          <% if user_signed_in? %>
+            <% if policy(LaneReport).destroy? %>
+              <%= link_to lane_lane_report_path(@lane, report), data: {turbo_method: :delete } do %>
+                <i class="fa-solid fa-trash fa-sm"></i>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
+        </li>
       <% end %>
-    <% end %>
+    </ul>
   </div>
 <% end %>
 
@@ -88,7 +92,9 @@
         <%= f.simple_fields_for :comments do |comments_form| %>
           <%= comments_form.input :content, label: false, as: :text %>
         <% end %>
-        <%= f.submit '+', class: 'submit-btn' %>
+        <%= button_tag(class: 'submit-btn') do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
       <% end %>
     </div>
   <% end %>

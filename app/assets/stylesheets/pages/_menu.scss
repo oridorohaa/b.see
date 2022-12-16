@@ -4,7 +4,7 @@ $white: #E5E2DA;
 $grey: #47473B;
 
 body {
-  background: #1C1C17;
+  background: $black;
 }
 
 .nav {
@@ -14,16 +14,32 @@ body {
 
   .globe {
     font-size: 40px;
-    color: #F5FF6D;
+    color: $yellow;
     display: flex;
     align-items: center;
   }
 
+  .dropdown{ color: $yellow }
+
   .profile-icon{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    border: 1px solid #F5FF6D;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $yellow;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  p {
+    padding: 0px 23px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+
+    &:hover {
+      border: 1px solid $yellow;
+    }
   }
 }
 
@@ -39,20 +55,20 @@ body {
     max-width: 316px;
     text-decoration: none;
     /* background:#F5FF6D; */
-    color: #F5FF6D;
+    color: $yellow;
     padding: 29px 0px;
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 50px;
     border-radius: 10px;
-    border: 3px solid #F5FF6D;
+    border: 3px solid $yellow;
     text-transform: uppercase;
   }
 
   .menu-item:hover {
-    background:#F5FF6D;
-    color:black;
+    background: $yellow;
+    color: $black;
     font-weight:bold;
   }
 }
