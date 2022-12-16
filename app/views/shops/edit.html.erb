@@ -17,7 +17,7 @@
     <%= f.input :address %>
     <%= f.input :hours %>
     <%= f.input :phone_number %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :text %>
     <%= f.input :website %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
     <%= button_tag(class:"submit") do  %>

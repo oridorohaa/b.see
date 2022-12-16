@@ -14,7 +14,7 @@
 
   <%= simple_form_for(@video) do |f| %>
     <%= f.input :title, label: false, placeholder: 'title...' %>
-    <%= f.input :description, label: false, placeholder: 'description...' %>
+    <%= f.input :description, as: :text, label: false, placeholder: 'description...' %>
     <%= f.input :video, as: :file %>
     <%= f.input :tag_list, as: :check_boxes,
                 collection: [ "maintenance", "repair", "styling", "other" ],

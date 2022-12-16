@@ -5,6 +5,8 @@ class Lane < ApplicationRecord
   has_many :lane_reports
   has_many_attached :photos
 
+  validates :description, presence: true
+
   def has_user_liked?(user)
     self.lane_likes.where(user_id: user.id).present?
   end

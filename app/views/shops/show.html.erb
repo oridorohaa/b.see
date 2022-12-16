@@ -108,7 +108,7 @@
             <% if shop_comment.comment.user.avatar.attached? %>
               <%= cl_image_tag shop_comment.comment.user.avatar.key, height: 50, width: 50, crop: :fill, class: "avatar-small" %>
             <% else %>
-              <i class="fa-solid fa-circle-user fa-sm"></i>
+              <i class="fa-solid fa-circle-user fa-1x"></i>
             <% end %>
             <%= shop_comment.comment.user.username %>
           </div>
