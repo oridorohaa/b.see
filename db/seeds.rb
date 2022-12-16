@@ -125,6 +125,8 @@ rack = BikeRack.new(address: "C. Artículo 123 123, Colonia Centro, Centro, Cuau
                     latitude: 19.43437,
                     longitude: -99.14957,
                     user: user)
+rack.photos.attach(io: file11, filename: "biciestacionamineto11", content_type: "images/jpg")
+rack.save!
 
 file12 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -133,6 +135,8 @@ rack = BikeRack.new(address: "Serapio Rendon 76, San Rafael, Cuauhtémoc, 06470 
                     latitude: 19.43704,
                     longitude: -99.15956,
                     user: user)
+rack.photos.attach(io: file12, filename: "biciestacionamineto12", content_type: "images/jpg")
+rack.save!
 
 file13 = URI.open('app/assets/images/bike_rack_auto.jpg')
 
@@ -141,6 +145,8 @@ rack = BikeRack.new(address: "Euler 152, Polanco, Polanco V Secc, Miguel Hidalgo
                     latitude: 19.43311,
                     longitude: -99.18320,
                     user: user)
+rack.photos.attach(io: file13, filename: "biciestacionamineto13", content_type: "images/jpg")
+rack.save!
 
 file14 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -149,6 +155,8 @@ rack = BikeRack.new(address: "Parroquia 179, Actipan, Benito Juárez, 03230 Ciud
                     latitude: 19.372081685463268,
                     longitude: -99.1783359316581,
                     user: user)
+rack.photos.attach(io: file14, filename: "biciestacionamineto14", content_type: "images/jpg")
+rack.save!
 
 file15 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -157,6 +165,9 @@ rack = BikeRack.new(address: "Orizaba 99, Roma Nte., Cuauhtémoc, 06700 Ciudad d
                     latitude: 19.419818339932245,
                     longitude: -99.16016087413234,
                     user: user)
+rack.photos.attach(io: file15, filename: "biciestacionamineto15", content_type: "images/jpg")
+rack.save!
+
 
 file16 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671202973/racks/bicies_tipo_x_rgbtx1.png')
 
@@ -165,6 +176,8 @@ rack = BikeRack.new(address: "C. Bajío 350, código 2, Roma Sur, Cuauhtémoc, 0
                     latitude: 19.403646746626848,
                     longitude:  -99.16928740799037,
                     user: user)
+rack.photos.attach(io: file16, filename: "biciestacionamineto16", content_type: "images/jpg")
+rack.save!
 
 file17 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -173,6 +186,8 @@ rack = BikeRack.new(address: "Av. Paseo de la Reforma 199, Col. Renacimiento, Cu
                     latitude: 19.431534852821184,
                     longitude: -99.16173647259465,
                     user: user)
+rack.photos.attach(io: file17, filename: "biciestacionamineto17", content_type: "images/jpg")
+rack.save!
 
 file18 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -181,6 +196,8 @@ rack = BikeRack.new(address: "Av. Paseo de la Reforma 175, Col. Renacimiento, Cu
                     latitude: 19.43194761704681,
                     longitude: -99.16075065359571,
                     user: user)
+rack.photos.attach(io: file18, filename: "biciestacionamineto18", content_type: "images/jpg")
+rack.save!
 
 file19 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671119846/racks/bike_rack_u_ebhov1.png')
 
@@ -189,6 +206,9 @@ rack = BikeRack.new(address: "C. Río Lerma 63, Cuauhtémoc, 06500 Ciudad de Mé
                     latitude: 19.431387050759646,
                     longitude: -99.16495887192086,
                     user: user)
+rack.photos.attach(io: file19, filename: "biciestacionamineto19", content_type: "images/jpg")
+rack.save!
+
 
 file20 = URI.open('https://res.cloudinary.com/dsfuck1dv/image/upload/v1671202995/racks/Bici_tipo_bici_ruhnuh.png')
 
@@ -197,6 +217,8 @@ rack = BikeRack.new(address: "Frontera 122, Roma Nte., Cuauhtémoc, 06700 Ciudad
                     latitude: 19.41947063828734,
                     longitude: -99.15559771463155,
                     user: user)
+rack.photos.attach(io: file20, filename: "biciestacionamineto20", content_type: "images/jpg")
+rack.save!
 
 Shop.destroy_all
 
@@ -316,7 +338,7 @@ shop = Shop.new(name: "Group Bcl Imports",
                 latitude: 19.38093,
                 longitude: -99.13548,
                 user: user)
-shop.photos.attach(io: file8, filename: "shop8", content_type: "images/jpg")
+shop.photos.attach(io: file18, filename: "shop8", content_type: "images/jpg")
 shop.save!
 
 # file19 = URI.open(File.join(Rails.root,'app/assets/images/bike_rack_auto.jpg'))
