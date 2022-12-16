@@ -1,0 +1,15 @@
+$yellow: #F5FF6D;
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 10px;
+  transition: all .5s ease;
+
+  .button {
+    color: $yellow;
+    background: none;
+    border-radius: 10px;
+  }
+}

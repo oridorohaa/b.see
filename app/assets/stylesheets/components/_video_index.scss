@@ -1,0 +1,145 @@
+$black: #1C1C17;
+$yellow: #F5FF6D;
+$white: #E5E2DA;
+$grey: #47473B;
+$pink: #F5FF;
+
+.video-list {
+  border: 1px solid $yellow;
+  width: 80%;
+  height: 475px;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: all .5s ease;
+  overflow-y: scroll;
+
+  .video-container{
+    background-color: $grey;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .video {
+    margin: 15px;
+    width: 50%;
+  }
+
+  .video-info {
+    margin: 15px;
+    color: $white;
+    overflow-y: scroll;
+
+    a {
+      text-decoration: none;
+      color:  $white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.video-search {
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 0;
+
+  .form-control {
+    background-color: $black;
+    border: 1px solid $yellow;
+    border-radius: 10px 0 0 10px;
+    color: $white;
+  }
+
+  .form-control:focus {
+    background: none;
+    color: $white;
+    outline: none;
+  }
+
+  .search-btn {
+    color: $black;
+    background: $yellow;
+    border: 1px solid $yellow;
+    border-radius: 0 10px 10px 0;
+  }
+
+  i {
+    color: $black;
+    margin-right: 0;
+  }
+}
+
+.video-body {
+  position: relative;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  position: relative;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+  }
+
+  .filter-dropdown ul {
+    justify-content: space-around;
+    margin-left: -17.5%;
+    top: 120%;
+    width: 100%;
+  }
+
+  .order-dropdown ul {
+    justify-content: space-evenly;
+    width: 80%;
+    margin-left: -47%;
+    top: 120%;
+  }
+
+  .btn {
+    color: $yellow !important;
+    border: 1px solid $yellow !important;
+    padding: 8px 20px;
+    border-radius: 10px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    background: none;
+  }
+
+  .btn.active {
+    background: $yellow !important;
+    color: $black !important;
+  }
+
+  .tag {
+    text-decoration: none;
+    background: none;
+    color: $yellow;
+    padding: 5px;
+    border: 1px solid $yellow;
+    border-radius: 10px;
+    margin: 5px;
+  }
+}

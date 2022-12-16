@@ -5,7 +5,7 @@
       class: "form-control",
       placeholder: "search..."
     %>
-    <%= submit_tag "search", class: "search-btn"  do %>
+    <%= button_tag(type: "submit", class: "search-btn")  do %>
       <i class="fa-solid fa-magnifying-glass"></i>
     <% end %>
   <% end %>
@@ -17,16 +17,16 @@
       <button class="btn" data-action="click->filter-videos#active" data-filter-videos-target="filter">filter</button>
         <ul data-filter-videos-target="filterdropdown">
           <li>
-            <button data-action="click->filter-videos#maintenance">maintenance</button>
+            <button class="tag" data-action="click->filter-videos#maintenance">maintenance</button>
           </li>
           <li>
-            <button data-action="click->filter-videos#repair">repair</button>
+            <button class="tag" data-action="click->filter-videos#repair">repair</button>
           </li>
           <li>
-            <button data-action="click->filter-videos#styling">styling</button>
+            <button class="tag" data-action="click->filter-videos#styling">styling</button>
           </li>
           <li>
-            <button data-action="click->filter-videos#other">other</button>
+            <button class="tag" data-action="click->filter-videos#other">other</button>
           </li>
         </ul>
     </div>
@@ -34,10 +34,10 @@
       <button class="btn" data-action="click->filter-videos#active" data-filter-videos-target="order">order</button>
         <ul data-filter-videos-target="orderdropdown">
           <li>
-            <button data-action="click->filter-videos#recent">most recent</button>
+            <button class="tag" data-action="click->filter-videos#recent">most recent</button>
           </li>
           <li>
-            <button data-action="click->filter-videos#liked">most liked</button>
+            <button class="tag" data-action="click->filter-videos#liked">most liked</button>
           </li>
         </ul>
     </div>
@@ -54,180 +54,3 @@
     <% end %>
   </div>
 </div>
-
-<style>
-
-body {
-  overflow-y: scroll;
-}
-
-.d-flex input {
-
-}
-.video-list {
-  border: 1px solid #F5FF6D;
-  width: 80%;
-  height: 475px;
-  margin: 20px auto;
-  border-radius: 10px;
-  transition: all .5s ease;
-  overflow-y: scroll;
-}
-
-.video-container{
-  background-color: #47473B;
-  width: 90%;
-  margin: 20px auto;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.video {
-  margin: 15px;
-  width: 50%;
-}
-
-.video-info {
-  margin: 15px;
-  color: #E5E2DA;
-  overflow-y: scroll;
-}
-
-.video-info a {
-  text-decoration: none;
-  color: #E5E2DA;
-}
-
-.video-info p {
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 20px 10px;
-  transition: all .5s ease;
-}
-
-.dropdowns {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  position: relative;
-}
-
-.btn {
-  color: #F5FF6D !important;
-  border: 1px solid #F5FF6D !important;
-  padding: 8px 20px;
-  border-radius: 10px;
-  margin-bottom: 0;
-  margin-top: 20px;
-  background: none;
-}
-
-.btn.active {
-  background: #F5FF6D !important;
-  color: black !important;
-}
-
-.video-search {
-  width: 80%;
-  margin: 20px auto;
-  margin-bottom: 0;
-}
-
-.form-control {
-  background-color: #1C1C17;
-  border: 1px solid #F5FF6D;
-  border-radius: 10px 0 0 10px;
-  color: #E5E2DA;
-}
-
-.form-control:focus {
-  background: none;
-  color: #E5E2DA;
-}
-
-.search-btn {
-  color: #1C1C17;
-  background: #F5FF6D;
-  border: 1px solid #F5FF6D;
-  border-radius: 0 10px 10px 0;
-}
-
-.video-body {
-  position: relative;
-}
-
-.filter-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  margin-left: -17.5%;
-  top: 120%;
-  height: 0;
-  width: 100%;
-  overflow-y: hidden;
-  transition: all .5s ease;
-}
-
-.order-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  position: absolute;
-  width: 80%;
-  margin-left: -47%;
-  top: 120%;
-  height: 0;
-  overflow-y: hidden;
-  transition: all .5s ease;
-}
-
-button {
-  border: 1px solid #F5FF6D;
-  color: #F5FF6D;
-  background: none;
-  border-radius: 10px;
-}
-
-.tag {
-  text-decoration: none;
-  color: #F5FF6D;
-  padding: 5px;
-  border: 1px solid #F5FF6D;
-  border-radius: 10px;
-  margin: 5px;
-}
-.active{
-  background:#F5FF6D  !important;
-  color: black !important;
-}
-
-.video-info {
-  margin-bottom: 0;
-}
-
-.video-info a {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-</style>

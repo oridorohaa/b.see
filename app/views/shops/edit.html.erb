@@ -20,6 +20,8 @@
     <%= f.input :description %>
     <%= f.input :website %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
-    <%= f.submit "edit", class: "submit" %>
+    <%= button_tag(class:"submit") do  %>
+      <i class="fa-solid fa-pencil"></i>
+    <% end %>
   <% end %>
 </div>

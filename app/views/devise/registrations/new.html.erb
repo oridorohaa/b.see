@@ -1,54 +1,51 @@
-<%= link_to :back do %>
-  <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
-<% end %>
+<div class="login-container">
+  <%= link_to :back do %>
+    <i class="fa-solid fa-circle-chevron-left fa-xl"></i>
+  <% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :username, label: false, placeholder: "username" %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" },
-                label: false,
-                placeholder: "email" %>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" },
-                label: false,
-                placeholder: "password" %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" },
-                label: false,
-                placeholder: "confirm password" %>
-    <%= f.input :avatar, as: :file %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :username, label: false, placeholder: "username" %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" },
+                  label: false,
+                  placeholder: "email" %>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" },
+                  label: false,
+                  placeholder: "password" %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" },
+                  label: false,
+                  placeholder: "confirm password" %>
+      <%= f.input :avatar, as: :file %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class:"submit" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class:"submit" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
-
+  <%= render "devise/shared/links" %>
+</div>
 
 <style>
-  .link{
-    margin-top: 50px;
-    margin-left: 160px;
-  }
 
   .submit{
-  margin-bottom: 29px;
-  margin-left: 39px;
-  color: black;
-  background:#F5FF6D;
-  width:80%;
-  padding: 10px 0;
-  border-radius:25px;
+    margin-bottom: 29px;
+    margin-left: 39px;
+    color: black;
+    background:#F5FF6D;
+    width:80%;
+    padding: 10px 0;
+    border-radius:25px;
   }
 
   .login-form {
@@ -88,7 +85,7 @@
   .form-control:focus {
     background: none;
 
-    color: yellow;
+    color: #F5FF6D;
     letter-spacing:1px;
   }
 
@@ -103,9 +100,10 @@
   .link {
     color: #F5FF6D;
     text-decoration: none;
-
-
+    display: flex;
+    justify-content: center;
   }
+
 
   .form-check {
     color: #F5FF6D;

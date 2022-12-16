@@ -7,9 +7,6 @@
 
 <div id="map"  class="map" data-controller="shops-google-maps" style="height:564px; width:90%; border:2px solid #F5FF6D; left:20px; border-radius:7px;"></div>
 
-
-
-
 <div class="buttons">
   <%= link_to menu_path, class: 'button' do %>
     <i class="fa-solid fa-house fa-xl"></i>
@@ -20,43 +17,15 @@
 </div>
 
 <script>
- shop_data = {
-  <% @shops.each do |shop| %>
-  '<%=shop.id%>':{
-    'lat': '<%=shop.latitude%>',
-    'long': '<%=shop.longitude%>',
-    'status': '<%=shop.status%>'
-  },
-  <% end %>
- }
+  shop_data = {
+    <% @shops.each do |shop| %>
+    '<%=shop.id%>':{
+      'lat': '<%=shop.latitude%>',
+      'long': '<%=shop.longitude%>',
+      'status': '<%=shop.status%>'
+    },
+    <% end %>
+  }
 
 //  console.log(shop_data)
 </script>
-
-
-<style>
-.shop-container {
-  border: 1px solid black;
-}
-
-body {
-  background:#1C1C17;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 20px 10px;
-  transition: all .5s ease;
-}
-
-.button {
-  /* border: 1px solid #F5FF6D; */
-  color: #F5FF6D;
-  background: none;
-  border-radius: 10px;
-}
-
-
-</style>

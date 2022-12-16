@@ -5,6 +5,8 @@
 
   <%= simple_form_for [@shop, @report], url: shop_shop_reports_path do |f| %>
     <%= f.input :content %>
-    <%= f.submit "add report" , class:"submit"%>
+    <%= button_tag(class:"submit") do %>
+      <i class="fa-solid fa-plus fa-xl"></i>
+    <% end %>
   <% end %>
 </div>

@@ -22,6 +22,8 @@
     <%= f.input :description, label: false, placeholder: 'description...' %>
     <%= f.input :website, label: false, placeholder: 'website...' %>
     <%= f.input :photos, as: :file, class: "photo-field" , input_html: { multiple: true } %>
-    <%= f.submit "+", class:"submit" %>
+    <%= button_tag(class: "submit") do %>
+      <i class="fa-solid fa-plus fa-lg"></i>
+    <% end %>
   <% end %>
 </div>
