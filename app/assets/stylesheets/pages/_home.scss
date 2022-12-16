@@ -41,18 +41,17 @@ $yellow: #F5FF6D;
     }
 
     .gear {
-      // background-color: $yellow;
+      padding:0px;
+      transform-origin: center;
       height: 16px;
       width: 16px;
-      margin: 0 10px;
-      margin-top: 25%;
       animation-name: spin;
       animation-duration: 3000ms;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
-      position: absolute;
-      left: 123px;
-      top:18px;
+      position: relative;
+      left: -242px;
+      top: 112px;
     }
 
     @keyframes spin {
