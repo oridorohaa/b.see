@@ -1,19 +1,21 @@
-<div  data-controller ="language">
+<div data-controller ="language">
     <div class="nav">
-    <i class="fa-solid fa-globe globe" data-language-target="globe" data-action="click->language#action" style="margin-left: 17px;"></i>
-    <div class="dropdown" data-language-target="dropdown" style="display:none">
-      <p data-language-target="english" data-action="click->language#language">English</p>
-      <p data-language-target="spanish" data-action="click->language#language">Spanish</p>
-    </div>
-    <% if user_signed_in? %>
-      <%= link_to profile_path do  %>
-        <% if current_user.avatar.attached? %>
-          <%= cl_image_tag current_user.avatar.key, height: 100, width: 100, crop: :fill, class: "avatar" %>
-        <% else %>
-          <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+      <i class="fa-solid fa-globe globe" data-language-target="globe" data-action="click->language#action" style="margin-left: 17px;"></i>
+      <div class="dropdown" data-language-target="dropdown" style="display:none">
+        <p data-language-target="english" data-action="click->language#language">English</p>
+        <p data-language-target="spanish" data-action="click->language#language">Spanish</p>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to profile_path do  %>
+          <% if current_user.avatar.attached? %>
+            <%= cl_image_tag current_user.avatar.key, height: 100, width: 100, crop: :fill, class: "avatar" %>
+          <% else %>
+            <i class="fa-solid fa-user fa-2xl default-avatar"></i>
+          <% end %>
         <% end %>
+      <% else %>
+        <%= link_to 'login/signup', root_path, class: "links" %>
       <% end %>
-    <% end %>
     </div>
     <div class="menu-container">
       <%= link_to "Racks", bike_racks_path, class:"menu-item", id:"one",  data: { language_target: "rack" }  %>

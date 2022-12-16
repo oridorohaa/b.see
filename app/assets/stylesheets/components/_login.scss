@@ -1,0 +1,125 @@
+$black: #1C1C17;
+$yellow: #F5FF6D;
+$white: #E5E2DA;
+
+.login-container {
+
+  a {
+    color: $yellow;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: $yellow;
+  }
+
+  .login-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $black;
+    background-color: $yellow;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+.login-form {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .form-control {
+    color: $white;
+    background-color: $black;
+    border: 1px solid $yellow;
+    border-radius: 10px;
+    width: 300px;
+    padding: 8px;
+  }
+
+  .form-control:focus {
+    background: none;
+    color: $white;
+    letter-spacing: 1px;
+    outline: none;
+  }
+
+  .form-control::placeholder { color: $white }
+
+  .form-control:focus::placeholder { color: transparent }
+
+  .form-check { color: $yellow }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.login-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .link {
+    color: $yellow;
+    text-decoration: none;
+  }
+
+  p {
+    color: $white;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.login-bsee {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  h1 {
+    font-size: 120px;
+    color: $yellow;
+  }
+
+  .gear {
+    padding:0px;
+    transform-origin: center;
+    height: 16px;
+    width: 16px;
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    left: -252px;
+    top: 116px;
+    font-size:22px;
+  }
+
+  .gt {
+    width: 285px;
+    height: 100px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
