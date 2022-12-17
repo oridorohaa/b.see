@@ -13,7 +13,7 @@ $pink: #F5FF;
   transition: all .5s ease;
   overflow-y: scroll;
 
-  .video-container{
+  .video-container {
     background-color: $grey;
     width: 90%;
     margin: 20px auto;
@@ -22,6 +22,7 @@ $pink: #F5FF;
     flex-direction: row;
     overflow-x: hidden;
     overflow-y: scroll;
+    max-height: 170px;
   }
 
   .video {
@@ -141,5 +142,10 @@ $pink: #F5FF;
     border: 1px solid $yellow;
     border-radius: 10px;
     margin: 5px;
+  }
+
+  .tag.active {
+    background: $yellow !important;
+    color: $black !important;
   }
 }
