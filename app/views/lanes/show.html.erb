@@ -93,9 +93,7 @@
         <%= f.simple_fields_for :comments do |comments_form| %>
           <%= comments_form.input :content, label: false, as: :text %>
         <% end %>
-        <%= button_tag(class: 'submit-btn') do %>
-          <i class="fa-solid fa-plus"></i>
-        <% end %>
+        <%= f.submit "+", class: 'submit-btn' %>
       <% end %>
     </div>
   <% end %>
