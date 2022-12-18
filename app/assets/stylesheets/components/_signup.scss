@@ -57,18 +57,20 @@ $white: #E5E2DA;
     align-items: center;
   }
 
-  .form-actions { margin: 0 auto }
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
 
   p {
     color: $white;
   }
 
   .submit {
-    margin-bottom: 29px;
-    margin-left: 39px;
+    margin: 10px auto;
     color: $black;
     background:$yellow;
-    width: 80%;
+    width: 20%;
     padding: 10px 0;
     border-radius: 25px;
   }
