@@ -84,10 +84,13 @@ $white: #E5E2DA;
 }
 
 .login-bsee {
-  margin-top: 120px;
+  margin-top: 120px !important;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
 
   h1 {
     font-size: 120px;
@@ -103,10 +106,14 @@ $white: #E5E2DA;
     animation-duration: 3000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    position: relative;
-    left: -252px;
-    top: 116px;
-    font-size:22px;
+    position: absolute;
+    right: 250px;
+    top: 115px;
+    font-size: 22px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .gt {

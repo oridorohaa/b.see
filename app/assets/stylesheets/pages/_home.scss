@@ -3,10 +3,11 @@ $black: #1C1C17;
 $yellow: #F5FF6D;
 
 // @media (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  img{
-    width:30px;
-    height:30px;
+  img {
+    width: 30px;
+    height: 30px;
   }
+
   .container {
     height: 100vh;
     padding: 0;
@@ -33,7 +34,10 @@ $yellow: #F5FF6D;
       display: flex;
       flex-direction: row;
       justify-content: center;
+      position: relative;
       height: 100%;
+      width: 400px;
+      margin: 0 auto;
     }
 
     .bsee h1 {
@@ -41,7 +45,7 @@ $yellow: #F5FF6D;
     }
 
     .gear {
-      padding:0px;
+      padding: 0px;
       transform-origin: center;
       height: 16px;
       width: 16px;
@@ -49,9 +53,10 @@ $yellow: #F5FF6D;
       animation-duration: 3000ms;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
-      position: relative;
-      left: -242px;
-      top: 112px;
+      position: absolute;
+      top: 115px;
+      right: 250px;
+      font-size: 22px;
     }
 
     @keyframes spin {
@@ -61,11 +66,16 @@ $yellow: #F5FF6D;
       to {
           transform:rotate(360deg);
       }
-  }
-
-    .fa-gear{
-      font-size:22px;
     }
+
+    .fa-gear {
+      font-size: 22px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     p {
       text-transform: uppercase;
       margin-bottom: 0;
@@ -110,6 +120,5 @@ $yellow: #F5FF6D;
 .gt {
   width: 272px;
   height: 95px;
-  margin: 40px;
-  margin-left: 20%;
+  margin: 40px auto;
 }
