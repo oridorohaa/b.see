@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_many :reports
+
   has_many :lane_likes, dependent: :destroy
   has_many :shop_likes, dependent: :destroy
   has_many :bike_rack_likes, dependent: :destroy
